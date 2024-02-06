@@ -1,9 +1,10 @@
 import { LucideProps } from "lucide-react";
+import type { SVGProps } from "react";
 
 export const Icons = {
   logo: (props: LucideProps) => (
     <svg
-        {...props}
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
       width="184"
       height="70"
@@ -40,6 +41,17 @@ export const Icons = {
           <path fill="#fff" d="M0 0h184v69.714H0z" />
         </clipPath>
       </defs>
+    </svg>
+  ),
+  IcBaselineArrowDropDown: (props: SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path fill="currentColor" d="m7 10l5 5l5-5z"></path>
     </svg>
   ),
 };

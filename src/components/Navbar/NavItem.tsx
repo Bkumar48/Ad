@@ -1,7 +1,8 @@
 import { NAV_ITEMS } from "@/config";
-import { ChevronDown } from "lucide-react";
+import { Icons } from "../Icons/Icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import AnimatedLinks from "./AnimatedLinks";
 
 type NavItems = (typeof NAV_ITEMS)[number];
 
@@ -12,39 +13,38 @@ interface NavItemProps {
 
 const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
   return (
-    <div className="flex  justify-center">
-      <div className=" flex items-center">
+    <div className="flex justify-center">
+      <div className={cn("flex  items-center group" )}>
         <Link
-          className="gap-1 font-semibold flex items-center h-20"
+          className="gap-1 font-semibold flex items-center h-24 px-2 relative hover:after:w-[100%] after:absolute after:content-[''] after:h-[3px] after:w-[0%] after:bg-[#aaa] after:bottom-0 after:left-0 after:transition-all after:duration-300"
           href={navitems.href}
           onClick={activeIndex}
         >
-          {navitems.label}
-          {navitems.subItems && (
-            <ChevronDown
-              className={cn("h-4 w-4 transition-all text-muted-foreground")}
+          <AnimatedLinks title={navitems.label} />
+          {(navitems.subItems || navitems.childrens) && (
+            <Icons.IcBaselineArrowDropDown
+              className={cn(
+                "h-4 w-4 transition-all text-muted-foreground group-hover:rotate-180"
+              )}
             />
           )}
         </Link>
-        {navitems.subItems && (
-          <div className="absolute top-full text-sm text-muted-foreground w-full bg-white left-0 rounded-bl-lgpad">
-            <div className="relative bg-white ">
+        {navitems.subItems ? (
+          <div className="absolute top-full text-sm text-muted-foreground inset-x-0 bg-white left-0 rounded-bl-lg rounded-br-lg shadow-lg transition-all duration-300 origin-top scale-y-0 pointer-events-none group-hover:scale-y-100 group-hover:pointer-events-auto">
+            <div className="relative bg-white rounded-bl-lg rounded-br-lg">
               <div className="mx-auto px-4 py-4">
-                <div className="flex">
-                  <div className="grid grid-cols-3 gap-x-8 gap-y-10 py-4 w-9/12">
+                <div className="flex rounded-bl-lg rounded-br-lg">
+                  <div className="grid grid-cols-3 gap-8 py-4 w-9/12">
                     {navitems.subItems.map((subItem) => (
                       <div
-                        className="group relative text-base sm:text-sm"
+                        className="relative text-base sm:text-sm"
                         key={subItem.name}
                       >
                         <Link
                           href={subItem.href}
-                          className="block font-medium text-gray-900 py-2"
+                          className="block font-medium text-gray-900 pb-2"
                         >
-                          <span className="font-semibold">
-                            {" "}
-                            {subItem.name}
-                          </span>
+                          <span className="font-bold "> {subItem.name}</span>
                         </Link>
                         <ul>
                           {subItem.subItems
@@ -52,10 +52,13 @@ const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
                                 return (
                                   <li
                                     key={subSubItem.name}
-                                    className="flex items-center gap-2 py-2"
+                                    className="flex items-center gap-2 py-1"
                                   >
-                                    <div className="w-[13px] h-[13px] rounded bg-[#ddd] text-[0px]"></div>
-                                    <Link href={subSubItem.href}>
+                                    <div className="w-[13px] h-[13px] rounded-sm bg-[#ddd]"></div>
+                                    <Link
+                                      href={subSubItem.href}
+                                      className="text-base"
+                                    >
                                       {subSubItem.name}
                                     </Link>
                                   </li>
@@ -66,12 +69,27 @@ const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
                       </div>
                     ))}
                   </div>
-                  <div className="bg-[#f3fdff] flex-none w-3/12">hello</div>
+                  <div className="bg-[#f3fdff] flex-none w-3/12"></div>
                 </div>
               </div>
             </div>
           </div>
-        )}
+        ) : navitems.childrens ? (
+          <div className="absolute top-full text-sm text-muted-foreground bg-white rounded-bl-lg rounded-br-lg shadow-lg transition-all duration-300 origin-top scale-y-0 pointer-events-none group-hover:scale-y-100 group-hover:pointer-events-auto">
+            <div className="mx-auto px-4 py-4">
+            {navitems.childrens.map((children) => (
+              <div key={children.name} className="text-base sm:text-sm">
+                <Link
+                  href={children.href}
+                  className="block font-medium text-gray-900 py-2"
+                >
+                  <span> {children.name}</span>
+                </Link>
+              </div>
+            ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );

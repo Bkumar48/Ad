@@ -5,6 +5,25 @@ export const NAV_ITEMS = [
     href: "/",
   },
   {
+    label: "About",
+    value: "about" as const,
+    href: "#",
+    childrens:[
+      {
+        name:"Team",
+        href:"/team"
+      },
+      {
+        name:"Culture",
+        href:"/culture"
+      },
+      {
+        name:"Testimonials",
+        href:"/testimonials"
+      },
+    ]
+  },
+  {
     label: "Services",
     value: "services" as const,
     href: "#",
@@ -109,62 +128,88 @@ export const NAV_ITEMS = [
         ],
       },
       {
-        name: "Web Designing & Development",
-        href: "/web-designing-and-development",
+        name: "Compelling Content Marketing",
+        href: "/services/compelling-content-marketing",
         subItems: [
           {
-            name: "WordPress Development",
-            href: "/services/web-designing-and-development/wordpress-development",
+            name: "Content Audit",
+            href: "/services/compelling-content-marketing",
           },
           {
-            name: "Custom web development",
-            href: "/services/web-designing-and-development/custom-web-development",
+            name: "Blogs & Articles",
+            href: "/services/compelling-content-marketing",
           },
           {
-            name: "WooCommerce",
-            href: "/services/web-designing-and-development/woocommerce",
+            name: "Social Media Posts",
+            href: "/services/compelling-content-marketing",
           },
           {
-            name: "Shopify Development",
-            href: "/services/web-designing-and-development/shopify-development",
+            name: "Infographics",
+            href: "/services/compelling-content-marketing",
           },
           {
-            name: "PHP Development",
-            href: "/services/web-designing-and-development/php-development",
+            name: "Email Marketing Draft",
+            href: "/services/compelling-content-marketing",
           },
           {
-            name: "Laravel Development",
-            href: "/services/web-designing-and-development/laravel-development",
+            name: "Website Copies",
+            href: "/services/compelling-content-marketing",
+          },
+          {
+            name: "Guest Posting",
+            href: "/services/compelling-content-marketing",
+          },
+          {
+            name: "Google Business Profile Posts",
+            href: "/services/compelling-content-marketing",
           },
         ],
       },
       {
-        name: "Web Designing & Development",
-        href: "/web-designing-and-development",
+        name: "Digital Creative & Logo Design",
+        href: "/services/digital-creative-and-logo-design",
         subItems: [
           {
-            name: "WordPress Development",
-            href: "/services/web-designing-and-development/wordpress-development",
+            name: "Website Graphics",
+            href: "/services/digital-creative-and-logo-design",
           },
           {
-            name: "Custom web development",
-            href: "/services/web-designing-and-development/custom-web-development",
+            name: "Website Logo",
+            href: "/services/digital-creative-and-logo-design",
           },
           {
-            name: "WooCommerce",
-            href: "/services/web-designing-and-development/woocommerce",
+            name: "Digital Broucher",
+            href: "/services/digital-creative-and-logo-design",
           },
           {
-            name: "Shopify Development",
-            href: "/services/web-designing-and-development/shopify-development",
+            name: "Email Marketing Graphics",
+            href: "/services/digital-creative-and-logo-design",
           },
           {
-            name: "PHP Development",
-            href: "/services/web-designing-and-development/php-development",
+            name: "Business card, Letterhead etc.",
+            href: "/services/digital-creative-and-logo-design",
           },
           {
-            name: "Laravel Development",
-            href: "/services/web-designing-and-development/laravel-development",
+            name: "Poster, Banner, Flyer and Signage",
+            href: "/services/digital-creative-and-logo-design",
+          },
+          {
+            name: "Social Media Graphics",
+            href: "/services/digital-creative-and-logo-design",
+          },
+        ],
+      },
+      {
+        name: "Strategic Social Media Management",
+        href: "/services/strategic-social-media-management",
+        subItems: [
+          {
+            name: "Social Media Optimization",
+            href: "/services/strategic-social-media-management/social-media-optimization",
+          },
+          {
+            name: "Social Media Marketing",
+            href: "/services/strategic-social-media-management/social-media-marketing",
           },
         ],
       },
@@ -174,30 +219,24 @@ export const NAV_ITEMS = [
     label: "Resources",
     value: "resources" as const,
     href: "#",
-    // subItems: [
-    //   {
-    //     name: "Blog",
-    //     href: "/blog",
-    //   },
-    //   {
-    //     name: "Blog",
-    //     href: "/blog",
-    //   },
-    // ],
+    childrens: [
+      {
+        name: "Case Studies",
+        href: "/case-studies",
+      },
+      {
+        name: "Blog",
+        href: "/blog",
+      },
+     
+     
+    ],
   },
+
   {
-    label: "Case Studies",
-    value: "case-studies" as const,
-    href: "/case-studies",
+    label: "Career",
+    value: "career" as const,
+    href: "/career",
   },
-  {
-    label: "Careers",
-    value: "careers" as const,
-    href: "/careers",
-  },
-  {
-    label: "Contact",
-    value: "contact" as const,
-    href: "/contact",
-  },
+  
 ];

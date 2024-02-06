@@ -1,10 +1,20 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import { NAV_ITEMS } from "@/config";
-import React, { useState } from "react";
 import NavItem from "./NavItem";
+import { PopupButton } from "react-calendly";
 
 const NavItems = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+    const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const rootEl = document.getElementById("root");
+    if (rootEl) {
+      setRootElement(rootEl);
+    }
+  }, []); 
+
   return (
     <div className="flex gap-10 h-full">
       {NAV_ITEMS.map((item, index) => {
@@ -21,6 +31,17 @@ const NavItems = () => {
           />
         );
       })}
+      <div className="overflow-hidden flex items-center ">
+        {rootElement && (
+          
+          <PopupButton
+            url="https://calendly.com/bittu-ad"
+            rootElement={rootElement}
+            text="Book Demo"
+            className="font-semibold relative hover:after:w-[100%] after:absolute after:content-[''] after:h-[3px] after:w-[100%] after:bg-[#FB9100] after:bottom-[-5px] after:left-0 after:transition-all after:rounded-2xl"
+          />
+        )}
+      </div>
     </div>
   );
 };
