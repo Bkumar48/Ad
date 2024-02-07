@@ -1,10 +1,16 @@
+
 import Link from "next/link";
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
 import { Icons } from "./../Icons/Icons";
 import NavItems from "./NavItems";
+import Topbar from "./Topbar";
+
+
 
 const Navbar = () => {
   return (
+    <>
+
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-24">
       <header className="relative bg-white">
         <MaxWidthWrapper>
@@ -19,7 +25,9 @@ const Navbar = () => {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6 ">
-                  <NavItems />
+                 
+                      <NavItems />
+
                 </div>
               </div>
             </div>
@@ -27,6 +35,7 @@ const Navbar = () => {
         </MaxWidthWrapper>
       </header>
     </div>
+    </>
   );
 };
 

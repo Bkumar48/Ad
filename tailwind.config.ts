@@ -11,7 +11,8 @@ const config = {
   prefix: "",
   theme: {
     fontFamily: {
-      'dm-serif': ['"DM Serif Display"', "serif"],
+      nunito: ["var(--font-nunito)"],
+      dm: ["var(--font-dm)"],
     },
     container: {
       center: true,

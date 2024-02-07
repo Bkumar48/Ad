@@ -3,23 +3,24 @@ export const NAV_ITEMS = [
     label: "Home",
     value: "home" as const,
     href: "/",
+    subItems: [],
   },
   {
     label: "About",
     value: "about" as const,
     href: "#",
-    childrens:[
+    subItems: [  // Corrected property name
       {
-        name:"Team",
-        href:"/team"
+        name: "Team",
+        href: "/team"
       },
       {
-        name:"Culture",
-        href:"/culture"
+        name: "Culture",
+        href: "/culture"
       },
       {
-        name:"Testimonials",
-        href:"/testimonials"
+        name: "Testimonials",
+        href: "/testimonials"
       },
     ]
   },
@@ -219,7 +220,7 @@ export const NAV_ITEMS = [
     label: "Resources",
     value: "resources" as const,
     href: "#",
-    childrens: [
+    subItems: [
       {
         name: "Case Studies",
         href: "/case-studies",
@@ -237,6 +238,7 @@ export const NAV_ITEMS = [
     label: "Career",
     value: "career" as const,
     href: "/career",
+    subItems: [],
   },
   
 ];

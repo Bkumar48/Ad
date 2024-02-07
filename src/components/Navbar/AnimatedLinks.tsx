@@ -6,7 +6,10 @@ interface AnimatedLetterProps {
   animation: Variants;
 }
 
-const AnimatedLetter: React.FC<AnimatedLetterProps> = ({ character, animation }) => {
+const AnimatedLetter: React.FC<AnimatedLetterProps> = ({
+  character,
+  animation,
+}) => {
   return (
     <motion.span
       variants={animation}
@@ -23,7 +26,11 @@ interface AnimatedWordProps {
   isHovered: boolean;
 }
 
-const AnimatedWord: React.FC<AnimatedWordProps> = ({ title, animation,isHovered }) => {
+const AnimatedWord: React.FC<AnimatedWordProps> = ({
+  title,
+  animation,
+  isHovered,
+}) => {
   return (
     <motion.span
       variants={titleAnimation}
@@ -37,7 +44,11 @@ const AnimatedWord: React.FC<AnimatedWordProps> = ({ title, animation,isHovered 
           character === " " ? (
             <span key={i}>&nbsp;</span>
           ) : (
-            <AnimatedLetter key={i} character={character} animation={animation} />
+            <AnimatedLetter
+              key={i}
+              character={character}
+              animation={animation}
+            />
           )
         )}
     </motion.span>
@@ -45,20 +56,28 @@ const AnimatedWord: React.FC<AnimatedWordProps> = ({ title, animation,isHovered 
 };
 
 const AnimatedLink: React.FC<{ title: string }> = ({ title }) => {
-    const [isHovered, setHovered] = useState(false);
-  
-    return (
-      <motion.div
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="relative overflow-hidden cursor-pointer "
-      >
-        <AnimatedWord title={title} animation={letterAnimation} isHovered={isHovered}/>
-        <div className="absolute top-0 h-24 text-slate-800">
-          <AnimatedWord title={title} animation={letterAnimationTwo} isHovered={isHovered}/>
-        </div>
-      </motion.div>
-    );
+  const [isHovered, setHovered] = useState(false);
+
+  return (
+    <motion.div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="relative overflow-hidden cursor-pointer"
+    >
+      <AnimatedWord
+        title={title}
+        animation={letterAnimation}
+        isHovered={isHovered}
+      />
+      <div className="absolute top-0 h-24 text-slate-800">
+        <AnimatedWord
+          title={title}
+          animation={letterAnimationTwo}
+          isHovered={isHovered}
+        />
+      </div>
+    </motion.div>
+  );
 };
 
 const titleAnimation: Variants = {
@@ -73,7 +92,7 @@ const titleAnimation: Variants = {
     },
   },
 };
-  
+
 const letterAnimation: Variants = {
   rest: {
     y: 0,
@@ -87,7 +106,7 @@ const letterAnimation: Variants = {
     },
   },
 };
-  
+
 const letterAnimationTwo: Variants = {
   rest: {
     y: 30,

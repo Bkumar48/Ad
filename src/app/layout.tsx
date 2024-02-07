@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-nunito",
+});
+const dm = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-dm",
+});
 
 export const metadata: Metadata = {
   title: "Adaired Digital Media",
@@ -19,7 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={cn("relative h-full font-sans antialiased", inter.className)}
+        id="root"
+        className={cn(
+          "relative h-full font-sans antialiased",
+          dm.variable,
+          nunito.variable
+        )}
       >
         <main className={`relative flex flex-col min-h-screen`}>
           <Navbar />
