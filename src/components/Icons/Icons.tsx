@@ -11,7 +11,7 @@ export const Icons = {
       fill="none"
       xmlnsXlink="https://vecta.io/nano"
     >
-      <g clip-path="url(#A)">
+      <g clipPath="url(#A)">
         <g fill="#1b5a96">
           <path d="M86.971 24.868l3.189-7.157 2.644 3.385-5.833 3.772zm3.975-8.073l9.952 13.688 4.721-6.065 3.909-5.205 1.295-12.65-19.877 10.233z" />
         </g>
@@ -52,6 +52,24 @@ export const Icons = {
       {...props}
     >
       <path fill="currentColor" d="m7 10l5 5l5-5z"></path>
+    </svg>
+  ),
+  ArrowRightBroken: (props: SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M4 12h2.5M20 12l-6-6m6 6l-6 6m6-6H9.5"
+      ></path>
     </svg>
   ),
 };

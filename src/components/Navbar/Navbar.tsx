@@ -5,13 +5,11 @@ import { Icons } from "./../Icons/Icons";
 import NavItems from "./NavItems";
 import Topbar from "./Topbar";
 
-
-
 const Navbar = () => {
   return (
     <>
-
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-24">
+    {/* <Topbar/> */}
       <header className="relative bg-white">
         <MaxWidthWrapper>
           <div className="relative">
