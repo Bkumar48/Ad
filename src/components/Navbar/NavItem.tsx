@@ -19,7 +19,7 @@ const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
           className="gap-1 font-semibold flex items-center h-24 px-2 relative hover:after:w-[100%] after:absolute after:content-[''] after:h-[3px] after:w-[0%] after:bg-[#aaa] after:bottom-0 after:left-0 after:transition-all after:duration-300"
           href={navitems.href}
           onClick={activeIndex}
-        >
+        > 
           <AnimatedLinks title={navitems.label} />
           {(navitems.subItems || navitems.childrens) && (
             <Icons.IcBaselineArrowDropDown

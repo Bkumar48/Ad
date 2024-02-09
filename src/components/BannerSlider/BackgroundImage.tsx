@@ -4,7 +4,7 @@ import Image from "next/image";
 export type Data = {
   img: string;
   title: string;
-subHead:string;
+  subHead: string;
 };
 
 type BackgroundImageProps = {
@@ -17,12 +17,11 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
   nextData,
 }) => {
   const containerVariants: Variants = {
-    hidden: { opacity: 0},
+    hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
 
   return (
-
     <>
       <motion.div
         key={currentData.img}
@@ -31,11 +30,21 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
         exit="hidden"
         variants={containerVariants}
         transition={{
-          opacity: { duration: 0.5 ,ease: "easeOut"}, 
+          opacity: { duration: 0.5, ease: "easeOut" },
         }}
         className="absolute left-0 top-0 z-1 h-full w-full current"
       >
-        <Image src={currentData.img} fill priority alt="Current Banner Image" />
+        <Image
+          src={currentData.img}
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+          priority
+          alt="Current Banner Image"
+        />
       </motion.div>
 
       <motion.div
@@ -45,14 +54,23 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
         exit="hidden"
         variants={containerVariants}
         transition={{
-          opacity: { duration: 0.5 ,ease: "easeOut"}, 
+          opacity: { duration: 0.5, ease: "easeOut" },
         }}
         className="absolute left-0 top-0 z-1 h-full w-full"
       >
-        <Image src={nextData.img} fill priority alt="Next Banner Image" />
+        <Image
+          src={nextData.img}
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+          priority
+          alt="Next Banner Image"
+        />
       </motion.div>
-      </>
-
+    </>
   );
 };
 

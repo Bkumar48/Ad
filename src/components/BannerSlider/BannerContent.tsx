@@ -95,16 +95,18 @@ type BannerContentProps = {
 
 const BannerContent: React.FC<BannerContentProps> = ({ data }) => {
   return (
-    <div className="text-white">
+    <div className="text-white leading-tight">
       <span>{data.subHead}</span>
       <h1 className="transition-all text-[30px] 2xl:text-[56px] xl:text-[50px] lg:text-[42px] md:text-[35px] sm:text-[30px]">
         {data.title}
       </h1>
       <Button
-        title="Click me"
-        icon="ArrowRightBroken"
-        svgClassName="bg-white p-3"
-        // onClick={""}
+        title="Request a Callback"
+        className="bg-white text-black mt-5"
+        // svgContainerClassName="group-hover:right-[75%]"
+        svgClassName="bg-[#F89520]"
+        type="button"
+        navigateTo="/contact"
       />
     </div>
   );

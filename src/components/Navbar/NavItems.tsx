@@ -16,7 +16,7 @@ const NavItems = () => {
   }, []);
 
   return (
-    <div className="flex gap-10 h-full">
+    <div className="flex gap-6 h-full">
     
           {NAV_ITEMS.map((item, index) => {
             const setActive = (index: number) => {
