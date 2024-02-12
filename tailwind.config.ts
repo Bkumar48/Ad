@@ -12,6 +12,7 @@ const config = {
   theme: {
     fontFamily: {
       nunito: ["var(--font-nunito)"],
+      baby:["var(--font-baby)"],
       dm: ["var(--font-dm)"],
     },
     container: {

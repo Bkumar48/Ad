@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito_Sans, DM_Serif_Display } from "next/font/google";
+import { Nunito_Sans, DM_Serif_Display, Oooh_Baby } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar/Navbar";
@@ -13,6 +13,11 @@ const dm = DM_Serif_Display({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-dm",
+});
+const baby = Oooh_Baby({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-baby",
 });
 
 export const metadata: Metadata = {
@@ -32,7 +37,8 @@ export default function RootLayout({
         className={cn(
           "relative h-full font-sans antialiased",
           dm.variable,
-          nunito.variable
+          nunito.variable,
+          baby.variable
         )}
       >
         <main className={`relative flex flex-col min-h-screen`}>
