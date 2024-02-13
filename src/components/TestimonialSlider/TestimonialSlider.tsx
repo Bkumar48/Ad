@@ -57,7 +57,7 @@ const TestimonialSlider = () => {
   );
   return (
     <>
-      <section className="py-6 md:py-12 bg-[#FAFFF3]">
+      <section className="pb-20 pt-6 sm:pt-12 sm:pb-16 bg-[#FAFFF3]">
         <MaxWidthWrapper>
           <div
             className={`flex-1 pb-12 flex flex-col items-center text-center lg:text-left lg:items-start lg:pb-0`}
@@ -77,13 +77,12 @@ const TestimonialSlider = () => {
               and make us the most trusted digital marketing company.
             </p>
           </div>
-          <div className="pt-4">
+          <div className="pt-10">
             <Carousel
               opts={{
                 align: "start",
                 loop: true,
-            }}
-            
+              }}
               plugins={[plugin.current]}
               onMouseEnter={plugin.current.stop}
               onMouseLeave={plugin.current.play}
@@ -117,7 +116,9 @@ const TestimonialSlider = () => {
                           )}
                           <h4>{item.name}</h4>
                         </div>
-                        <p className="pt-4 text-base sm:text-lg">{item.review}</p>
+                        <p className="pt-4 text-base sm:text-lg">
+                          {item.review}
+                        </p>
                         <Image
                           src={"/rating-star.svg"}
                           alt="Rating"
@@ -130,6 +131,8 @@ const TestimonialSlider = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
+              <CarouselPrevious className="left-0 top-[110%] " />
+              <CarouselNext className="left-16 top-[110%]" />
             </Carousel>
           </div>
         </MaxWidthWrapper>

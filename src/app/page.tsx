@@ -6,25 +6,28 @@ import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import Image from "next/image";
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
-const CaseStudySlider = dynamic(()=>import("@/components/CaseStudySlider/CaseStudySlider"))
-const TestimonialSlider= dynamic(()=>import("@/components/TestimonialSlider/TestimonialSlider"))
+const CaseStudySlider = dynamic(
+  () => import("@/components/CaseStudySlider/CaseStudySlider")
+);
+const TestimonialSlider = dynamic(
+  () => import("@/components/TestimonialSlider/TestimonialSlider")
+);
 
 export default function Home() {
   return (
     <main>
-      testing
       <BannerSlider />
       <ManageGrid />
       <AboutSection />
       <LogoSlider />
       <CaseStudySlider />
       <Awards />
-      <TestimonialSlider/>
+      <TestimonialSlider />
       <Footer />
-      <LocomotiveScroll />  
-      </main>
+      <LocomotiveScroll />
+    </main>
   );
 }
 
@@ -134,8 +137,8 @@ const AboutSection = () => {
               </div>
             </div>
             <p className="font-baby text-lg sm:text-2xl font-semibold py-2">
-            &quot;Your brand is what people say about you when you&apos;re not in the
-              room.&quot; -<i className="text-[#92288D]">Jeff Bezos</i>
+              &quot;Your brand is what people say about you when you&apos;re not
+              in the room.&quot; -<i className="text-[#92288D]">Jeff Bezos</i>
             </p>
             <Button
               title="View More Information"
