@@ -20,7 +20,7 @@ const BannerSlider = () => {
 
   return (
     <AnimatePresence initial={false}>
-      <div className="relative min-h-[500px] md:min-h-[600px] lg:h-dvh">
+      <div className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[90dvh]">
         <BackgroundImage
           currentData={data[currentIndex]}
           nextData={data[(currentIndex + 1) % data.length]}

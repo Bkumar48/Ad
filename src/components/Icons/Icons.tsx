@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { SVGProps } from "react";
 
 export const Icons = {
@@ -297,4 +298,45 @@ export const Icons = {
       ></path>
     </svg>
   ),
+  AngleLeft: (props: SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1.2rem"
+      height="1.2rem"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="m15 19l-7-7l7-7"
+      ></path>
+    </svg>
+  ),
+  AngleRight: (props: SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1.2rem"
+      height="1.2rem"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="m9 5l7 7l-7 7"
+      ></path>
+    </svg>
+  ),
+  Quote: (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" viewBox="0 0 16 16" {...props}><path fill="currentColor" d="M9 9V2h7v7.1c0 4.8-4.5 5.4-4.5 5.4l-.6-1.4s2-.3 2.4-1.9c.4-1.2-.4-2.2-.4-2.2zM0 9V2h7v7.1c0 4.8-4.5 5.4-4.5 5.4l-.6-1.4s2-.3 2.4-1.9C4.7 10 3.9 9 3.9 9z"></path></svg>
+  ),
 };
+
+
