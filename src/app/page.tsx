@@ -14,6 +14,7 @@ const TestimonialSlider= dynamic(()=>import("@/components/TestimonialSlider/Test
 export default function Home() {
   return (
     <main>
+      testing
       <BannerSlider />
       <ManageGrid />
       <AboutSection />
