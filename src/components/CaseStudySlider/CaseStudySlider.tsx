@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import Button from "@/components/Button/Button";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
+import { Icons } from "@/components/Icons/Icons";
 
 const CaseStudySlider = () => {
   type DataItem = {
@@ -97,7 +98,7 @@ const CaseStudySlider = () => {
                     <Button
                       title="View More"
                       className="bg-white text-black mt-5"
-                      svgContainerClassName="group-hover:right-[65%]"
+                      svgContainerClassName="group-hover:right-[64.9%]"
                       svgClassName="bg-[#F89520]"
                       type="button"
                       navigateTo="/case-studies"
@@ -115,8 +116,13 @@ const CaseStudySlider = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:block left-0 bg-white rounded-none h-12 w-6 rounded-tr-lg rounded-br-lg" />
-          <CarouselNext className="hidden md:block right-0 bg-white rounded-none h-12 w-6 rounded-tl-lg rounded-bl-lg" />
+          <CarouselPrevious className="hidden md:block left-0 bg-white rounded-none h-12 w-6 rounded-tr-lg rounded-br-lg" >
+          <Icons.AngleLeft />
+          </CarouselPrevious>
+          <CarouselNext className="hidden md:block right-0 bg-white rounded-none h-12 w-6 rounded-tl-lg rounded-bl-lg" >
+          <Icons.AngleRight />
+
+          </CarouselNext>
         </Carousel>
       </section>
     </>

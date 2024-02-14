@@ -9,7 +9,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import Button from "@/components/Button/Button";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import { Icons } from "@/components/Icons/Icons";
 const TestimonialSlider = () => {
@@ -87,7 +86,7 @@ const TestimonialSlider = () => {
               onMouseEnter={plugin.current.stop}
               onMouseLeave={plugin.current.play}
             >
-              <CarouselContent className="-ml-0 md:-ml-1 ">
+              <CarouselContent className="-ml-0 md:-ml-1 pb-6">
                 {data.map((item) => (
                   <CarouselItem
                     key={item.name}
@@ -131,8 +130,16 @@ const TestimonialSlider = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0 top-[110%] " />
-              <CarouselNext className="left-16 top-[110%]" />
+
+              <div className="relative mx-auto max-w-[100px] pt-5 sm:pt-0 sm:static sm:max-w-full">
+                <CarouselPrevious className="top-[110%] bg-[#515151] border-none w-10 left-0  rounded-lg text-white hover:text-white transition-all hover:bg-[#8EC640] sm:w-8 sm:translate-x-0 sm:rounded-full sm:left-0  sm:bg-transparent   sm:text-[#A7A9AC]  sm:hover:text-[#FB9100]  sm:hover:bg-transparent sm:after:absolute sm:after:content-[''] sm:after:h-10 sm:after:w-0.5 sm:after:right-[-30%] sm:after:bg-[#A7A9AC] flex-none sm:mr-2">
+                  <Icons.ArrowLeft className="hover:scale-125" />
+                </CarouselPrevious>
+
+                <CarouselNext className="w-10 right-0 rounded-lg top-[110%] bg-[#515151] transition-all border-none text-white hover:text-white hover:bg-[#8EC640] sm:rounded-full sm:left-12 sm:bg-transparent sm:text-[#A7A9AC]  sm:hover:text-[#FB9100] sm:hover:bg-transparent sm:w-8  flex-none">
+                  <Icons.ArrowRight className="hover:scale-125" />
+                </CarouselNext>
+              </div>
             </Carousel>
           </div>
         </MaxWidthWrapper>

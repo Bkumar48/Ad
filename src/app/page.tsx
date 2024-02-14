@@ -7,6 +7,9 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import Image from "next/image";
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
 import dynamic from "next/dynamic";
+import BlogCard from "@/components/BlogCard/BlogCard";
+import Link from "next/link";
+import HomePageForm from "@/components/Forms/HomePageForm";
 
 const CaseStudySlider = dynamic(
   () => import("@/components/CaseStudySlider/CaseStudySlider")
@@ -23,8 +26,11 @@ export default function Home() {
       <AboutSection />
       <LogoSlider />
       <CaseStudySlider />
+      <Growth />
       <Awards />
       <TestimonialSlider />
+      {/* <BlogCard /> */}
+      <ContactUs />
       <Footer />
       <LocomotiveScroll />
     </main>
@@ -259,6 +265,140 @@ const Awards = () => {
               speed="slow"
               itemClassName=" w-20 sm:w-32 h-auto md:w-40 px-2 py-2 sm:py-5 sm:px-8"
             />
+          </div>
+        </MaxWidthWrapper>
+      </section>
+    </>
+  );
+};
+
+const ContactUs = () => {
+  return (
+    <>
+      <section className="pt-6 sm:pt-12">
+        <MaxWidthWrapper>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl py-2">
+            Ready To Win More Customers?{" "}
+          </h2>
+          <p className="py-2">
+            Connect for more website traffic, qualified leads, and an
+            established online brand image.
+          </p>
+        </MaxWidthWrapper>
+        <div className="bg-[#ECECEC]">
+          <MaxWidthWrapper className="flex py-6">
+            <div className="flex-1 flex flex-col gap-4">
+              <Link
+                href="mailto:info@adaired.com"
+                className="flex bg-white gap-4 items-center p-6 "
+              >
+                <Icons.Mail className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                <div>
+                  <p>Mail Id Of Sales Executive</p>
+                  <p className="font-semibold text-2xl">info@adaired.com</p>
+                </div>
+              </Link>
+              <Link
+                href="/"
+                className="flex bg-white gap-4 items-center p-6 "
+              >
+                <Icons.Skype className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                <div>
+                  <p>Our Skype ID</p>
+                  <p className="font-semibold text-2xl">Adaired Digital</p>
+                </div>
+              </Link>
+              <Link
+                href="/"
+                className="flex bg-white gap-4 items-center p-6 "
+              >
+                <Icons.Whatsapp className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                <div>
+                  <p> Chat on</p>
+                  <p className="font-semibold text-2xl">Whatsapp</p>
+                </div>
+              </Link>
+              <Link
+                href="/"
+                className="flex bg-white gap-4 items-center p-6 "
+              >
+                <Icons.Telegram className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                <div>
+                  <p>Ping us on</p>
+                  <p className="font-semibold text-2xl">Telegram</p>
+                </div>
+              </Link>
+            </div>
+            <div className="flex-1">
+              <HomePageForm/>
+            </div>
+          </MaxWidthWrapper>
+        </div>
+      </section>
+    </>
+  );
+};
+
+const Growth = () => {
+  return (
+    <>
+      <section className="py-7 sm:py-14 ">
+        <MaxWidthWrapper className="flex flex-col lg:flex-row items-center lg:items-start gap-16 xl:gap-36  ">
+          <div className="flex-1 relative ml-2 mr-4 lg:mr-0 lg:ml-2 ">
+            <div className="max-w-[500px] lg:max-w-full after:absolute after:-top-3 after:-right-3 md:after:-top-6 md:after:-right-6 after:border-2 after:border-[#BC1D8D] after:h-[90%] after:w-[90%] after:-z-10">
+              {" "}
+              <Image
+                src="/TeamsBig.webp"
+                alt="Growth Image"
+                height={600}
+                width={800}
+                className=""
+                />
+                </div>
+                <div className="transition-all absolute top-3/4 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:top-auto xl:left-auto xl:bottom-[20%] xl:right-[-20%]">
+                  
+            <Image
+              src="/TeamsSmall.webp"
+              alt="Growth Image"
+              height={100}
+              width={300}
+              sizes="(min-width:640px) 50vw, 100vw"
+              className=""
+            />
+                </div>
+          </div>
+          <div className="flex-1 ">
+            <h5 className="inline font-nunito text-[#515151] relative pl-16 text-lg md:pl-20 ">
+              <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-12 md:w-16"></div>
+              {/* <div className="lg:hidden absolute top-1/2 -right-2/4 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div> */}
+              Holistic Expertise
+            </h5>
+            <h2 className="text-3xl md:text-4xl py-2">
+              Digital Marketing Experts Dedicated To Your Growth
+            </h2>
+            <p className="py-2">
+              Adaired has helped numerous companies develop their brands with
+              its digital marketing services worldwide. We understand the
+              importance of leads, sales, and return on investment when it comes
+              to digital marketing. Our clients come from all industries of
+              every size.
+            </p>
+            <ul className="text-left grid gap-3 sm:gap-0 sm:grid-cols-2 py-2">
+              <li className="flex items-center gap-1 border p-2 sm:border-none"><Icons.PinkArrowMarker className="text-[#BC1D8D]"/> Comprehensive Services</li>
+              <li className="flex items-center gap-1 border p-2 sm:border-none"><Icons.PinkArrowMarker className="text-[#BC1D8D]"/>Industry Expertise</li>
+              <li className="flex items-center gap-1 border p-2 sm:border-none"><Icons.PinkArrowMarker className="text-[#BC1D8D]"/>Client-Centric Approach</li>
+              <li className="flex items-center gap-1 border p-2 sm:border-none"><Icons.PinkArrowMarker className="text-[#BC1D8D]"/>Tailored Solutions</li>
+            </ul>
+            <p className="py-2">
+              Our digital marketing agency provides a wide range of services,
+              from initial brand development to a globally syndicated
+              advertising campaign, all of which are customized to meet the
+              unique needs of our clients.
+            </p>
+            <p className="py-2 px-2 bg-[#FFF9FD] border-l-8 border-[#BC1D8D]">
+              We strive to surpass your expectations, providing unparalleled
+              quality in our online marketing services.
+            </p>
           </div>
         </MaxWidthWrapper>
       </section>
