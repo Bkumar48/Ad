@@ -27,7 +27,7 @@ const BlogCards: React.FC = async () => {
           <h2 className="text-3xl md:text-4xl py-3">
             Update On The Latest Marketing Trends And Tech
           </h2>
-          <p className="py-3">
+          <p className="py-3 text-base sm:text-lg">
             You can never miss an update with Adaried! Explore our blogs for
             insightful information and stay ahead with specially curated content
             by industry experts.

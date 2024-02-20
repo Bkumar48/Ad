@@ -100,7 +100,7 @@ const BannerContent: React.FC<BannerContentProps> = ({ data }) => {
         <div className="hidden md:block absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-10 lg:w-12 "></div>
         {data.subHead}
       </span>
-      <h1 className="transition-all text-[30px] 2xl:text-[56px] xl:text-[50px] lg:text-[42px] md:text-[35px] sm:text-[30px]">
+      <h1 className="transition-all text-[35px] 2xl:text-[56px] xl:text-[50px] lg:text-[42px] md:text-[35px] sm:text-[30px]">
         {data.title}
       </h1>
       <Button

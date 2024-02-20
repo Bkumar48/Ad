@@ -35,7 +35,7 @@ export const HoverEffect = ({
         return (
           <div
             key={item?.link}
-            className="relative group block p-4 h-full w-full "
+            className="relative group block px-2 py-2 sm:p-4 h-full w-full "
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -73,10 +73,10 @@ export const HoverEffect = ({
                   width={120}
                 />
               </div>
-              <CardTitle className="font-nunito text-2xl">
+              <CardTitle className="font-nunito text-lg sm:font-2xl">
                 {item.title}
               </CardTitle>
-              <CardDescription className="text-lg font-[#515151] mt-2">
+              <CardDescription className="text-lg font-[#515151] mt-2 text-base sm:text-lg">
                 {item.description}
               </CardDescription>
               <div
@@ -91,7 +91,7 @@ export const HoverEffect = ({
                 }}
                 className="absolute bottom-0 right-0 h-5 w-5 group-hover:h-full group-hover:w-full transition-all duration-300"
               >
-                <div className="hidden group-hover:block text-left p-6 text-white">
+                <div className="hidden group-hover:block text-left p-4 xl:p-6 text-white">
                   <div>
                     <Image
                       src={item.hoverSvg}
@@ -101,13 +101,13 @@ export const HoverEffect = ({
                       className="text-white"
                     />
                   </div>
-                  <h4 className="py-2  text-xl md:text-2xl font-nunito">
+                  <h4 className="py-1 xl:py-2 text-xl xl:text-2xl font-nunito">
                     {item.title}
                   </h4>
                   <ul className="marker:text-white list-disc pl-5  ">
                     {item.list.map((listItem, index) => {
                       return (
-                        <li className="text-base md:text-lg" key={index}>
+                        <li className="text-base xl:text-lg" key={index}>
                           {listItem}
                         </li>
                       );
@@ -115,8 +115,8 @@ export const HoverEffect = ({
                   </ul>
                   <Button
                     title="View More"
-                    className="bg-white text-black mt-5"
-                    svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
+                    className="bg-white text-black mt-2 sm:mt-2"
+                    svgClassName="bg-[#F89520]  right-2.5 group-hover/btn:right-28"
                     type="button"
                     navigateTo="/about"
                   />
@@ -153,7 +153,7 @@ export const Card = ({
         "h-full w-full p-4 overflow-hidden border z-20 relative",
         className
       )}
-      style={style} 
+      style={style}
       {...props}
     >
       {children}

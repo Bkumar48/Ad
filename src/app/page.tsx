@@ -63,7 +63,7 @@ const ManageGrid = () => {
               <Icons.NimbusMarketing className="text-white h-14 w-14 bg-[#8EC640] p-2 rounded-full" />
             </div>
 
-            <p className=" text-lg md:text-2xl max-w-[900px]">
+            <p className="text-xl md:text-2xl max-w-[900px]">
               We work with businesses that want to engage better, dominate
               SERPs, and achieve more than just website traffic.
             </p>
@@ -107,7 +107,7 @@ const AboutSection = () => {
             <h2 className="text-3xl md:text-4xl">
               A Company Obsessed With ROI
             </h2>
-            <p className="py-3">
+            <p className="py-3 text-base sm:text-lg">
               Transform your marketing outcomes and experience exponential ROI
               growth by partnering with Adaired! We offer smart, targeted,
               integrated campaigns that drive traffic, build engagement,
@@ -129,7 +129,7 @@ const AboutSection = () => {
                   <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0  md:left-0 bg-[#A7A9AC] h-0.5 w-16 rounded-lg"></div>
                   Tailored Approach
                 </h4>
-                <p className="">
+                <p className="text-base sm:text-lg">
                   Our obsession with ROI means crafting personalized strategies,
                   from meticulous campaign design to continuous optimization for
                   maximum impact and growth.
@@ -147,7 +147,7 @@ const AboutSection = () => {
                   <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0 bg-[#A7A9AC] h-0.5 w-16 rounded-lg"></div>
                   Tangible Results
                 </h4>
-                <p className="">
+                <p className="text-base sm:text-lg">
                   Experience transparency in your marketing endeavors with
                   Adaired. As your brand gains momentum, the ROI translates into
                   measurable success for your business.
@@ -216,7 +216,7 @@ const LogoSlider = () => {
       <section className="bg-[#f8f8f8] py-6 sm:py-12">
         <MaxWidthWrapper className="flex flex-col items-center text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl py-2">Trusted By:</h2>
-          <p className="max-w-[1000px] py-2 mb-4">
+          <p className="max-w-[1000px] py-2 mb-4 text-base sm:text-lg">
             The success of our clients is what determines our success. Below are
             a few of our favorite clients who we have worked for; we have
             reserved a spot for you!
@@ -351,7 +351,7 @@ const Services = () => {
               Our Services
             </h5>
             <h2 className="text-3xl md:text-4xl py-2">What We Offer</h2>
-            <p className="py-2 max-w-[900px]">
+            <p className="py-2 max-w-[900px] text-base sm:text-lg">
               Whatever service we provide, we give a thought about every small
               detail. Our main motive is brand growth and this is what leaves a
               mark on every customer.
@@ -401,7 +401,7 @@ const Growth = () => {
             <h2 className="text-3xl md:text-4xl py-2">
               Digital Marketing Experts Dedicated To Your Growth
             </h2>
-            <p className="py-2">
+            <p className="py-2 text-base sm:text-lg">
               Adaired has helped numerous companies develop their brands with
               its digital marketing services worldwide. We understand the
               importance of leads, sales, and return on investment when it comes
@@ -426,13 +426,13 @@ const Growth = () => {
                 Tailored Solutions
               </li>
             </ul>
-            <p className="py-2">
+            <p className="py-2 text-base sm:text-lg">
               Our digital marketing agency provides a wide range of services,
               from initial brand development to a globally syndicated
               advertising campaign, all of which are customized to meet the
               unique needs of our clients.
             </p>
-            <p className="py-2 px-2 bg-[#FFF9FD] border-l-8 border-[#BC1D8D]">
+            <p className="py-2 px-2 bg-[#FFF9FD] border-l-8 border-[#BC1D8D] text-base sm:text-lg">
               We strive to surpass your expectations, providing unparalleled
               quality in our online marketing services.
             </p>
@@ -508,7 +508,7 @@ const ContactUs = () => {
               <h2 className="text-2xl md:text-3xl lg:text-4xl py-2">
                 Ready To Win More Customers?{" "}
               </h2>
-              <p className="py-2">
+              <p className="py-2 text-base sm:text-lg">
                 Connect for more website traffic, qualified leads, and an
                 established online brand image.
               </p>
@@ -516,7 +516,7 @@ const ContactUs = () => {
             <div className="hidden lg:block flex-1" />
           </MaxWidthWrapper>
         </div>
-        <div className="bg-[#ECECEC] pb-16">
+        <div className="md:pb-10 bg-[#ECECEC] pb-16 ">
           <MaxWidthWrapper className="flex py-6 flex-col gap-10 lg:flex-row">
             <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-1  gap-2 flex-1 items-center">
               <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
@@ -537,7 +537,7 @@ const ContactUs = () => {
               </div>
               <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
                 <Link
-                  href="skype:adaireddigital"
+                  href="skype:live:.cid.46cf67c456a5bb0c?chat"
                   className="flex flex-row sm:flex-col lg:flex-row bg-white gap-4 items-center  "
                 >
                   <Icons.Skype className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />

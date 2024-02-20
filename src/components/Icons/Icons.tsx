@@ -23,7 +23,7 @@ export const Icons = {
     >
       <path
         fill="none"
-        stroke="white"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}

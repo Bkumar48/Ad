@@ -19,7 +19,7 @@ const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
           className="gap-1 font-semibold flex items-center h-24 px-2 relative hover:after:w-[100%] after:absolute after:content-[''] after:h-[3px] after:w-[0%] after:bg-[#aaa] after:bottom-0 after:left-0 after:transition-all after:duration-300"
           href={navitems.href}
           onClick={activeIndex}
-        > 
+        >
           <AnimatedLinks title={navitems.label} />
           {(navitems.subItems || navitems.childrens) && (
             <Icons.IcBaselineArrowDropDown
@@ -41,7 +41,7 @@ const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
                     >
                       <Link
                         href={subItem.href}
-                        className="block font-medium text-gray-900 pb-2"
+                        className="block font-medium text-gray-900 pb-2 "
                       >
                         <span className="font-bold "> {subItem.name}</span>
                       </Link>
@@ -49,18 +49,21 @@ const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
                         {subItem.subItems
                           ? subItem.subItems.map((subSubItem) => {
                               return (
-                                <li
-                                  key={subSubItem.name}
-                                  className="flex items-center gap-2 py-1"
-                                >
-                                  <div className="w-[13px] h-[13px] rounded-sm bg-[#ddd]"></div>
-                                  <Link
-                                    href={subSubItem.href}
-                                    className="text-base"
+                                <div className="flex items-center cursor-pointer group/subMenu ">
+                                  <li
+                                    key={subSubItem.name}
+                                    className="flex items-center gap-2 py-1 group-hover/subMenu:text-[#FB9100] transition-all duration-300 "
                                   >
-                                    {subSubItem.name}
-                                  </Link>
-                                </li>
+                                    <div className="w-[13px] h-[13px] rounded-sm bg-[#ddd]"></div>
+                                    <Link
+                                      href={subSubItem.href}
+                                      className="text-base flex"
+                                    >
+                                      {subSubItem.name}
+                                    </Link>
+                                  </li>
+                                  <Icons.ArrowRightBroken className="text-[#FB9100] -translate-x-2 opacity-0 group-hover/subMenu:opacity-100 group-hover/subMenu:block group-hover/subMenu:translate-x-2 transition-all duration-500" />
+                                </div>
                               );
                             })
                           : null}

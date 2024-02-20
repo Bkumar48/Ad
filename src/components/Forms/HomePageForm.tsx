@@ -28,31 +28,26 @@ import { toast } from "@/components/ui/use-toast";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { sendEmail } from "@/lib/send-email";
 
 const HomePageForm = () => {
   const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL;
   const schema = z.object({
     formId: z.string(),
-    Name: z
-      .string({
-        required_error: "Name is required",
-      })
-      .min(2, { message: "Name must be at least 2 characters." }),
+    Name: z.string().min(1, { message: "Name is required" }),
     Email: z
-      .string({
-        required_error: "Email is required",
-      })
-      .email({ message: "Email is not valid" }),
-    Phone: z.string({
-      required_error: "Phone number is required",
-    }),
-    Interest: z.string({
-      required_error: "Please select your interested service.",
-    }),
+      .string()
+      .min(1, { message: "Email is required" })
+      .email({ message: "Invalid email" }),
+    Phone: z.string().min(5, { message: "Phone number is required" }),
+    Interest: z
+      .string()
+      .min(1, { message: "Please select your interested service." }),
     Budget: z.string().optional(),
     Message: z.string().optional(),
     terms: z.boolean().refine((v) => v === true, {
-      message: "Please accept the terms and conditions.",
+      message: "Please accept the terms and conditions",
     }),
   });
 
@@ -71,6 +66,7 @@ const HomePageForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof schema>) {
+    sendEmail(values);
     toast({
       title: "You submitted the following values:",
       description: (
@@ -80,9 +76,7 @@ const HomePageForm = () => {
       ),
     });
     form.reset();
-    console.log(values);
   }
-
 
   return (
     <div className="bg-white z-2 p-6 rounded-lg">
@@ -228,7 +222,6 @@ const HomePageForm = () => {
                 <FormLabel className="text-lg">Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Message"
                     {...field}
                     className="focus-visible:ring-offset-0 focus-visible:ring-0 text-lg mb-4"
                     rows={5}
@@ -265,6 +258,7 @@ const HomePageForm = () => {
                       terms and conditions
                     </Link>
                   </FormLabel>
+                  <FormMessage />
                 </div>
               </FormItem>
             )}

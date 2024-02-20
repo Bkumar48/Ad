@@ -22,7 +22,7 @@ const BannerSlider = () => {
 
   return (
     <AnimatePresence initial={false}>
-      <div className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[90dvh] ">
+      <div className="relative min-h-[400px] md:min-h-[500px] lg:min-h-[90dvh]">
         <div className=" hidden 3xl:flex absolute 3xl:right-[95%] top-1/2 -translate-y-1/2  z-10 flex-col justify-center items-center gap-8 ">
           <div className="w-0.5 h-48 bg-white" />
           <div>
@@ -70,7 +70,7 @@ const BannerSlider = () => {
           </div>
           <div
             className={
-              "w-full flex h-full items-end text-center md:text-left lg:w-3/6 md:w-[65%] pb-24"
+              "w-full flex h-full items-end text-center md:text-left lg:w-3/6 md:w-[65%] pb-20"
             }
           >
             <BannerContent data={data[currentIndex]} />

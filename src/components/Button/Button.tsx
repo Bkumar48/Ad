@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = (props) => {
       <span
         className={`animate-pulse absolute right-2 p-1 rounded-full transition-all   ${props.svgClassName}`}
       >
-        <SelectedIcon className={`text-3xl`} />
+        <SelectedIcon className={`text-3xl text-white`} />
       </span>
     </>
   );

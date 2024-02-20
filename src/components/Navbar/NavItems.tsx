@@ -38,7 +38,7 @@ const NavItems = () => {
         <PopupButton
           url="https://calendly.com/bittu-ad"
           rootElement={rootElement!}
-          text="Book Now"
+          text="Book Demo"
           className="font-semibold relative hover:after:w-[100%] after:absolute after:content-[''] after:h-[3px] after:w-[100%] after:bg-[#FB9100] after:bottom-[-5px] after:left-0 after:transition-all after:rounded-2xl"
         />
       </div>

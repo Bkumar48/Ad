@@ -5,19 +5,9 @@ export const NAV_ITEMS = [
     href: "/",
   },
   {
-    label: "Our Story",
-    value: "story" as const,
-    href: "#",
-    childrens: [
-      {
-        name: "About",
-        href: "/about",
-      },
-      {
-        name: "Career",
-        href: "/career",
-      },
-    ],
+    label: "About",
+    value: "about" as const,
+    href: "/about",
   },
   {
     label: "Services",
@@ -216,6 +206,10 @@ export const NAV_ITEMS = [
     value: "resources" as const,
     href: "#",
     childrens: [
+      {
+        name: "Career",
+        href: "/career",
+      },
       {
         name: "Case Studies",
         href: "/case-studies",

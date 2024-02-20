@@ -10,14 +10,14 @@ const Navbar = () => {
     <>
       <Topbar />
       <div className="bg-white sticky z-50 top-0 inset-x-0 h-20 lg:h-24">
-        <header className="relative bg-white">
+        <header className="relative bg-white flex items-center">
           <MaxWidthWrapper>
             <div className="relative">
               <div className="flex h-20 lg:h-24 items-center">
                 <div className=" ">
                   <Link
                     href="/"
-                    className="flex items-center w-36 lg:w-10/12 xl:w-full"
+                    className="flex items-center w-36 sm:w-10/0 lg:w-10/12 xl:w-full"
                   >
                     <Image
                       src="/Logo.svg"
@@ -34,10 +34,10 @@ const Navbar = () => {
                     <NavItems />
                   </div>
                 </div>
-                <MobileNav />
               </div>
             </div>
           </MaxWidthWrapper>
+          <MobileNav />
         </header>
       </div>
     </>

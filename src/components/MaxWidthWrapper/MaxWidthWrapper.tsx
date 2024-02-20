@@ -8,7 +8,7 @@ const MaxWidthWrapper: React.FC<{
   return (
     <div
       className={cn(
-        " mx-auto box-border w-full max-w-[1440px] px-2.5 md:px-4",
+        " mx-auto box-border w-full max-w-[1440px] px-3 md:px-6",
         className
       )}
     >
