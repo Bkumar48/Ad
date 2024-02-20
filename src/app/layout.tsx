@@ -3,6 +3,7 @@ import { Nunito_Sans, DM_Serif_Display, Oooh_Baby } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
           <Navbar />
           <div className={`flex-grow flex-1`}>{children}</div>
         </main>
+        <Toaster />
       </body>
     </html>
   );

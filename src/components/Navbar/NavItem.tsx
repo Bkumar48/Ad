@@ -73,7 +73,7 @@ const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
             </div>
           </div>
         ) : navitems.childrens ? (
-          <div className="absolute top-full text-sm text-muted-foreground bg-white rounded-bl-lg rounded-br-lg shadow-lg transition-all duration-300 origin-top scale-y-0 pointer-events-none group-hover:scale-y-100 group-hover:pointer-events-auto">
+          <div className="min-w-40 absolute top-full text-sm text-muted-foreground bg-white rounded-bl-lg rounded-br-lg shadow-lg transition-all duration-300 origin-top scale-y-0 pointer-events-none group-hover:scale-y-100 group-hover:pointer-events-auto ">
             <div className="mx-auto px-4 py-4">
               {navitems.childrens.map((children) => (
                 <div key={children.name} className="text-base sm:text-sm">

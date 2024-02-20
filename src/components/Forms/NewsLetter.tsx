@@ -59,7 +59,7 @@ const NewsLetter = () => {
         type="email"
         placeholder="Enter your email"
         {...register("Email")}
-        className="w-full md:w-full p-2 rounded-md relative h-12 outline-none"
+        className="w-full md:w-full p-2 rounded-md relative h-12 outline-none text-black"
       />
 
       {errors.Email && <p className="text-red-600 pt-4">{errors.Email.message}</p>}

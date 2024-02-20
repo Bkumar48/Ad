@@ -96,15 +96,17 @@ type BannerContentProps = {
 const BannerContent: React.FC<BannerContentProps> = ({ data }) => {
   return (
     <div className="text-white leading-tight">
-      <span>{data.subHead}</span>
+      <span className="relative md:pl-14">
+        <div className="hidden md:block absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-10 lg:w-12 "></div>
+        {data.subHead}
+      </span>
       <h1 className="transition-all text-[30px] 2xl:text-[56px] xl:text-[50px] lg:text-[42px] md:text-[35px] sm:text-[30px]">
         {data.title}
       </h1>
       <Button
         title="Request a Callback"
         className="bg-white text-black mt-5"
-        // svgContainerClassName="group-hover:right-[75%]"
-        svgClassName="bg-[#F89520]"
+        svgClassName="bg-[#F89520] group-hover/btn:right-[11.4rem]"
         type="button"
         navigateTo="/contact"
       />

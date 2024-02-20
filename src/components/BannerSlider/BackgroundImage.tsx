@@ -45,6 +45,7 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
           priority
           alt="Current Banner Image"
         />
+        <div className="sm:hidden absolute inset-0 bg-black opacity-50" />
       </motion.div>
 
       <motion.div
@@ -69,6 +70,7 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
           priority
           alt="Next Banner Image"
         />
+        <div className="sm:hidden absolute inset-0 bg-black opacity-50" />
       </motion.div>
     </>
   );

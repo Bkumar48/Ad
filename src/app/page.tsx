@@ -7,9 +7,10 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import Image from "next/image";
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
 import dynamic from "next/dynamic";
-import BlogCard from "@/components/BlogCard/BlogCard";
+import BlogCards from "@/components/BlogCard/BlogCards";
 import Link from "next/link";
 import HomePageForm from "@/components/Forms/HomePageForm";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 const CaseStudySlider = dynamic(
   () => import("@/components/CaseStudySlider/CaseStudySlider")
@@ -25,11 +26,12 @@ export default function Home() {
       <ManageGrid />
       <AboutSection />
       <LogoSlider />
+      <Services />
       <CaseStudySlider />
       <Growth />
       <Awards />
       <TestimonialSlider />
-      {/* <BlogCard /> */}
+      <BlogCards />
       <ContactUs />
       <Footer />
       <LocomotiveScroll />
@@ -83,10 +85,20 @@ const ManageGrid = () => {
 const AboutSection = () => {
   return (
     <>
-      <section className="pb-6 md:pb-12">
-        <MaxWidthWrapper className="flex gap-6 flex-col lg:flex-row">
-          <div className="flex-1">Video</div>
-          <div className="flex-1 text-center md:text-left">
+      <section className="py-6 md:py-12">
+        <MaxWidthWrapper className="flex gap-10 flex-col lg:flex-row">
+          <div className="flex-1 mx-auto ">
+            <div className="max-w-lg lg:max-w-full ">
+              <Image
+                src="/about_img.webp"
+                alt="About Image"
+                height={500}
+                width={800}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+          <div className="flex-1 text-center p-2 md:text-left">
             <h5 className="inline font-nunito text-[#515151] relative md:pl-20 text-lg">
               <div className="absolute top-1/2 -left-full md:left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
               <div className="md:hidden absolute top-1/2 -right-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
@@ -95,7 +107,7 @@ const AboutSection = () => {
             <h2 className="text-3xl md:text-4xl">
               A Company Obsessed With ROI
             </h2>
-            <p className="py-2">
+            <p className="py-3">
               Transform your marketing outcomes and experience exponential ROI
               growth by partnering with Adaired! We offer smart, targeted,
               integrated campaigns that drive traffic, build engagement,
@@ -104,7 +116,7 @@ const AboutSection = () => {
               lead-generating machine, and our ongoing efforts will bring in
               more clients than you can handle.
             </p>
-            <div className="flex gap-5 py-2 flex-col sm:flex-row">
+            <div className="flex gap-5 py-6 flex-col sm:flex-row">
               <div className="flex flex-col items-center border p-4 md:p-0 md:border-none md:items-start ">
                 <Image
                   src="/homePage_about1.svg"
@@ -147,10 +159,9 @@ const AboutSection = () => {
               in the room.&quot; -<i className="text-[#92288D]">Jeff Bezos</i>
             </p>
             <Button
-              title="View More Information"
+              title="View More"
               className="bg-white text-black mt-5"
-              svgContainerClassName="group-hover:right-[78%]"
-              svgClassName="bg-[#F89520]"
+              svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
               type="button"
               navigateTo="/about"
             />
@@ -224,6 +235,221 @@ const LogoSlider = () => {
   );
 };
 
+const Services = () => {
+  const projects = [
+    {
+      title: "Website Designing & Development",
+      description:
+        "Website Design and development services that deliver exquisite design, a user-friendly interface, and robust functionality for lasting impressions on the audience.",
+      link: "https://stripe.com",
+      list: [
+        "PHP Development",
+        "Website management",
+        "Website CMS migrations",
+        "WordPress design & development",
+        "Landing page design & development",
+        "E-commerce website design & development",
+      ],
+      mainSvg: "/web-main.svg",
+      hoverSvg: "/web-hover.svg",
+      accentColor: "#973492",
+    },
+    {
+      title: "Search Engine Optimization (SEO)",
+      description:
+        "Launch and maintain the websites on top of search results to enhance your online visibility with tried and tested Search Engine Optimization (SEO) services.",
+      link: "https://netflix.com",
+      list: [
+        "Meta Tags Optimization",
+        "Google tags Setup",
+        "Schema Optimization",
+        "Website Layout Optimization",
+        "Website Broken Link Analysis",
+        "Penalty Review & recovery",
+      ],
+      mainSvg: "/seo-main.svg",
+      hoverSvg: "/seo-hover.svg",
+      accentColor: "#F89520",
+    },
+    {
+      title: "Paid Media  & Advertising",
+      description:
+        "Building strategic ad campaigns and carrying data-driven optimizations to drive targeted traffic with our Pay-Per-Click (PPC) solutions.",
+      link: "https://google.com",
+      list: [
+        "Social Ads",
+        "Google Ads",
+        "Conversion Tracking",
+        "Google Analytics set up",
+        "Overall Performance Analysis",
+        "Campaign Management and Optimization",
+      ],
+      mainSvg: "/ppc-main.svg",
+      hoverSvg: "/ppc-hover.svg",
+      accentColor: "#EC1F27",
+    },
+    {
+      title: "Compelling Content Marketing",
+      description:
+        "Engaging and captivating content development that not only resonates with the audience but ranks well across all search engines.  ",
+      link: "https://meta.com",
+      list: [
+        "Infographics",
+        "Website Blogs",
+        "Press Releases",
+        "Website Copy",
+        "Guest Posting",
+        "Social Media Posting",
+      ],
+      mainSvg: "/content-marketing-main.svg",
+      hoverSvg: "/content-marketing-hover.svg",
+      accentColor: "#038EB0",
+    },
+    {
+      title: "Digital Creative & Logo Design",
+      description:
+        "The creative team illustrates the brand's image and ideas in captivating visuals to communicate with the target audience.",
+      link: "https://amazon.com",
+      list: [
+        "Digital Broucher",
+        "Email Marketing Graphics",
+        "Logos and Branded Elements",
+        "Poster, Banner and Signage",
+        "Business Card, Letterhead and Envelope",
+        "Social media graphics & digital marketing ads",
+      ],
+      mainSvg: "/logo-mian.svg",
+      hoverSvg: "/logo-hover.svg",
+      accentColor: "#BC1D8D",
+    },
+    {
+      title: "Strategic Social Media Management",
+      description:
+        "Enhance the social media presence of brands on diverse social platforms with engaging content to foster meaningful interactions and amplify reach.",
+      link: "https://microsoft.com",
+      list: [
+        "Profile Optimization",
+        "Targeted Page Likes",
+        "Hashtag Trend Research",
+        "Content Calendar",
+        "Monthly Report",
+      ],
+      mainSvg: "/smm-main.svg",
+      hoverSvg: "/smm-hover.svg",
+      accentColor: "#8EC640",
+    },
+  ];
+
+  return (
+    <>
+      <section className="py-6 lg:py-12">
+        <MaxWidthWrapper>
+          <div className="text-center flex flex-col items-center justify-center">
+            <h5 className="inline font-nunito text-[#515151] relative px-4 text-lg">
+              <div className="absolute top-1/2 left-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
+              <div className="absolute top-1/2 right-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
+              Our Services
+            </h5>
+            <h2 className="text-3xl md:text-4xl py-2">What We Offer</h2>
+            <p className="py-2 max-w-[900px]">
+              Whatever service we provide, we give a thought about every small
+              detail. Our main motive is brand growth and this is what leaves a
+              mark on every customer.
+            </p>
+          </div>
+
+          <HoverEffect items={projects} />
+        </MaxWidthWrapper>
+      </section>
+    </>
+  );
+};
+
+const Growth = () => {
+  return (
+    <>
+      <section className="py-7 sm:py-14 ">
+        <MaxWidthWrapper className="flex flex-col lg:flex-row items-center lg:items-start gap-16 xl:gap-36  ">
+          <div className="flex-1 relative ml-2 mr-4 lg:mr-0 lg:ml-2 ">
+            <div className="max-w-[500px] lg:max-w-full after:absolute after:-top-3 after:-right-3 md:after:-top-6 md:after:-right-6 after:border-2 after:border-[#BC1D8D] after:h-[90%] after:w-[90%] after:-z-10">
+              {" "}
+              <Image
+                src="/TeamsBig.webp"
+                alt="Growth Image"
+                height={600}
+                width={800}
+                className=""
+              />
+            </div>
+            <div className="transition-all absolute top-3/4 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:top-auto xl:left-auto xl:bottom-[20%] xl:right-[-20%]">
+              <Image
+                src="/TeamsSmall.webp"
+                alt="Growth Image"
+                height={100}
+                width={300}
+                sizes="(min-width:640px) 50vw, 100vw"
+                className=""
+              />
+            </div>
+          </div>
+          <div className="flex-1 ">
+            <h5 className="inline font-nunito text-[#515151] relative pl-16 text-lg md:pl-20 ">
+              <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-12 md:w-16"></div>
+              {/* <div className="lg:hidden absolute top-1/2 -right-2/4 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div> */}
+              Holistic Expertise
+            </h5>
+            <h2 className="text-3xl md:text-4xl py-2">
+              Digital Marketing Experts Dedicated To Your Growth
+            </h2>
+            <p className="py-2">
+              Adaired has helped numerous companies develop their brands with
+              its digital marketing services worldwide. We understand the
+              importance of leads, sales, and return on investment when it comes
+              to digital marketing. Our clients come from all industries of
+              every size.
+            </p>
+            <ul className="text-left grid gap-3 sm:gap-0 sm:grid-cols-2 py-2">
+              <li className="flex items-center gap-1 border p-2 sm:border-none">
+                <Icons.PinkArrowMarker className="text-[#BC1D8D]" />{" "}
+                Comprehensive Services
+              </li>
+              <li className="flex items-center gap-1 border p-2 sm:border-none">
+                <Icons.PinkArrowMarker className="text-[#BC1D8D]" />
+                Industry Expertise
+              </li>
+              <li className="flex items-center gap-1 border p-2 sm:border-none">
+                <Icons.PinkArrowMarker className="text-[#BC1D8D]" />
+                Client-Centric Approach
+              </li>
+              <li className="flex items-center gap-1 border p-2 sm:border-none">
+                <Icons.PinkArrowMarker className="text-[#BC1D8D]" />
+                Tailored Solutions
+              </li>
+            </ul>
+            <p className="py-2">
+              Our digital marketing agency provides a wide range of services,
+              from initial brand development to a globally syndicated
+              advertising campaign, all of which are customized to meet the
+              unique needs of our clients.
+            </p>
+            <p className="py-2 px-2 bg-[#FFF9FD] border-l-8 border-[#BC1D8D]">
+              We strive to surpass your expectations, providing unparalleled
+              quality in our online marketing services.
+            </p>
+            <Button
+              title="View More"
+              className="bg-white text-black mt-5"
+              svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
+              type="button"
+              navigateTo="/about"
+            />
+          </div>
+        </MaxWidthWrapper>
+      </section>
+    </>
+  );
+};
+
 const Awards = () => {
   type AwardImages = {
     img: string;
@@ -276,131 +502,95 @@ const ContactUs = () => {
   return (
     <>
       <section className="pt-6 sm:pt-12">
-        <MaxWidthWrapper>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl py-2">
-            Ready To Win More Customers?{" "}
-          </h2>
-          <p className="py-2">
-            Connect for more website traffic, qualified leads, and an
-            established online brand image.
-          </p>
-        </MaxWidthWrapper>
-        <div className="bg-[#ECECEC]">
-          <MaxWidthWrapper className="flex py-6">
-            <div className="flex-1 flex flex-col gap-4">
-              <Link
-                href="mailto:info@adaired.com"
-                className="flex bg-white gap-4 items-center p-6 "
-              >
-                <Icons.Mail className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
-                <div>
-                  <p>Mail Id Of Sales Executive</p>
-                  <p className="font-semibold text-2xl">info@adaired.com</p>
-                </div>
-              </Link>
-              <Link
-                href="/"
-                className="flex bg-white gap-4 items-center p-6 "
-              >
-                <Icons.Skype className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
-                <div>
-                  <p>Our Skype ID</p>
-                  <p className="font-semibold text-2xl">Adaired Digital</p>
-                </div>
-              </Link>
-              <Link
-                href="/"
-                className="flex bg-white gap-4 items-center p-6 "
-              >
-                <Icons.Whatsapp className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
-                <div>
-                  <p> Chat on</p>
-                  <p className="font-semibold text-2xl">Whatsapp</p>
-                </div>
-              </Link>
-              <Link
-                href="/"
-                className="flex bg-white gap-4 items-center p-6 "
-              >
-                <Icons.Telegram className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
-                <div>
-                  <p>Ping us on</p>
-                  <p className="font-semibold text-2xl">Telegram</p>
-                </div>
-              </Link>
-            </div>
+        <div className="bg-[#ECECEC] pt-4 lg:pt-0 lg:bg-white">
+          <MaxWidthWrapper className="flex">
             <div className="flex-1">
-              <HomePageForm/>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl py-2">
+                Ready To Win More Customers?{" "}
+              </h2>
+              <p className="py-2">
+                Connect for more website traffic, qualified leads, and an
+                established online brand image.
+              </p>
+            </div>
+            <div className="hidden lg:block flex-1" />
+          </MaxWidthWrapper>
+        </div>
+        <div className="bg-[#ECECEC] pb-16">
+          <MaxWidthWrapper className="flex py-6 flex-col gap-10 lg:flex-row">
+            <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-1  gap-2 flex-1 items-center">
+              <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
+                <Link
+                  href="mailto:info@adaired.com"
+                  className="flex flex-row sm:flex-col lg:flex-row bg-white gap-4 items-center  "
+                >
+                  <Icons.Mail className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                  <div>
+                    <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
+                      Mail Id Of Sales Executive
+                    </p>
+                    <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
+                      info@adaired.com
+                    </p>
+                  </div>
+                </Link>
+              </div>
+              <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
+                <Link
+                  href="skype:adaireddigital"
+                  className="flex flex-row sm:flex-col lg:flex-row bg-white gap-4 items-center  "
+                >
+                  <Icons.Skype className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                  <div>
+                    <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
+                      Our Skype ID
+                    </p>
+                    <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
+                      Adaired Digital
+                    </p>
+                  </div>
+                </Link>
+              </div>
+              <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
+                <Link
+                  href="https://api.whatsapp.com/send?phone=918907400008"
+                  className="flex flex-row sm:flex-col lg:flex-row bg-white gap-4 items-center  "
+                >
+                  <Icons.Whatsapp className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                  <div>
+                    <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
+                      Chat on
+                    </p>
+                    <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
+                      Whatsapp
+                    </p>
+                  </div>
+                </Link>
+              </div>
+              <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
+                <Link
+                  href="https://telegram.me/adaired"
+                  className="flex flex-row sm:flex-col lg:flex-row bg-white gap-4 items-center  "
+                >
+                  <Icons.Telegram className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                  <div>
+                    <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
+                      Ping us on
+                    </p>
+                    <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
+                      Telegram
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+            <div className="flex-1 lg:relative">
+              <div className=" rounded-lg border-4 border-[#EFEFEF] lg:-mt-32 w-full ">
+                <HomePageForm />
+              </div>
             </div>
           </MaxWidthWrapper>
         </div>
-      </section>
-    </>
-  );
-};
-
-const Growth = () => {
-  return (
-    <>
-      <section className="py-7 sm:py-14 ">
-        <MaxWidthWrapper className="flex flex-col lg:flex-row items-center lg:items-start gap-16 xl:gap-36  ">
-          <div className="flex-1 relative ml-2 mr-4 lg:mr-0 lg:ml-2 ">
-            <div className="max-w-[500px] lg:max-w-full after:absolute after:-top-3 after:-right-3 md:after:-top-6 md:after:-right-6 after:border-2 after:border-[#BC1D8D] after:h-[90%] after:w-[90%] after:-z-10">
-              {" "}
-              <Image
-                src="/TeamsBig.webp"
-                alt="Growth Image"
-                height={600}
-                width={800}
-                className=""
-                />
-                </div>
-                <div className="transition-all absolute top-3/4 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:top-auto xl:left-auto xl:bottom-[20%] xl:right-[-20%]">
-                  
-            <Image
-              src="/TeamsSmall.webp"
-              alt="Growth Image"
-              height={100}
-              width={300}
-              sizes="(min-width:640px) 50vw, 100vw"
-              className=""
-            />
-                </div>
-          </div>
-          <div className="flex-1 ">
-            <h5 className="inline font-nunito text-[#515151] relative pl-16 text-lg md:pl-20 ">
-              <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-12 md:w-16"></div>
-              {/* <div className="lg:hidden absolute top-1/2 -right-2/4 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div> */}
-              Holistic Expertise
-            </h5>
-            <h2 className="text-3xl md:text-4xl py-2">
-              Digital Marketing Experts Dedicated To Your Growth
-            </h2>
-            <p className="py-2">
-              Adaired has helped numerous companies develop their brands with
-              its digital marketing services worldwide. We understand the
-              importance of leads, sales, and return on investment when it comes
-              to digital marketing. Our clients come from all industries of
-              every size.
-            </p>
-            <ul className="text-left grid gap-3 sm:gap-0 sm:grid-cols-2 py-2">
-              <li className="flex items-center gap-1 border p-2 sm:border-none"><Icons.PinkArrowMarker className="text-[#BC1D8D]"/> Comprehensive Services</li>
-              <li className="flex items-center gap-1 border p-2 sm:border-none"><Icons.PinkArrowMarker className="text-[#BC1D8D]"/>Industry Expertise</li>
-              <li className="flex items-center gap-1 border p-2 sm:border-none"><Icons.PinkArrowMarker className="text-[#BC1D8D]"/>Client-Centric Approach</li>
-              <li className="flex items-center gap-1 border p-2 sm:border-none"><Icons.PinkArrowMarker className="text-[#BC1D8D]"/>Tailored Solutions</li>
-            </ul>
-            <p className="py-2">
-              Our digital marketing agency provides a wide range of services,
-              from initial brand development to a globally syndicated
-              advertising campaign, all of which are customized to meet the
-              unique needs of our clients.
-            </p>
-            <p className="py-2 px-2 bg-[#FFF9FD] border-l-8 border-[#BC1D8D]">
-              We strive to surpass your expectations, providing unparalleled
-              quality in our online marketing services.
-            </p>
-          </div>
-        </MaxWidthWrapper>
       </section>
     </>
   );

@@ -8,8 +8,8 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <>
+      <Topbar />
       <div className="bg-white sticky z-50 top-0 inset-x-0 h-20 lg:h-24">
-        {/* <Topbar/> */}
         <header className="relative bg-white">
           <MaxWidthWrapper>
             <div className="relative">

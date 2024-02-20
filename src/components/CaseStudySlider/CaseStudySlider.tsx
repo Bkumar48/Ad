@@ -98,10 +98,9 @@ const CaseStudySlider = () => {
                     <Button
                       title="View More"
                       className="bg-white text-black mt-5"
-                      svgContainerClassName="group-hover:right-[64.9%]"
-                      svgClassName="bg-[#F89520]"
+                      svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
                       type="button"
-                      navigateTo="/case-studies"
+                      navigateTo="/about"
                     />
                   </div>
                   <div className={`flex-1 flex justify-end`}>
@@ -109,19 +108,18 @@ const CaseStudySlider = () => {
                       src={item.img}
                       alt="Case Study Slide Image"
                       width={700}
-                      height={350}
+                      height={400}
                     />
                   </div>
                 </MaxWidthWrapper>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:block left-0 bg-white rounded-none h-12 w-6 rounded-tr-lg rounded-br-lg" >
-          <Icons.AngleLeft />
+          <CarouselPrevious className="hidden md:block left-0 bg-white rounded-none h-12 w-6 rounded-tr-lg rounded-br-lg">
+            <Icons.AngleLeft />
           </CarouselPrevious>
-          <CarouselNext className="hidden md:block right-0 bg-white rounded-none h-12 w-6 rounded-tl-lg rounded-bl-lg" >
-          <Icons.AngleRight />
-
+          <CarouselNext className="hidden md:block right-0 bg-white rounded-none h-12 w-6 rounded-tl-lg rounded-bl-lg">
+            <Icons.AngleRight />
           </CarouselNext>
         </Carousel>
       </section>
