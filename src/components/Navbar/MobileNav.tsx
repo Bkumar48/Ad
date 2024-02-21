@@ -230,7 +230,8 @@ const MobileNav = () => {
                     type: "spring",
                     bounce: 0.1,
                     when: "afterChildren",
-                    staggerChildren: 0.25,
+                    duration: 0.3,
+                    // staggerChildren: 0.10,
                   },
                 },
                 show: {
@@ -239,7 +240,8 @@ const MobileNav = () => {
                     type: "spring",
                     bounce: 0,
                     when: "beforeChildren",
-                    staggerChildren: 0.25,
+                    duration: 0.3,
+                    // staggerChildren: 0.10,
                   },
                 },
               }}
@@ -261,7 +263,7 @@ const MobileNav = () => {
                       type: "spring",
                       bounce: 0.1,
                       when: "beforeChildren",
-                      staggerChildren: 0.25,
+                      staggerChildren: 0.10,
                     },
                   },
                 }}

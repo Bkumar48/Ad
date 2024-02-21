@@ -101,13 +101,13 @@ export const HoverEffect = ({
                       className="text-white"
                     />
                   </div>
-                  <h4 className="py-1 xl:py-2 text-xl xl:text-2xl font-nunito">
+                  <h4 className="text-white py-1 xl:py-2 text-xl xl:text-2xl font-nunito">
                     {item.title}
                   </h4>
-                  <ul className="marker:text-white list-disc pl-5  ">
+                  <ul className="marker:text-white text-white list-disc pl-5  ">
                     {item.list.map((listItem, index) => {
                       return (
-                        <li className="text-base xl:text-lg" key={index}>
+                        <li className="text-white text-base 2xl:text-lg" key={index}>
                           {listItem}
                         </li>
                       );

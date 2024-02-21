@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -79,9 +78,10 @@
   textarea {
     font-family: var(--font-nunito);
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 300;
     text-decoration: none;
     margin: 0;
+    color:var(--current)
   }
 
   h1,
@@ -91,7 +91,8 @@
   h5,
   h6 {
     font-family: var(--font-dm);
-    margin: 0px
+    margin: 0px;
+    color:var(--current)
   }
 }
 

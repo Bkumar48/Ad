@@ -18,16 +18,16 @@ const BlogCards: React.FC = async () => {
   return (
     <section className="py-3 md:py-12">
       <MaxWidthWrapper className="text-center">
-        <div>
+        <div className="flex flex-col items-center">
           <h5 className="inline font-nunito text-[#515151] relative px-4 text-lg">
             <div className="absolute top-1/2 left-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
             <div className="absolute top-1/2 right-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
             Blog
           </h5>
-          <h2 className="text-3xl md:text-4xl py-3">
+          <h2 className="text-[1.688rem] md:text-4xl py-1">
             Update On The Latest Marketing Trends And Tech
           </h2>
-          <p className="py-3 text-base sm:text-lg">
+          <p className="py-1 pb-10 text-base sm:text-lg max-w-[900px]">
             You can never miss an update with Adaried! Explore our blogs for
             insightful information and stay ahead with specially curated content
             by industry experts.

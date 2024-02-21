@@ -1,6 +1,5 @@
 import BannerSlider from "@/components/BannerSlider/BannerSlider";
 import Button from "@/components/Button/Button";
-import Footer from "@/components/Footer/Footer";
 import { Icons } from "@/components/Icons/Icons";
 import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
@@ -33,7 +32,6 @@ export default function Home() {
       <TestimonialSlider />
       <BlogCards />
       <ContactUs />
-      <Footer />
       <LocomotiveScroll />
     </main>
   );
@@ -42,7 +40,7 @@ export default function Home() {
 const ManageGrid = () => {
   return (
     <>
-      <section className="py-6 flex items-center justify-between transition-all">
+      <section className="pt-6 flex items-center justify-between transition-all">
         <div className="hidden md:block">
           <Image
             height={300}
@@ -98,16 +96,16 @@ const AboutSection = () => {
               />
             </div>
           </div>
-          <div className="flex-1 text-center p-2 md:text-left">
-            <h5 className="inline font-nunito text-[#515151] relative md:pl-20 text-lg">
+          <div className="flex-1 p-2 text-center md:text-left">
+            <h5 className=" sm:text-xl inline font-nunito text-[#515151] relative md:pl-20 text-lg">
               <div className="absolute top-1/2 -left-full md:left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
               <div className="md:hidden absolute top-1/2 -right-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
               About Us
             </h5>
-            <h2 className="text-3xl md:text-4xl">
+            <h2 className="text-[1.688rem] md:text-4xl">
               A Company Obsessed With ROI
             </h2>
-            <p className="py-3 text-base sm:text-lg">
+            <p className="py-3 text-base sm:text-lg text-justify md:text-left">
               Transform your marketing outcomes and experience exponential ROI
               growth by partnering with Adaired! We offer smart, targeted,
               integrated campaigns that drive traffic, build engagement,
@@ -120,7 +118,7 @@ const AboutSection = () => {
               <div className="flex flex-col items-center border p-4 md:p-0 md:border-none md:items-start ">
                 <Image
                   src="/homePage_about1.svg"
-                  alt=""
+                  alt="Information Icon"
                   height={60}
                   width={60}
                   className="border rounded-lg p-2 mb-2"
@@ -138,7 +136,7 @@ const AboutSection = () => {
               <div className="flex flex-col items-center border p-4 md:p-0 md:border-none md:items-start ">
                 <Image
                   src="/homePage_about2.svg"
-                  alt=""
+                  alt="Information Icon"
                   height={60}
                   width={60}
                   className="border rounded-lg p-2 mb-2 "
@@ -350,7 +348,7 @@ const Services = () => {
               <div className="absolute top-1/2 right-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
               Our Services
             </h5>
-            <h2 className="text-3xl md:text-4xl py-2">What We Offer</h2>
+            <h2 className="text-[1.688rem] md:text-4xl py-2">What We Offer</h2>
             <p className="py-2 max-w-[900px] text-base sm:text-lg">
               Whatever service we provide, we give a thought about every small
               detail. Our main motive is brand growth and this is what leaves a
@@ -398,7 +396,7 @@ const Growth = () => {
               {/* <div className="lg:hidden absolute top-1/2 -right-2/4 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div> */}
               Holistic Expertise
             </h5>
-            <h2 className="text-3xl md:text-4xl py-2">
+            <h2 className="text-[1.688rem] md:text-4xl py-2">
               Digital Marketing Experts Dedicated To Your Growth
             </h2>
             <p className="py-2 text-base sm:text-lg">
@@ -505,7 +503,7 @@ const ContactUs = () => {
         <div className="bg-[#ECECEC] pt-4 lg:pt-0 lg:bg-white">
           <MaxWidthWrapper className="flex">
             <div className="flex-1">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl py-2">
+              <h2 className="text-[1.688rem] md:text-4xl py-2">
                 Ready To Win More Customers?{" "}
               </h2>
               <p className="py-2 text-base sm:text-lg">
@@ -519,12 +517,12 @@ const ContactUs = () => {
         <div className="md:pb-10 bg-[#ECECEC] pb-16 ">
           <MaxWidthWrapper className="flex py-6 flex-col gap-10 lg:flex-row">
             <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-1  gap-2 flex-1 items-center">
-              <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
+              <div className=" p-3 sm:p-6 bg-white sm:max-w-[500px] rounded-lg ">
                 <Link
                   href="mailto:info@adaired.com"
                   className="flex flex-row sm:flex-col lg:flex-row bg-white gap-4 items-center  "
                 >
-                  <Icons.Mail className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                  <Icons.Mail className="border p-2 rounded h-14 w-14 sm:h-16 sm:w-16 text-[#1B5A96]" />
                   <div>
                     <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
                       Mail Id Of Sales Executive
@@ -535,12 +533,12 @@ const ContactUs = () => {
                   </div>
                 </Link>
               </div>
-              <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
+              <div className=" p-3 sm:p-6 bg-white sm:max-w-[500px] rounded-lg ">
                 <Link
                   href="skype:live:.cid.46cf67c456a5bb0c?chat"
                   className="flex flex-row sm:flex-col lg:flex-row bg-white gap-4 items-center  "
                 >
-                  <Icons.Skype className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                  <Icons.Skype className="border p-2 rounded h-14 w-14 sm:h-16 sm:w-16 text-[#1B5A96]" />
                   <div>
                     <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
                       Our Skype ID
@@ -551,12 +549,12 @@ const ContactUs = () => {
                   </div>
                 </Link>
               </div>
-              <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
+              <div className=" p-3 sm:p-6 bg-white sm:max-w-[500px] rounded-lg ">
                 <Link
                   href="https://api.whatsapp.com/send?phone=918907400008"
                   className="flex flex-row sm:flex-col lg:flex-row bg-white gap-4 items-center  "
                 >
-                  <Icons.Whatsapp className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                  <Icons.Whatsapp className="border p-2 rounded h-14 w-14 sm:h-16 sm:w-16 text-[#1B5A96]" />
                   <div>
                     <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
                       Chat on
@@ -567,12 +565,12 @@ const ContactUs = () => {
                   </div>
                 </Link>
               </div>
-              <div className="p-6 bg-white sm:max-w-[500px] rounded-lg ">
+              <div className=" p-3 sm:p-6 bg-white sm:max-w-[500px] rounded-lg ">
                 <Link
                   href="https://telegram.me/adaired"
                   className="flex flex-row sm:flex-col lg:flex-row bg-white gap-4 items-center  "
                 >
-                  <Icons.Telegram className="border p-2 rounded h-16 w-16 text-[#1B5A96]" />
+                  <Icons.Telegram className="border p-2 rounded h-14 w-14 sm:h-16 sm:w-16 text-[#1B5A96]" />
                   <div>
                     <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
                       Ping us on

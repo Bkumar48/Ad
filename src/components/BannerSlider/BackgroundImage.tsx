@@ -42,7 +42,7 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
           style={{
             objectFit: "cover",
           }}
-          priority
+          // priority
           alt="Current Banner Image"
         />
         <div className="sm:hidden absolute inset-0 bg-black opacity-50" />

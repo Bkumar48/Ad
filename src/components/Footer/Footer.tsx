@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#1B5A96] text-white">
       <MaxWidthWrapper className="px-4">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-12 py-6">
+        <div className="grid gap-5 sm:grid-cols-12 py-6">
           <Link
             href="https://maps.app.goo.gl/CEMtUbQd1246YQ3c7"
             target="_blank"
@@ -32,7 +32,7 @@ const Footer = () => {
             href="https://maps.app.goo.gl/CEMtUbQd1246YQ3c7"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex gap-2 col-span-12 p-5 flex-col items-center text-center lg:text-left lg:items-start border lg:flex-row lg:border-0 lg:col-span-4 xl:col-span-3"
+            className="flex col-span-12 gap-2 p-5 flex-col items-center text-center lg:text-left lg:items-start border lg:flex-row lg:border-0 sm:col-span-6 lg:col-span-4 xl:col-span-3"
           >
             <Icons.Phone className="flex-none h-12 w-12 border p-2  text-[#FB9100] lg:text-white rounded" />
             <div>
@@ -44,7 +44,7 @@ const Footer = () => {
             href="https://maps.app.goo.gl/CEMtUbQd1246YQ3c7"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex gap-2 col-span-12 p-5 flex-col items-center text-center lg:text-left lg:items-start border lg:flex-row lg:border-0 lg:col-span-3 xl:col-span-3"
+            className="flex col-span-12 gap-2 p-5 flex-col items-center text-center lg:text-left lg:items-start border lg:flex-row lg:border-0 sm:col-span-6 lg:col-span-3 xl:col-span-3"
           >
             <Icons.Mail className="flex-none h-12 w-12 border p-2  text-[#FB9100] lg:text-white rounded" />
             <div>
@@ -222,7 +222,7 @@ const Footer = () => {
         </div>
         <div className="border-t mt-6 py-6 text-center flex justify-center items-center flex-col-reverse md:flex-row md:justify-between ">
           <div>Copyright © 2024 - AdAired Digital Media</div>
-          <div className=" sm:bg-transparent flex gap-5 sm:gap-1 py-2" >
+          <div className=" sm:bg-transparent flex gap-5 sm:gap-1 py-2">
             <Link href="/terms-and-conditions">Terms & Conditions </Link>
             <span className="hidden sm:block">/</span>
             <div className="sm:hidden">

@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import Footer from "@/components/Footer/Footer";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
         <main className={`relative flex flex-col min-h-screen`}>
           <Navbar />
           <div className={`flex-grow flex-1`}>{children}</div>
+          <Footer />
         </main>
         <Toaster />
       </body>
