@@ -7,6 +7,8 @@ import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
 import BlogCards from "@/components/BlogCard/BlogCards";
 import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
 import { Icons } from "@/components/Icons/Icons";
+import { TracingBeam } from "@/components/ui/tracing-beam";
+import Process from "@/components/Timeline/Process";
 const About = () => {
   return (
     <div>
@@ -140,9 +142,9 @@ const ProcessSection = () => {
         </div>
       </MaxWidthWrapper>
 
-      <MaxWidthWrapper className="xl:max-w-[1440px] lg:max-w-screen-lg">
+      <MaxWidthWrapper className="hidden lg:block xl:max-w-[1440px] lg:max-w-screen-lg">
         <div className="relative min-h-[28rem]">
-          <div className="absolute bottom-[-5%] xl:bottom-0 left-0 xl:left-[5%] 2xl:left-0 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64  break-words border text-center p-3">
+          <div className="flex flex-col justify-center absolute lg:min-h-40 bottom-[-5%] xl:bottom-0 left-0 xl:left-[5%] 2xl:left-0 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-56 break-words border text-center p-3">
             <h3>Discovery and Planning</h3>
             <p className="text-base">
               Research the business's landscape, target audience, and specific
@@ -150,36 +152,33 @@ const ProcessSection = () => {
               success.
             </p>
           </div>
-          <div className="absolute left-11 xl:left-[12%] 2xl:left-[6%] bottom-16 xl:bottom-1/4 -translate-y-1/2 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64 border text-center p-3">
-            <h3>Discovery and Planning</h3>
+          <div className="flex flex-col justify-center absolute lg:min-h-40 left-11 xl:left-[12%] 2xl:left-[6%] bottom-16 xl:bottom-1/4 -translate-y-1/2 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64 border text-center p-3">
+            <h3>Strategic Execution</h3>
             <p className="text-base">
-              Research the business's landscape, target audience, and specific
-              goals to create a roadmap, ensuring a solid foundation for
-              success.
+              Seamlessly execute tailored strategies to elevate your brand and
+              maximize your digital impact.
             </p>
           </div>
-          <div className="absolute left-1/2 -translate-x-1/2 lg:top-[20%] xl:top-0 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64 border text-center p-3">
-            <h3>Discovery and Planning</h3>
+          <div className="flex flex-col justify-center absolute lg:min-h-40 left-1/2 -translate-x-1/2 lg:top-[20%] xl:top-0 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64 border text-center p-3">
+            <h3>Comprehensive Analysis</h3>
             <p className="text-base">
-              Research the business's landscape, target audience, and specific
-              goals to create a roadmap, ensuring a solid foundation for
-              success.
+              As the campaigns unfold, conduct in-depth analyses to measure
+              performance, user engagement, and campaign effectiveness.
             </p>
           </div>
-          <div className="absolute right-11 xl:right-[12%] 2xl:right-[6%] bottom-16 xl:bottom-1/4 -translate-y-1/2 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64 border text-center p-3">
-            <h3>Discovery and Planning</h3>
+          <div className="flex flex-col justify-center absolute lg:min-h-40 right-11 xl:right-[12%] 2xl:right-[6%] bottom-16 xl:bottom-1/4 -translate-y-1/2 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64 border text-center p-3">
+            <h3>Ongoing Optimization</h3>
             <p className="text-base">
-              Research the business's landscape, target audience, and specific
-              goals to create a roadmap, ensuring a solid foundation for
-              success.
+              Continuously optimize campaigns based on emerging trends, user
+              behavior, and platform algorithms to remain adaptive and
+              impactful.
             </p>
           </div>
-          <div className="absolute bottom-[-5%] xl:bottom-0 right-0 xl:right-[5%] 2xl:right-0 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64 border text-center p-3">
-            <h3>Discovery and Planning</h3>
+          <div className="flex flex-col justify-center absolute lg:min-h-40 bottom-[-5%] xl:bottom-0 right-0 xl:right-[5%] 2xl:right-0 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64 border text-center p-3">
+            <h3>Evaluation and Reporting</h3>
             <p className="text-base">
-              Research the business's landscape, target audience, and specific
-              goals to create a roadmap, ensuring a solid foundation for
-              success.
+              Regular evaluation and reporting provide valuable insights into
+              strategy effectiveness, progress tracking, and decision-making.
             </p>
           </div>
 
@@ -187,7 +186,9 @@ const ProcessSection = () => {
             <Icons.WorkProcess className="h-full w-full " />
           </div>
         </div>
-       
+      </MaxWidthWrapper>
+      <MaxWidthWrapper className="lg:hidden">
+        <Process />
       </MaxWidthWrapper>
     </section>
   );
