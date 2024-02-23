@@ -79,12 +79,6 @@ export async function POST(request: NextRequest) {
     from: process.env.NEXT_PUBLIC_SENDER_EMAIL,
     to: process.env.NEXT_PUBLIC_ADMIN_EMAIL,
     subject: `Message from ${Name} (${Email})`,
-    // text: `Name: ${Name}
-    // Email: ${Email}
-    // Phone: ${Phone}
-    // Interest: ${Interest}
-    // Budget: ${Budget}
-    // Message: ${Message}`,
     html: `<h1 class="text-red">Message from ${Name}</h1>
     <p>Email: ${Email}</p>
     <p>Phone: ${Phone}</p>

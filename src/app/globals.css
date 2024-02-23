@@ -81,8 +81,13 @@
     font-weight: 300;
     text-decoration: none;
     margin: 0;
-    color:var(--current)
+    color: var(--current);
   }
+
+  /* ol {
+    list-style: decimal;
+    padding-left:2.5rem ;
+  } */
 
   h1,
   h2,
@@ -92,7 +97,12 @@
   h6 {
     font-family: var(--font-dm);
     margin: 0px;
-    color:var(--current)
+    color: var(--current);
+  }
+
+  address {
+    display: block;
+    font-style: normal;
   }
 }
 

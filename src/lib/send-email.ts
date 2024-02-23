@@ -9,12 +9,6 @@ type FormData = {
   Message?: string;
   terms: boolean;
 };
-
-// export function sendEmail(data: FormData) {
-//   // TODO: send email
-//   console.log(data);
-// }
-
 export function sendEmail(data: FormData) {
   const apiEndpoint = "/api/email";
 
