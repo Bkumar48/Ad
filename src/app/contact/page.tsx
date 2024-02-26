@@ -50,8 +50,8 @@ const ContactDetails = () => {
           Welcome to Adaired, your one-stop destination for comprehensive
           digital marketing solutions. Every ambitious entrepreneur needs a
           digital marketing partner like us. To get started, please fill out the
-          form on this page. We'll promptly connect with you to discuss your
-          project and provide a personalized plan tailored to your business
+          form on this page. We&apos;ll promptly connect with you to discuss
+          your project and provide a personalized plan tailored to your business
           objectives.
         </p>
       </div>

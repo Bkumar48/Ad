@@ -10,6 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import Button from "@/components/Button/Button";
 import parse from "html-react-parser";
 import Image from "next/image";
+import { formatDate } from "@/lib/utils";
 
 interface Data {
   image: string;
@@ -23,14 +24,7 @@ interface BlogCardProps {
   data: Data;
 }
 const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
-  const formatDate = (dateString: string) => {
-    const options: Intl.DateTimeFormatOptions = {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  };
+
   return (
     <div className="">
       <Card className="rounded-none ">

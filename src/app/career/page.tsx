@@ -1,7 +1,5 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import PageBanner from "@/components/PageBanner/PageBanner";
-import { Icons } from "@/components/Icons/Icons";
-import Link from "next/link";
 import parse, { domToReact, HTMLReactParserOptions } from "html-react-parser";
 import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
 import CareerPageForm from "@/components/Forms/CareerPageForm";
@@ -18,13 +16,16 @@ const Career = () => {
   return (
     <React.Fragment>
       <PageBanner title="Career" />
+
       <section className="py-12 lg:py-24">
-        <MaxWidthWrapper className="flex gap-16">
-          <div className="w-[55%]">
-            <JobList />
-          </div>
-          <div className="w-[45%]">
-            <CareerPageForm />
+        <MaxWidthWrapper>
+          <div className="flex gap-16 flex-col-reverse lg:flex-row ">
+            <div className="lg:w-[55%]">
+              <JobList />
+            </div>
+            <div className="lg:w-[45%]">
+              <CareerPageForm />
+            </div>
           </div>
         </MaxWidthWrapper>
       </section>
@@ -56,11 +57,11 @@ async function getJobs() {
 
 const JobList = async () => {
   const data = await getJobs();
-  console.log(data);
-  console.log("Break Here");
   return (
     <div>
-      <h2 className="">We Are Currently Recruiting For :</h2>
+      <h2 className="text-2xl md:text-4xl mb-3.5">
+        We Are Currently Recruiting For :
+      </h2>
       {data.map((job: Job) => {
         const dateString: string = job.updatedAt;
         const date: Date = new Date(dateString);
@@ -78,20 +79,6 @@ const JobList = async () => {
         } else {
           daysAgoString = `${daysAgo} ${daysAgo === 1 ? "Day" : "Days"} Ago`;
         }
-
-        // const options: HTMLReactParserOptions = {
-        //   replace: (domNode) => {
-        //     if (domNode.type === "tag" && domNode.name === "ol") {
-        //       return (
-        //         <ol className="list-decimal list-inside">
-        //           {domToReact(domNode.children)}
-        //         </ol>
-        //       );
-        //     }
-        //     // Return domNode if the condition is not met
-        //     return domNode;
-        //   },
-        // };
         const options: HTMLReactParserOptions = {
           replace: (domNode) => {
             if (domNode.type === "tag" && domNode.name === "ol") {
@@ -108,23 +95,25 @@ const JobList = async () => {
         };
 
         return (
-          <>
-            <div key={job.jobName}>
-              <div className="flex justify-between items-center">
-                <h3>{job.jobName}</h3>
+          <div key={job.jobName}>
+            <div className="border p-5 sm:p-10 rounded-tl-lg rounded-tr-lg">
+              <div className="py-2 flex flex-col sm:flex-row sm:justify-between items-center">
+                <h3 className="text-xl md:text-3xl">{job.jobName}</h3>
                 <p>({daysAgoString})</p>
               </div>
-              <p>{job.jobDescription}</p>
+              <p className="text-justify sm:text-left">{job.jobDescription}</p>
             </div>
             <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Description</AccordionTrigger>
-                <AccordionContent>
+              <AccordionItem value={job.jobName} className="border-none">
+                <AccordionTrigger className="px-5 hover:no-underline bg-[#515151] rounded-bl-lg rounded-br-lg text-white text-xl data-[state=open]:rounded-none">
+                  Description
+                </AccordionTrigger>
+                <AccordionContent className="border p-10 rounded-bl-xl rounded-br-xl ">
                   {parse(job.description, options)}
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          </>
+          </div>
         );
       })}
     </div>

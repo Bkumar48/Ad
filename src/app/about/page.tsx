@@ -1,13 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
-import Button from "@/components/Button/Button";
 import PageBanner from "@/components/PageBanner/PageBanner";
 import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
 import BlogCards from "@/components/BlogCard/BlogCards";
 import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
 import { Icons } from "@/components/Icons/Icons";
-import { TracingBeam } from "@/components/ui/tracing-beam";
 import Process from "@/components/Timeline/Process";
 const About = () => {
   return (
@@ -54,9 +52,9 @@ const IntroSection = () => {
               that empowers businesses to thrive online through its time-tested
               and effective digital marketing services. We are more than just
               another industry survivor; we are creators, inventors, and
-              catalysts for your company's growth. We stand out by consistently
-              delivering innovative solutions, pushing limits, and redefining
-              the idea of success.
+              catalysts for your company&apos;s growth. We stand out by
+              consistently delivering innovative solutions, pushing limits, and
+              redefining the idea of success.
             </p>
             <div className="flex gap-5 py-1 flex-col sm:flex-row">
               <div className="flex flex-col items-center border p-4 md:p-0 md:border-none md:items-start ">
@@ -72,9 +70,9 @@ const IntroSection = () => {
                   Innovative Mindset
                 </h4>
                 <p className="text-base sm:text-lg">
-                  Known for our innovative mindset, Adaired's qualified digital
-                  marketers use creativity to craft tailored strategies that
-                  meet your unique needs and goals.
+                  Known for our innovative mindset, Adaired&apos;s qualified
+                  digital marketers use creativity to craft tailored strategies
+                  that meet your unique needs and goals.
                 </p>
               </div>
               <div className="flex flex-col items-center border p-4 md:p-0 md:border-none md:items-start ">
@@ -147,9 +145,9 @@ const ProcessSection = () => {
           <div className="flex flex-col justify-center absolute lg:min-h-40 bottom-[-5%] xl:bottom-0 left-0 xl:left-[5%] 2xl:left-0 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-56 break-words border text-center p-3">
             <h3>Discovery and Planning</h3>
             <p className="text-base">
-              Research the business's landscape, target audience, and specific
-              goals to create a roadmap, ensuring a solid foundation for
-              success.
+              Research the business&apos;s landscape, target audience, and
+              specific goals to create a roadmap, ensuring a solid foundation
+              for success.
             </p>
           </div>
           <div className="flex flex-col justify-center absolute lg:min-h-40 left-11 xl:left-[12%] 2xl:left-[6%] bottom-16 xl:bottom-1/4 -translate-y-1/2 2xl:max-w-sm xl:max-w-72 lg:max-w-72 max-w-64 border text-center p-3">

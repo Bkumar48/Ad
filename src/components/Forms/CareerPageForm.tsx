@@ -62,7 +62,7 @@ const CareerPageForm = () => {
     <div>
       <Form {...form}>
         <form
-          className="border p-10 rounded-lg max-w-3xl mx-auto"
+          className="border p-5 lg:p-10 rounded-lg "
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <FormField
@@ -180,7 +180,7 @@ const CareerPageForm = () => {
             )}
           />
           <Button
-            title="Send Your Enquiry"
+            title="Submit"
             className="bg-white text-black mt-10 w-full flex items-center justify-center pl-0 pr-0 hover:pl-0 hover:pr-0"
             svgClassName="bg-[#F89520]  group-hover/btn:right-2"
             type="submit"
