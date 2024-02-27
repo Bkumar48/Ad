@@ -49,7 +49,10 @@ const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
                         {subItem.subItems
                           ? subItem.subItems.map((subSubItem) => {
                               return (
-                                <div className="flex items-center cursor-pointer group/subMenu ">
+                                <div
+                                  className="flex items-center cursor-pointer group/subMenu "
+                                  key={subSubItem.name}
+                                >
                                   <li
                                     key={subSubItem.name}
                                     className="flex items-center gap-2 py-1 group-hover/subMenu:text-[#FB9100] transition-all duration-300 "

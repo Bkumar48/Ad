@@ -13,6 +13,13 @@ import {
 } from "react-compare-slider";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import Button from "@/components/Button/Button";
 
 async function getServiceData({ params }: { params: { slug: string } }) {
   const res = await fetch(
@@ -44,14 +51,18 @@ const MainService: React.FC<MainServiceProps> = async ({ params }) => {
         serviceDescriptionIII={data.serviceDescriptionIII}
         fourPoints={data.fourPoints}
         menuData={data.childrens}
+        slug={data.slug}
       />
-      {!data.isChildService && (
-        <OurProcess
-          ourProcessSubHeading={data.ourProcessSubHeading}
-          ourProcessImage1={data.ourProcessImageI}
-          ourProcessImage2={data.ourProcessImageII}
-        />
-      )}
+      <MaxWidthWrapper>
+        <Separator className="h-0.5 bg-[#A7A9AC]" />
+      </MaxWidthWrapper>
+
+      <OurProcess
+        ourProcessSubHeading={data.ourProcessSubHeading}
+        ourProcessImage1={data.ourProcessImageI}
+        ourProcessImage2={data.ourProcessImageII}
+      />
+
       <ServiceBuild data={data.combinedSection} />
       <ServiceParagraph
         title={data.serviceHeadingIII}
@@ -89,6 +100,7 @@ interface IntroSectionProps {
   serviceDescriptionIII: string;
   fourPoints?: string[];
   menuData?: string[];
+  slug: string;
 }
 
 const IntroSection: React.FC<IntroSectionProps> = ({
@@ -101,15 +113,16 @@ const IntroSection: React.FC<IntroSectionProps> = ({
   serviceDescriptionIII,
   fourPoints,
   menuData,
+  slug,
 }) => {
   return (
     <section className="py-6 lg:py-12">
       <MaxWidthWrapper className="flex gap-10">
         <div className="w-3/4">
-          <h2>{title}</h2>
+          <h2 className="text-[1.688rem] md:text-4xl pb-4">{title}</h2>
           <div>{parse(description)}</div>
           {mainTwoPoints && (
-            <ul className="flex gap-5 ">
+            <ul className="flex gap-5 py-4">
               {mainTwoPoints.map((point: any, index: number) => {
                 return (
                   <li key={point.title} className="flex gap-5 border p-5 w-1/2">
@@ -139,17 +152,19 @@ const IntroSection: React.FC<IntroSectionProps> = ({
               height={400}
             />
           </div>
-          <div>{parse(decription_II)}</div>
-          <h3>{serviceHeadingII}</h3>
-          <div>{parse(serviceDescriptionIII)}</div>
+          <div className="py-3">{parse(decription_II)}</div>
+          <h3 className="text-[1.688rem] md:text-4xl py-2">
+            {serviceHeadingII}
+          </h3>
+          <div className="pb-3">{parse(serviceDescriptionIII)}</div>
         </div>
         <aside className="w-1/4">
-          <ServicePageMenu data={menuData} />
+          <ServicePageMenu data={menuData} parentPage={slug} />
         </aside>
       </MaxWidthWrapper>
-      <MaxWidthWrapper>
+      <MaxWidthWrapper className="py-2">
         {fourPoints && (
-          <ul className="grid grid-cols-2">
+          <ul className="grid grid-cols-2 gap-3">
             {fourPoints.map((point: any, index: number) => {
               return (
                 <li key={point}>
@@ -179,7 +194,7 @@ const OurProcess: React.FC<OurProcessProps> = ({
   ourProcessImage2,
 }) => {
   return (
-    <section>
+    <section className="py-6 lg:py-12">
       <MaxWidthWrapper>
         <div className="text-center flex flex-col items-center justify-center">
           <h5 className="inline font-nunito text-[#515151] relative px-4 text-lg">
@@ -222,31 +237,127 @@ const OurProcess: React.FC<OurProcessProps> = ({
 const ServiceBuild = ({ data }: { data: any }) => {
   return (
     <>
-      {data.map((section: { combinedSectionImage: string }, index: number) => {
-        return (
-          <section
-            key={section.combinedSectionImage}
-            className={cn(
-              "flex",
-              index % 2 === 0 ? "flex-row-reverse" : "flex-row"
-            )}
-          >
-            <div className="w-1/2">
-              {
-                section
-              }
-            </div>
-            <div className="w-1/2">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}services/${section.combinedSectionImage}`}
-                alt="Image"
-                height={400}
-                width={1200}
-              />
-            </div>
-          </section>
-        );
-      })}
+      {data.map(
+        (
+          section: {
+            combinedSectionImage: string;
+            editorValue: string;
+            accordion: any;
+            heading: string;
+          },
+          index: number
+        ) => {
+          const value = section.editorValue;
+          console.log(value);
+          const ChangedEditorValue = value
+            ? value
+                .replace(/<ul>/g, '<ul class="grid grid-cols-2 py-2">')
+                .replace(
+                  /<li>/g,
+                  '<li class="custom-marker flex items-center custom-marker py-1" >'
+                )
+                .replace(
+                  /<li dir="ltr">/g,
+                  '<li class="custom-marker flex items-center custom-marker py-1" >'
+                )
+            : "";
+
+          return (
+            <section
+              key={section.combinedSectionImage}
+              className={cn(
+                "flex relative min-h-96",
+                index % 2 === 0 ? "flex-row-reverse" : "flex-row",
+                index === data.length - 1 ? "pb-6 lg:pb-12" : ""
+              )}
+            >
+              <div className="w-1/2"></div>
+              <div className="w-1/2 object-cover">
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}services/${section.combinedSectionImage}`}
+                  alt="Image"
+                  height={300}
+                  width={1000}
+                />
+              </div>
+              <MaxWidthWrapper
+                className={cn(
+                  "absolute left-1/2 -translate-x-1/2 flex",
+                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                )}
+              >
+                <div className="w-1/2"></div>
+                <div className="w-1/2 ">
+                  {section.editorValue ? (
+                    <div
+                      className={cn(
+                        index % 2 === 0 ? "p-10 pr-0" : "p-10 pl-0"
+                      )}
+                    >
+                      <h2 className="text-[1.688rem] md:text-4xl pb-4">
+                        {section.heading}
+                      </h2>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: ChangedEditorValue }}
+                      />
+                      <Button
+                        title="View More"
+                        className="bg-white text-black mt-5"
+                        svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
+                        type="button"
+                        navigateTo="/about"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <h2
+                        className={cn(
+                          "text-[1.688rem] md:text-4xl ",
+                          index % 2 === 0 ? "p-10 pr-0 pb-2" : "p-10 pb-2 pl-0"
+                        )}
+                      >
+                        {section.heading}
+                      </h2>
+                      <Accordion type="single" collapsible>
+                        {section.accordion.map(
+                          (accordion: any, index: number) => {
+                            return (
+                              <AccordionItem
+                                key={index}
+                                value={accordion.title}
+                                className="border-none px-10 data-[state=open]:bg-[#FFFAFD]"
+                              >
+                                <AccordionTrigger className="flex ">
+                                  <div className="flex items-center gap-3">
+                                    <div className="h-3 w-3 bg-[#BC1D8D]" />
+                                    {accordion.title}
+                                  </div>
+                                </AccordionTrigger>
+                                <AccordionContent>
+                                  {parse(accordion.content)}
+                                </AccordionContent>
+                              </AccordionItem>
+                            );
+                          }
+                        )}
+                      </Accordion>
+                      <div className="px-10">
+                        <Button
+                          title="View More"
+                          className="bg-white text-black mt-5"
+                          svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
+                          type="button"
+                          navigateTo="/about"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </MaxWidthWrapper>
+            </section>
+          );
+        }
+      )}
     </>
   );
 };
@@ -261,27 +372,21 @@ const ServiceParagraph: React.FC<ServiceParagraphProps> = ({
   description,
 }) => {
   const modifiedText = description
-    .replace(/<ul>/g, '<ul class="grid grid-cols-2 ">')
-    .replace(
-      /<li>/g,
-      '<li class="custom-marker flex items-center " ><div className="flex  ">'
-    )
-    .replace(
-      /<li dir="ltr">/g,
-      '<li class="custom-marker flex items-center" ><div className="flex  ">'
-    )
+    .replace(/<ul>/g, '<ul class="grid grid-cols-2 gap-2 py-2">')
+    .replace(/<li>/g, '<li class="custom-marker flex items-center " >')
+    .replace(/<li dir="ltr">/g, '<li class="custom-marker flex items-center" >')
     .replace(
       /<li dir="ltr" aria-level="1">/g,
-      '<li class="custom-marker flex items-center" ><div className="flex  ">'
+      '<li class="custom-marker flex items-center" >'
     );
   function parseHTML() {
     return { __html: modifiedText };
   }
 
   return (
-    <section>
+    <section className="pb-6 lg:pb-12">
       <MaxWidthWrapper>
-        <h2>{title}</h2>
+        <h2 className="text-[1.688rem] md:text-4xl pb-4">{title}</h2>
         <div dangerouslySetInnerHTML={parseHTML()} />
       </MaxWidthWrapper>
     </section>
@@ -311,7 +416,7 @@ const PinkSection: React.FC<PinkSectionProps> = ({
     <section className=" pt-10 pb-14 lg:pt-20 lg:pb-28 bg-[#bc1d8d0a]">
       <MaxWidthWrapper className="flex gap-10">
         <div className="w-1/2">
-          <h2 className="text-4xl mb-2">{heading}</h2>
+          <h2 className="text-[1.688rem] md:text-4xl pb-1">{heading}</h2>
           <div className="py-2">{parse(text)}</div>
           {points && (
             <ul className="grid grid-cols-2 gap-5 py-2">

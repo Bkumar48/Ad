@@ -4,7 +4,6 @@ import React from "react";
 import { Icons } from "@/components/Icons/Icons";
 import Link from "next/link";
 import ContactPageForm from "@/components/Forms/ContactPageForm";
-import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
 
 const Contact = () => {
   return (
@@ -29,7 +28,6 @@ const Contact = () => {
           className="h-96 w-full border-none"
         ></iframe>
       </section>
-      <LocomotiveScroll />
     </>
   );
 };

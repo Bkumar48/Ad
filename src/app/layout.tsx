@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/Footer/Footer";
+import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
           <Footer />
         </main>
         <Toaster />
+        <LocomotiveScroll />
       </body>
     </html>
   );

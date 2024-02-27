@@ -1,7 +1,6 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import PageBanner from "@/components/PageBanner/PageBanner";
 import parse, { domToReact, HTMLReactParserOptions } from "html-react-parser";
-import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
 import CareerPageForm from "@/components/Forms/CareerPageForm";
 import React from "react";
 
@@ -29,7 +28,6 @@ const Career = () => {
           </div>
         </MaxWidthWrapper>
       </section>
-      <LocomotiveScroll />
     </React.Fragment>
   );
 };

@@ -1,7 +1,7 @@
 import BannerSlider from "@/components/BannerSlider/BannerSlider";
 import Button from "@/components/Button/Button";
 import { Icons } from "@/components/Icons/Icons";
-import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
+
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import Image from "next/image";
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
@@ -32,7 +32,6 @@ export default function Home() {
       <TestimonialSlider />
       <BlogCards />
       <ContactUs />
-      <LocomotiveScroll />
     </main>
   );
 }

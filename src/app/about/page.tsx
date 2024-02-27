@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import PageBanner from "@/components/PageBanner/PageBanner";
-import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
 import BlogCards from "@/components/BlogCard/BlogCards";
 import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
 import { Icons } from "@/components/Icons/Icons";
@@ -15,7 +14,6 @@ const About = () => {
       <ProcessSection />
       <TestimonialSlider />
       <BlogCards />
-      <LocomotiveScroll />
     </div>
   );
 };
