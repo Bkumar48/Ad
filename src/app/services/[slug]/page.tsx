@@ -3,19 +3,16 @@ import { Icons } from "@/components/Icons/Icons";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import PageBanner from "@/components/PageBanner/PageBanner";
 import ServicePageMenu from "@/components/ServicePageMenu/ServicePageMenu";
-import parse, {
-  attributesToProps,
-  domToReact,
-  HTMLReactParserOptions,
-  Element,
-  DOMNode,
-} from "html-react-parser";
+import { Separator } from "@/components/ui/separator";
+import parse from "html-react-parser";
 import Image from "next/image";
 import React from "react";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 async function getServiceData({ params }: { params: { slug: string } }) {
   const res = await fetch(
@@ -67,6 +64,8 @@ const MainService: React.FC<MainServiceProps> = async ({ params }) => {
         hookline={data.LastSectionHookLine}
         points={data.LastSectionPoints}
       />
+      <Consultation />
+
       <BlogCards />
     </>
   );
@@ -223,11 +222,28 @@ const OurProcess: React.FC<OurProcessProps> = ({
 const ServiceBuild = ({ data }: { data: any }) => {
   return (
     <>
-      {data.map((section: { combinedSectionImage: string }) => {
+      {data.map((section: { combinedSectionImage: string }, index: number) => {
         return (
-          <section key={section.combinedSectionImage}>
-            <div className="w-1/2"></div>
-            <div className="w-1/2"></div>
+          <section
+            key={section.combinedSectionImage}
+            className={cn(
+              "flex",
+              index % 2 === 0 ? "flex-row-reverse" : "flex-row"
+            )}
+          >
+            <div className="w-1/2">
+              {
+                section
+              }
+            </div>
+            <div className="w-1/2">
+              <Image
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}services/${section.combinedSectionImage}`}
+                alt="Image"
+                height={400}
+                width={1200}
+              />
+            </div>
           </section>
         );
       })}
@@ -279,7 +295,6 @@ interface PinkSectionProps {
   hookline: string;
   points: lastPoints[];
 }
-
 interface lastPoints {
   LastSectionPointsImage: string;
   title: string;
@@ -293,7 +308,7 @@ const PinkSection: React.FC<PinkSectionProps> = ({
   points,
 }) => {
   return (
-    <section className=" py-10 lg:py-20 bg-[#bc1d8d0a]">
+    <section className=" pt-10 pb-14 lg:pt-20 lg:pb-28 bg-[#bc1d8d0a]">
       <MaxWidthWrapper className="flex gap-10">
         <div className="w-1/2">
           <h2 className="text-4xl mb-2">{heading}</h2>
@@ -327,6 +342,38 @@ const PinkSection: React.FC<PinkSectionProps> = ({
             width={800}
             height={400}
           />
+        </div>
+      </MaxWidthWrapper>
+    </section>
+  );
+};
+
+const Consultation = () => {
+  return (
+    <section>
+      <MaxWidthWrapper className="-mt-16 flex items-center justify-between md:px-10 py-6 max-w-5xl rounded-xl bg-[#fb9100] text-white">
+        <div className="flex gap-5 items-center">
+          <div className="border p-2">
+            <Icons.Phone className="h-14 w-14" />
+          </div>
+          <div>
+            <p className="text-xl">Get A Free Consultation</p>
+            <p className="text-2xl text-semibold">
+              <Link href="/">+91-8907200008</Link>
+            </p>
+          </div>
+        </div>
+        <Separator orientation="vertical" className="h-20 w-0.5 bg-white" />
+        <div className="flex gap-5 items-center">
+          <div className="border p-2">
+            <Icons.Mail className="h-14 w-14" />
+          </div>
+          <div>
+            <p className="text-xl">Mail Us</p>
+            <p className="text-2xl text-semibold">
+              <Link href="/">info@adaired.com</Link>
+            </p>
+          </div>
         </div>
       </MaxWidthWrapper>
     </section>
