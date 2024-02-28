@@ -15,6 +15,23 @@ import {
 } from "@/components/ui/accordion";
 import Button from "@/components/Button/Button";
 
+export async function generateStaticParams() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/services`
+  ).then((res) => res.json());
+
+  const services = res.data;
+
+  // Extract and return the slugs from the childrens array of each service
+  return services.flatMap((service: any) => {
+    return service.childrens.map((child: string) => ({
+      slug: service.slug.toString(), // Assuming each service has a slug property
+      childSlug: child.toString(),
+    }));
+  });
+}
+
+
 async function getServiceData({
   params,
 }: {
@@ -49,6 +66,7 @@ const ChildService: React.FC<ChildServiceProps> = async ({ params }) => {
         serviceDescriptionIII={data.serviceDescriptionIII}
         fourPoints={data.fourPoints}
         menuData={data.childrens}
+        slug={data.slug}
       />
       <ServiceBuild data={data.combinedSection} />
       <BlogCards />
@@ -74,6 +92,7 @@ interface IntroSectionProps {
   serviceDescriptionIII: string;
   fourPoints?: string[];
   menuData?: string[];
+  slug: string;
 }
 
 const IntroSection: React.FC<IntroSectionProps> = ({
@@ -86,6 +105,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({
   serviceDescriptionIII,
   fourPoints,
   menuData,
+  slug,
 }) => {
   return (
     <section className="py-6 lg:py-12">
@@ -131,7 +151,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({
           <div className="pb-3">{parse(serviceDescriptionIII)}</div>
         </div>
         <aside className="w-1/4">
-          <ServicePageMenu data={menuData} />
+          <ServicePageMenu data={menuData} parentPage={slug} />
         </aside>
       </MaxWidthWrapper>
       <MaxWidthWrapper className="py-2">
@@ -168,7 +188,6 @@ const ServiceBuild = ({ data }: { data: any }) => {
           index: number
         ) => {
           const value = section.editorValue;
-          console.log(value);
           const ChangedEditorValue = value
             ? value
                 .replace(/<ul>/g, '<ul class="grid grid-cols-2 py-2">')

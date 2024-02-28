@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/Button/Button";
 import Image from "next/image";
 import React from "react";
@@ -5,33 +6,17 @@ import parse from "html-react-parser";
 import { cn, formatDate } from "@/lib/utils";
 import PageBanner from "@/components/PageBanner/PageBanner";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 
-async function getBlogs({ limit, skip }: { limit: number; skip: number }) {
+async function getBlogs() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/blog/findBlog?limit=${limit}&skip=${skip}`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/blog/findBlog`
   );
   const data = await res.json();
   return data;
 }
 
-const Blog = async ({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) => {
-  const page = searchParams["page"] ?? 1;
-  const limit = searchParams["limit"] ?? 5;
-  const skip = (Number(page) - 1) * Number(limit);
-  const data = await getBlogs({ limit: Number(limit), skip });
-  const totalPages = Math.ceil(data.totalBlogsCount / Number(limit));
+const Blog = async () => {
+  const data = await getBlogs();
 
   return (
     <>
@@ -41,7 +26,10 @@ const Blog = async ({
           <div className="w-3/4 ">
             {data.result.map((blog: any) => {
               return (
-                <figure className="border p-10 rounded-lg flex my-10">
+                <figure
+                  className="border p-10 rounded-lg flex my-10"
+                  key={blog.title}
+                >
                   <div className="w-[45%] object-cover ">
                     <Image
                       src={`${process.env.NEXT_PUBLIC_IMAGE_URL}blog/${blog.image}`}
@@ -83,39 +71,6 @@ const Blog = async ({
                 </figure>
               );
             })}
-            <Pagination>
-              <PaginationContent>
-                <PaginationPrevious
-                  href={`/blog?page=${Number(page) - 1}`}
-                  className={cn(
-                    Number(page) === 1 || page === "undefined"
-                      ? "pointer-events-none"
-                      : ""
-                  )}
-                />
-                {Array.from({ length: totalPages }, (_, i) => {
-                  return (
-                    <PaginationItem>
-                      <PaginationLink
-                        href={`/blog?page=${i + 1}`}
-                        aria-label={`Go to page ${i + 1}`}
-                        isActive={Number(page) === i + 1}
-                      >
-                        {i + 1}
-                      </PaginationLink>
-                    </PaginationItem>
-                  );
-                })}
-                <PaginationNext
-                  href={`/blog?page=${Number(page) + 1}`}
-                  className={cn(
-                    Number(page) === totalPages || page === "undefined"
-                      ? "pointer-events-none"
-                      : ""
-                  )}
-                />
-              </PaginationContent>
-            </Pagination>
           </div>
           <div className="w-1/4"></div>
         </div>

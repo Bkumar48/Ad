@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/Footer/Footer";
-import LocomotiveScroll from "@/components/LocomotiveScroll/LocomotiveScroll";
+import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
@@ -44,13 +44,14 @@ export default function RootLayout({
           baby.variable
         )}
       >
-        <main className={`relative flex flex-col min-h-screen`}>
-          <Navbar />
-          <div>{children}</div>
-          <Footer />
-        </main>
-        <Toaster />
-        <LocomotiveScroll />
+        <SmoothScroll>
+          <main className={`relative flex flex-col min-h-screen`}>
+            <Navbar />
+            <div>{children}</div>
+            <Footer />
+          </main>
+          <Toaster />
+        </SmoothScroll>
       </body>
     </html>
   );

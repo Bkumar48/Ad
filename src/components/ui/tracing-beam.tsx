@@ -39,7 +39,7 @@ export const TracingBeam = ({
     return scrollYProgressVelocity.onChange((latestVelocity) => {
       setVelocity(latestVelocity);
     });
-  }, []);
+  }, [scrollYProgressVelocity]);
 
   const y1 = useSpring(
     useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
@@ -137,7 +137,7 @@ export const TracingBeam = ({
           <div className="flex flex-col">
             <h3 className="text-2xl font-semibold">Discovery and Planning</h3>
             <p className="text-base">
-              Research the business's landscape, target audience, and specific
+              Research the business&apos;s landscape, target audience, and specific
               goals to create a roadmap, ensuring a solid foundation for
               success.
             </p>

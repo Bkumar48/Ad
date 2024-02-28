@@ -7,7 +7,6 @@ import {
   useVelocity,
   useSpring,
 } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 const Process = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,7 +31,7 @@ const Process = () => {
     return scrollYProgressVelocity.onChange((latestVelocity) => {
       setVelocity(latestVelocity);
     });
-  }, []);
+  }, [scrollYProgressVelocity]);
 
   const y1 = useSpring(
     useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
@@ -101,7 +100,7 @@ const Process = () => {
           <div className="w-1/2 border max-w-xs min-h-40 p-5 flex flex-col justify-center items-center text-center">
             <h3 className="text-2xl font-semibold">Discovery and Planning</h3>
             <p className="text-base">
-              Research the business's landscape, target audience, and specific
+              Research the business&apos;s landscape, target audience, and specific
               goals to create a roadmap, ensuring a solid foundation for
               success.
             </p>
