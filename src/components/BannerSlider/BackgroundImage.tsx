@@ -36,13 +36,12 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
       >
         <Image
           src={currentData.img}
-          quality={100}
+          quality={70}
           fill
-          sizes="100vw"
           style={{
             objectFit: "cover",
           }}
-          // priority
+          priority
           alt="Current Banner Image"
         />
         <div className="sm:hidden absolute inset-0 bg-black opacity-50" />
@@ -61,13 +60,12 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
       >
         <Image
           src={nextData.img}
-          quality={100}
+          quality={70}
           fill
-          sizes="100vw"
           style={{
             objectFit: "cover",
           }}
-          priority
+          // priority
           alt="Next Banner Image"
         />
         <div className="sm:hidden absolute inset-0 bg-black opacity-50" />

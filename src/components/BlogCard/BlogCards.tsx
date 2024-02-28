@@ -2,7 +2,7 @@ import React from "react";
 import BlogCard from "@/components/BlogCard/BlogCard";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import Button from "../Button/Button";
-
+ 
 async function getBlogsData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/v1/blog/findBlog?limit=3&skip=0`
