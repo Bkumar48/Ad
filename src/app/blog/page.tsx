@@ -1,4 +1,3 @@
-"use client";
 import Button from "@/components/Button/Button";
 import Image from "next/image";
 import React from "react";

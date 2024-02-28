@@ -30,14 +30,14 @@ async function getServiceData({ params }: { params: { slug: string } }) {
   return newData;
 }
 
-export async function generateStaticParams() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/services`);
-  const data = await res.json();
-  const newData = data.data;
-  return newData.map((service: any) => ({
-    slug: service.slug.toString(),
-  }));
-}
+// export async function generateStaticParams() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/services`);
+//   const data = await res.json();
+//   const newData = data.data;
+//   return newData.map((service: any) => ({
+//     slug: service.slug.toString(),
+//   }));
+// }
 
 interface MainServiceProps {
   params: {

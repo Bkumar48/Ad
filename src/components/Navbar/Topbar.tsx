@@ -27,7 +27,7 @@ const Topbar = () => {
         <div>
           <Link href="/" className="flex gap-1 sm:gap-2 items-center">
             <Image
-              src="/in_flag.webp"
+              src="/In_flag.webp"
               width={30}
               height={15}
               alt="In"

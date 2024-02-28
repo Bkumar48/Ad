@@ -15,21 +15,21 @@ import {
 } from "@/components/ui/accordion";
 import Button from "@/components/Button/Button";
 
-export async function generateStaticParams() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/services`
-  ).then((res) => res.json());
+// export async function generateStaticParams() {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_API_URL}/api/v1/services`
+//   ).then((res) => res.json());
 
-  const services = res.data;
+//   const services = res.data;
 
-  // Extract and return the slugs from the childrens array of each service
-  return services.flatMap((service: any) => {
-    return service.childrens.map((child: string) => ({
-      slug: service.slug.toString(), // Assuming each service has a slug property
-      childSlug: child.toString(),
-    }));
-  });
-}
+//   // Extract and return the slugs from the childrens array of each service
+//   return services.flatMap((service: any) => {
+//     return service.childrens.map((child: string) => ({
+//       slug: service.slug.toString(), // Assuming each service has a slug property
+//       childSlug: child.toString(),
+//     }));
+//   });
+// }
 
 
 async function getServiceData({
