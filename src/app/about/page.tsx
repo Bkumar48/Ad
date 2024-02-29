@@ -119,7 +119,7 @@ const IntroSection = () => {
   );
 };
 
-const ProcessSection = () => {
+export const ProcessSection = () => {
   return (
     <section className="pb-20">
       <MaxWidthWrapper className="text-center">

@@ -144,7 +144,7 @@ const ContactPageForm = () => {
                     {...field}
                     className="focus-visible:ring-offset-0 focus-visible:ring-0 text-lg mb-4"
                     rows={5}
-                    defaultValue={field.value}
+                    // defaultValue={field.value}
                   />
                 </FormControl>
 
