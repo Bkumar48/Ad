@@ -3,29 +3,35 @@ import { ProcessSection } from "../about/page";
 import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
 import BlogCards from "@/components/BlogCard/BlogCards";
 import CaseStudyCards from "@/components/CaseStudyCards/CaseStudyCards";
+import { revalidatePath } from "next/cache";
 
-// async function getCaseStudyCategories() {
-//   const res = await fetch(
-//     `${process.env.NEXT_PUBLIC_API_URL}/api/v1/case-studies-category/getCaseStudiesCategory/all`
-//   );
-//   const data = await res.json();
-//   return data.result;
-// }
 
-// async function getCaseStudies({ slug }: { slug: string }) {
-//   const res = await fetch(
-//     `${process.env.NEXT_PUBLIC_API_URL}/api/v1/case-studies/all/?category=${slug}`
-//   );
-//   const data = await res.json();
-//   return data.result;
-// }
+async function getCaseStudyCategories() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/case-studies-category/getCaseStudiesCategory/all`,{
+      method:"GET",
+      next:{
+        revalidate:5000
+      }
+    }
+  );
+  const data = await res.json();
+  console.log("Lenght of categories", data.result);
+  return data.result;
+}
+
+async function getCaseStudies() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/case-studies/all`
+  );
+  const data = await res.json();
+  return data.result;
+}
 
 const CaseStudies = async () => {
-  // const categories = await getCaseStudyCategories();
-
-  // const caseStudies = await getCaseStudies({
-  //   slug: "all",
-  // });
+  const categories = await getCaseStudyCategories();
+  const caseStudies = await getCaseStudies();
+  // console.log("length of caseStudyies ", caseStudies);
 
   return (
     <>
@@ -59,7 +65,7 @@ const CaseStudies = async () => {
           );
         })}
       </MaxWidthWrapper> */}
-      <CaseStudyCards />
+      <CaseStudyCards categories={categories} caseStudies={caseStudies} />
       <ProcessSection />
       <TestimonialSlider />
       <BlogCards />
