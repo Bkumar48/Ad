@@ -75,6 +75,7 @@ function CaseStudyCards({ categories, caseStudies }: CaseStudyCardsProps) {
       <div>
         {filteredCaseStudies.map((caseStudy) => (
           <CaseStudyCard
+            category={caseStudy.category}
             categories={categories}
             colorScheme={caseStudy.colorScheme}
             key={caseStudy.slug}
@@ -92,6 +93,7 @@ function CaseStudyCards({ categories, caseStudies }: CaseStudyCardsProps) {
 }
 
 interface CaseStudyCardProps {
+  category: string;
   categories: Category[];
   colorScheme: string;
   slug: string;
@@ -103,6 +105,7 @@ interface CaseStudyCardProps {
 }
 
 function CaseStudyCard({
+  category,
   categories,
   colorScheme,
   slug,
@@ -112,38 +115,45 @@ function CaseStudyCard({
   aboutProjectDescription,
   technologiesUsed,
 }: CaseStudyCardProps) {
+  const categoryData = categories.find((cat) => cat.slug === category);
+  // console.log(categoryData, "categoryData")
   return (
-    <div className="p-8 my-8 border rounded-3xl flex">
-      <div className="w-1/2">
+    <div
+      className="p-14 my-8 border rounded-3xl flex gap-20"
+      style={{
+        background: `linear-gradient(to bottom, #fff 75%, ${colorScheme} 25%)`,
+      }}
+    >
+
+
+      <div className="w-1/2 flex flex-col ">
         <div
           className="h-4 w-7"
           style={{
             backgroundColor: colorScheme,
           }}
         />
-        <div>
-          <h3 className="text-3xl py-4">About the project</h3>
-          <p className="line-clamp-3">{aboutProjectDescription}</p>
+        <div className="py-4">
+          <h3 className="text-3xl my-4">About the project</h3>
+          <p className="line-clamp-3 ">{aboutProjectDescription}</p>
         </div>
-
         <div className="py-4 grid grid-cols-3 gap-5">
           {technologiesUsed.map((tech) => {
-            const category = categories.find((category) =>
-              category.technologies.find((t) => t.title === tech)
+            const techData = categoryData?.technologies.find(
+              (t) => t._id === tech
             );
-            console.log(category, "category")
-
-            return (
+            return techData ? (
               <p
-                className="bg-[#515151] rounded-full py-1 text-center text-white"
-                key={tech}
+                key={techData._id}
+                className="text-white bg-[#515151] rounded-full text-center text-base py-1"
               >
-                hello
+                {techData.title}
               </p>
-            );
+            ) : null;
           })}
         </div>
-        <div>
+        <div className="flex-grow "></div> {/* Add this line */}
+        <div className="">
           <Button
             title="View Case Study"
             className="bg-white text-black mt-5"
@@ -153,11 +163,13 @@ function CaseStudyCard({
           />
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="w-1/2 flex flex-col items-center ">
         <div>
-          <h2 className="text-[1.688rem] md:text-4xl">{caseStudyName}</h2>
+          <h2 className="text-[1.688rem] md:text-4xl text-center">
+            {caseStudyName}
+          </h2>
           <div>_____</div>
-          <p className="line-clamp-1">{caseStudyDescription}</p>
+          <p className="line-clamp-1 text-center">{caseStudyDescription}</p>
         </div>
         <div>
           <Image
