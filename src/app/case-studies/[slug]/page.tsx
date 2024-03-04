@@ -298,9 +298,32 @@ const Goalssection = ({
   stratergy,
 }: GoalssectionProps) => {
   const themeColor = ShadeLighter(colorScheme, 0.5);
+  const rgbaToHex = (rgba: string): string => {
+    const hexValues = rgba
+      .match(/\d+(?:\.\d+)?/g)
+      ?.slice(0, 4) // Capture decimals for alpha
+      .map((x: string, index: number) => {
+        if (index === 3) {
+          // Handle alpha: convert decimal to integer between 0-255
+          const alpha = Math.round(parseFloat(x) * 255);
+          return alpha.toString(16).padStart(2, "0");
+        } else {
+          return parseInt(x).toString(16).padStart(2, "0");
+        }
+      });
+
+    return "#" + (hexValues?.join("") ?? "");
+  };
+
+  const hexColor = rgbaToHex(themeColor);
+
   return (
-    <section className="relative py-6 lg:py-12">
-      <div className="absolute top-0 left-0 h-full w-full">
+    <section
+      className={cn(
+        `relative py-6 lg:py-12 bg-[${hexColor}] lg:bg-transparent`
+      )}
+    >
+      <div className="absolute top-0 left-0 h-full w-full hidden lg:block">
         <svg
           viewBox="0 0 1920 1242"
           fill="none"
@@ -314,12 +337,12 @@ const Goalssection = ({
         </svg>
       </div>
       <MaxWidthWrapper className="relative z-10 ">
-        <div className="text-center flex flex-col items-center justify-center pb-6">
+        <div className="text-center flex flex-col items-center justify-center pb-6 lg:bg-none">
           <h2 className="text-[1.688rem] md:text-4xl py-2">{goalsTitle}</h2>
           <p className="py-2 text-base sm:text-lg">{goalsDescription}</p>
         </div>
-        <div className="flex gap-32 pb-10">
-          <div className="bg-white p-10 rounded-2xl space-y-3">
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 xl:gap-32 pb-10 lg:bg-none">
+          <div className="shadow-2xl bg-white p-10 rounded-2xl space-y-3">
             <h2 className="text-[1.688rem] md:text-4xl">Objectives</h2>
             <ul>
               {objectives.map((item: any, index: number) => (
@@ -335,7 +358,7 @@ const Goalssection = ({
               ))}
             </ul>
           </div>
-          <div className="bg-white p-10 rounded-2xl space-y-3">
+          <div className="shadow-2xl bg-white p-10 rounded-2xl space-y-3">
             <h2 className="text-[1.688rem] md:text-4xl">Stratergy</h2>
             <ul>
               {stratergy.map((item: any, index: number) => (
