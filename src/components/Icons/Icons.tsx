@@ -701,6 +701,56 @@ export const Icons = {
       />
     </svg>
   ),
+  CharmSquareTick: (props: SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 16 16"
+      {...props}
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+      >
+        <path d="M10.25 2.75h-7.5v10.5h10.5v-3.5"></path>
+        <path d="m5.75 7.75l2.5 2.5l6-6.5"></path>
+      </g>
+    </svg>
+  ),
+  UpArrow: (props: SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 512 512"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={48}
+        d="m112 244l144-144l144 144M256 120v292"
+      ></path>
+    </svg>
+  ),
+  SimpleIcon: (props: SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M1.927 23.935a2.4 2.4 0 0 1-1.882-1.883a2.4 2.4 0 0 1 2.82-2.82a2.4 2.4 0 0 1 1.882 1.882a2.4 2.4 0 0 1-2.82 2.82M21.135 4.768a2.4 2.4 0 0 1-1.882-1.882a2.4 2.4 0 0 1 2.82-2.82a2.4 2.4 0 0 1 1.882 1.882a2.4 2.4 0 0 1-2.82 2.82M12.021 6.01c1.147 0 2.219.324 3.13.883l2.585-2.585A9.583 9.583 0 0 0 4.328 17.716l2.586-2.586a5.99 5.99 0 0 1 5.107-9.12m5.107 2.86a5.99 5.99 0 0 1-8.237 8.237l-2.586 2.585A9.583 9.583 0 0 0 19.713 6.284Z"
+      ></path>
+    </svg>
+  ),
 };
-
-

@@ -128,6 +128,11 @@ function CaseStudyCard({
 
         <div className="py-4 grid grid-cols-3 gap-5">
           {technologiesUsed.map((tech) => {
+            const category = categories.find((category) =>
+              category.technologies.find((t) => t.title === tech)
+            );
+            console.log(category, "category")
+
             return (
               <p
                 className="bg-[#515151] rounded-full py-1 text-center text-white"
