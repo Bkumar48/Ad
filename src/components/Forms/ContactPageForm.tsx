@@ -16,7 +16,7 @@ import { Textarea } from "../ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { sendEmail } from "@/lib/send-email";
+import { contactPageFormSubmission } from "@/lib/send-email";
 const ContactPageForm = () => {
   const schema = z.object({
     formId: z.string(),
@@ -41,7 +41,7 @@ const ContactPageForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof schema>) {
-    // sendEmail(values);
+    contactPageFormSubmission(values);
     toast({
       title: "You submitted the following values:",
       description: (

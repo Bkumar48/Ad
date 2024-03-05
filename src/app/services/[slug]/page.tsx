@@ -20,6 +20,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Button from "@/components/Button/Button";
+import GetInTouchForm from "@/components/Forms/GetInTouchForm";
 
 async function getServiceData({ params }: { params: { slug: string } }) {
   const res = await fetch(
@@ -167,8 +168,11 @@ const IntroSection: React.FC<IntroSectionProps> = ({
           </h3>
           <div className="pb-3">{parse(serviceDescriptionIII)}</div>
         </div>
-        <aside className="w-1/4">
-          <ServicePageMenu data={menuData} parentPage={slug} />
+        <aside className="w-1/4 relative">
+          <div className="sticky top-28 space-y-5">
+            <ServicePageMenu data={menuData} parentPage={slug} />
+            <GetInTouchForm />
+          </div>
         </aside>
       </MaxWidthWrapper>
       <MaxWidthWrapper className="py-2">
@@ -401,7 +405,6 @@ const ServiceParagraph: React.FC<ServiceParagraphProps> = ({
     </section>
   );
 };
-
 interface PinkSectionProps {
   heading: string;
   text: string;

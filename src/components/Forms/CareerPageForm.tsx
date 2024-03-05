@@ -55,6 +55,7 @@ const CareerPageForm = () => {
         </pre>
       ),
     });
+    console.log(values);
     form.reset();
   }
 
@@ -153,6 +154,7 @@ const CareerPageForm = () => {
                 <FormControl>
                   <Input
                     type="file"
+                    accept="application/pdf"
                     placeholder="Resume"
                     {...field}
                     className="focus-visible:ring-offset-0 focus-visible:ring-0 rounded-lg text-lg mb-4 items-center bg-[#fafafa] border-none"

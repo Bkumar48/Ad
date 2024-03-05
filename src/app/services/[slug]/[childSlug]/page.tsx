@@ -2,7 +2,6 @@ import BlogCards from "@/components/BlogCard/BlogCards";
 import { Icons } from "@/components/Icons/Icons";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import PageBanner from "@/components/PageBanner/PageBanner";
-import ServicePageMenu from "@/components/ServicePageMenu/ServicePageMenu";
 import parse from "html-react-parser";
 import Image from "next/image";
 import React from "react";
@@ -14,6 +13,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Button from "@/components/Button/Button";
+import GetInTouchForm from "@/components/Forms/GetInTouchForm";
 
 // export async function generateStaticParams() {
 //   const res = await fetch(
@@ -30,7 +30,6 @@ import Button from "@/components/Button/Button";
 //     }));
 //   });
 // }
-
 
 async function getServiceData({
   params,
@@ -108,7 +107,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({
   slug,
 }) => {
   return (
-    <section className="py-6 lg:py-12">
+    <section className="py-6 lg:py-12 relative">
       <MaxWidthWrapper className="flex gap-10">
         <div className="w-3/4">
           <h2 className="text-[1.688rem] md:text-4xl pb-4">{title}</h2>
@@ -150,8 +149,10 @@ const IntroSection: React.FC<IntroSectionProps> = ({
           </h3>
           <div className="pb-3">{parse(serviceDescriptionIII)}</div>
         </div>
-        <aside className="w-1/4">
-          <ServicePageMenu data={menuData} parentPage={slug} />
+        <aside className="relative w-1/4 space-y-5">
+          <div className="sticky top-28">
+            <GetInTouchForm />
+          </div>
         </aside>
       </MaxWidthWrapper>
       <MaxWidthWrapper className="py-2">

@@ -4,6 +4,13 @@ import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
 import Image from "next/image";
 import Button from "../Button/Button";
 import { cn } from "@/lib/utils";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface Technology {
   _id: string;
@@ -54,12 +61,12 @@ function CaseStudyCards({ categories, caseStudies }: CaseStudyCardsProps) {
 
   return (
     <MaxWidthWrapper className="py-12 lg:py-24">
-      <div className="mb-8">
+      <div className="mb-8 hidden md:block">
         {categories.map((category) => (
           <button
             key={category.slug}
             className={cn(
-              "m-2 p-3 px-8 rounded-full border",
+              "m-2 md:p-3 md:px-8 rounded-full border text-base lg:text-xl",
               selectedCategory === category.slug
                 ? "bg-[#F89520] text-white"
                 : "bg-white text-black"
@@ -71,6 +78,25 @@ function CaseStudyCards({ categories, caseStudies }: CaseStudyCardsProps) {
             {category.categoryName}
           </button>
         ))}
+      </div>
+      <div className=" block md:hidden">
+        <h4>Filter:</h4>
+        <Select
+          onValueChange={(value) => {
+            setSelectedCategory(value);
+          }}
+        >
+          <SelectTrigger>
+            <SelectValue placeholder="Select Category"></SelectValue>
+          </SelectTrigger>
+          <SelectContent>
+            {categories.map((category) => (
+              <SelectItem key={category.slug} value={category.slug}>
+                {category.categoryName}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
       <div>
         {filteredCaseStudies.map((caseStudy) => (
@@ -116,28 +142,30 @@ function CaseStudyCard({
   technologiesUsed,
 }: CaseStudyCardProps) {
   const categoryData = categories.find((cat) => cat.slug === category);
-  // console.log(categoryData, "categoryData")
+
   return (
     <div
-      className="p-14 my-8 border rounded-3xl flex gap-20"
-      style={{
-        background: `linear-gradient(to bottom, #fff 75%, ${colorScheme} 25%)`,
-      }}
+      className={`p-5 lg:p-8 xl:p-14 my-8 border rounded-3xl flex flex-col-reverse lg:flex-row lg:gap-10 xl:gap-20 bg-gradient-to-b from-white from-70% to-[#02811a] `}
+      // style={{
+      //   background: `linear-gradient(to bottom, #fff 75%, ${colorScheme} 25%)`,
+      // }}
     >
-
-
-      <div className="w-1/2 flex flex-col ">
+      <div className="w-full lg:w-1/2 flex flex-col ">
         <div
-          className="h-4 w-7"
+          className="h-4 w-7 hidden lg:block"
           style={{
             backgroundColor: colorScheme,
           }}
         />
-        <div className="py-4">
-          <h3 className="text-3xl my-4">About the project</h3>
-          <p className="line-clamp-3 ">{aboutProjectDescription}</p>
+        <div className="py-2 lg:py-4">
+          <h3 className="text-xl lg:text-3xl my-1 lg:my-4 text-center lg:text-left">
+            About the project
+          </h3>
+          <p className="line-clamp-3 text-base lg:text-lg  text-justify lg:text-left hyphens-auto lg:hyphens-none">
+            {aboutProjectDescription}
+          </p>
         </div>
-        <div className="py-4 grid grid-cols-3 gap-5">
+        <div className="pb-4 grid grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-3 xl:gap-5">
           {technologiesUsed.map((tech) => {
             const techData = categoryData?.technologies.find(
               (t) => t._id === tech
@@ -145,15 +173,15 @@ function CaseStudyCard({
             return techData ? (
               <p
                 key={techData._id}
-                className="text-white bg-[#515151] rounded-full text-center text-base py-1"
+                className="text-white bg-[#515151] rounded-lg lg:rounded-full text-center text-xs sm:text-base py-1 flex items-center justify-center"
               >
                 {techData.title}
               </p>
             ) : null;
           })}
         </div>
-        <div className="flex-grow "></div> {/* Add this line */}
-        <div className="">
+        <div className="flex-grow "></div>
+        <div className="flex items-center lg:items-start justify-center lg:justify-start">
           <Button
             title="View Case Study"
             className="bg-white text-black mt-5"
@@ -163,21 +191,23 @@ function CaseStudyCard({
           />
         </div>
       </div>
-      <div className="w-1/2 flex flex-col items-center ">
+      <div className="w-full lg:w-1/2 flex flex-col items-center ">
         <div>
           <h2 className="text-[1.688rem] md:text-4xl text-center">
             {caseStudyName}
           </h2>
-          <div>_____</div>
-          <p className="line-clamp-1 text-center">{caseStudyDescription}</p>
+          <p className="line-clamp-1 text-center text-base lg:text-lg ">
+            {caseStudyDescription}
+          </p>
         </div>
+        <div className="flex-grow"></div>
         <div>
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_URL}${cardImage}`}
             alt="Case Study Card Image"
             height={400}
             width={600}
-            className="rounded-lg"
+            className="rounded-lg object-cover"
           />
         </div>
       </div>

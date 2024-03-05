@@ -101,7 +101,7 @@ const Introsection = ({
             {subHeading}
           </h5>
           <h2 className="text-[1.688rem] md:text-4xl py-2">{caseStudyName}</h2>
-          <p className="py-2 text-base sm:text-lg text-justify sm:text-center">
+          <p className="py-2 text-base sm:text-lg text-justify sm:text-center hyphens-auto ">
             {caseStudyDescription}
           </p>
         </div>
@@ -159,7 +159,7 @@ const Aboutsection = ({
           <h2 className="text-[1.688rem] md:text-4xl py-2">
             About the project
           </h2>
-          <p className="py-2 text-base sm:text-lg text-justify sm:text-center">
+          <p className="py-2 text-base sm:text-lg text-justify sm:text-center hyphens-auto ">
             {aboutProjectDescription}
           </p>
         </div>
@@ -168,14 +168,16 @@ const Aboutsection = ({
         <div className="w-full lg:w-1/2 flex justify-end ">
           <div className="lg:max-w-[720px] space-y-4 lg:p-10 lg:pl-6 px-4 py-4">
             <h2 className="text-[1.688rem] md:text-4xl">The Challenges</h2>
-            <p className="text-justify sm:text-left">{challengesDescription}</p>
+            <p className="text-justify sm:text-left text-base sm:text-lg hyphens-auto">
+              {challengesDescription}
+            </p>
             <ul className="space-y-4">
               {challengesAndSolutions.map((item: any) => (
                 <li
                   key={item.title}
-                  className="border flex items-center gap-1 py-2 px-1"
+                  className="border flex  gap-1 py-2 px-1 text-base sm:text-lg"
                 >
-                  <Icons.CharmSquareTick className="shrink-0" />
+                  <Icons.CharmSquareTick className="shrink-0 mt-1" />
                   {item.title}
                 </li>
               ))}
@@ -209,14 +211,18 @@ const Aboutsection = ({
         <div className="w-full lg:w-1/2">
           <div className="lg:max-w-[720px] space-y-4 lg:p-10 lg:pr-6 px-4 py-4">
             <h2 className="text-[1.688rem] md:text-4xl">The Solutions</h2>
-            <p className="text-justify sm:text-left">{challengesDescription}</p>
+            <p className="text-justify sm:text-left text-base sm:text-lg hyphens-auto">
+              {challengesDescription}
+            </p>
             <ul className="space-y-4">
               {challengesAndSolutions.map((item: any, index: number) => (
                 <li key={item.content}>
                   <div className="flex  gap-2">
                     {/* <div className="w-0 h-0 border-t-4 border-t-transparent border-l-8 border-l-[#BC1D8D] border-b-4 border-b-transparent shrink-0" /> */}
                     <h3>{index + 1}.</h3>
-                    {parse(item.content)}
+                    <div className="text-base sm:text-lg">
+                      {parse(item.content)}
+                    </div>
                   </div>
                 </li>
               ))}
@@ -247,11 +253,11 @@ const TechnologiesUsedsection = ({
           <h2 className="text-[1.688rem] md:text-4xl py-2">
             {technologiesUsedTitle}
           </h2>
-          <p className="py-2 text-base sm:text-lg">
+          <p className="py-2 text-base sm:text-lg text-justify sm:text-center hyphens-auto">
             {technologiesUsedDescription}
           </p>
         </div>
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {technologiesUsed.map((item) => {
             const category = categoryData.find(
               (category: any) => category._id === item
@@ -319,9 +325,10 @@ const Goalssection = ({
 
   return (
     <section
-      className={cn(
-        `relative py-6 lg:py-12 bg-[${hexColor}] lg:bg-transparent`
-      )}
+      className={`${cn("relative py-6 lg:py-12 ")} 
+      ${hexColor ? "bg-[" + hexColor + "]" : ""} 
+      ${hexColor ? "lg:bg-transparent" : ""}
+      `}
     >
       <div className="absolute top-0 left-0 h-full w-full hidden lg:block">
         <svg
@@ -339,43 +346,51 @@ const Goalssection = ({
       <MaxWidthWrapper className="relative z-10 ">
         <div className="text-center flex flex-col items-center justify-center pb-6 lg:bg-none">
           <h2 className="text-[1.688rem] md:text-4xl py-2">{goalsTitle}</h2>
-          <p className="py-2 text-base sm:text-lg">{goalsDescription}</p>
+          <p className="py-2 text-base sm:text-lg text-justify sm:text-center hyphens-auto">
+            {goalsDescription}
+          </p>
         </div>
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 xl:gap-32 pb-10 lg:bg-none">
-          <div className="shadow-2xl bg-white p-10 rounded-2xl space-y-3">
+          <div className="shadow-2xl bg-white p-6 sm:p-10 rounded-2xl space-y-3">
             <h2 className="text-[1.688rem] md:text-4xl">Objectives</h2>
             <ul>
               {objectives.map((item: any, index: number) => (
-                <li key={item.title}>
+                <li
+                  key={item.title}
+                  className="text-justify hyphens-auto sm:text-left sm:hyphens-none "
+                >
                   <div>
                     <div className="flex items-center gap-2">
                       <div className="w-0 h-0 border-t-4 border-t-transparent border-l-8 border-l-[#BC1D8D] border-b-4 border-b-transparent shrink-0" />
                       <h3>{index + 1}</h3>
                     </div>
-                    <p>{item.title}</p>
+                    <p className="text-base sm:text-lg">{item.title}</p>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="shadow-2xl bg-white p-10 rounded-2xl space-y-3">
+          <div className="shadow-2xl bg-white p-6 sm:p-10 rounded-2xl space-y-3">
             <h2 className="text-[1.688rem] md:text-4xl">Stratergy</h2>
             <ul>
               {stratergy.map((item: any, index: number) => (
-                <li key={item.title}>
+                <li
+                  key={item.title}
+                  className="text-justify hyphens-auto sm:text-left sm:hyphens-none "
+                >
                   <div>
                     <div className="flex items-center gap-2">
                       <div className="w-0 h-0 border-t-4 border-t-transparent border-l-8 border-l-[#BC1D8D] border-b-4 border-b-transparent shrink-0" />
                       <h3>{index + 1}</h3>
                     </div>
-                    <p>{item.title}</p>
+                    <p className="text-base sm:text-lg">{item.title}</p>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        <div>
+        <div className="shadow-2xl sm:shadow-none">
           <Image
             src={`${process.env.NEXT_PUBLIC_IMG_URL}${goalImage}`}
             alt="goals image"
@@ -385,10 +400,10 @@ const Goalssection = ({
             blurDataURL={`${process.env.NEXT_PUBLIC_IMG_URL}${goalImage}`}
           />
         </div>
-        <div className="flex justify-evenly -mt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:px-10 mt-10 sm:-mt-20">
           {growthBox.map((item: any) => (
             <div
-              className="space-y-1 relative border flex flex-col justify-center items-center bg-white rounded-3xl p-10"
+              className="md:space-y-1 relative border flex flex-col justify-center items-center bg-white rounded-3xl p-5 lg:p-10 shadow-2xl sm:shadow-none"
               style={{
                 borderColor: colorScheme,
               }}
@@ -402,14 +417,14 @@ const Goalssection = ({
                 }}
               />
               <h2
-                className="text-[1.688rem] md:text-4xl"
+                className="text-xl sm:text-2xl md:text-4xl text-center"
                 style={{
                   color: colorScheme,
                 }}
               >
                 {item.title}
               </h2>
-              <p className=" text-base sm:text-lg">{item.content}</p>
+              <p className="text-base md:text-lg text-center">{item.content}</p>
             </div>
           ))}
         </div>
@@ -431,7 +446,7 @@ const Resultsection = ({
   resultFinalDescription,
 }: ResultsectionProps) => {
   return (
-    <section className="pb-6 lg:pb-12">
+    <section className="py-6 lg:py-12">
       <MaxWidthWrapper className="space-y-5">
         <h2 className="text-[1.688rem] md:text-4xl inline-block">
           Result:
@@ -442,8 +457,10 @@ const Resultsection = ({
             }}
           />
         </h2>
-        <p>{resultDescription}</p>
-        <div className="grid grid-cols-4 gap-2">
+        <p className="text-justify hyphens-auto sm:text-left sm:hyphens-none">
+          {resultDescription}
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
           {resultBox.map((item: any) => (
             <div
               className="space-y-1 border flex gap-3 bg-white p-5"
@@ -476,12 +493,14 @@ const Resultsection = ({
                 >
                   {item.percentage}
                 </p>
-                <p className="text-base sm:text-lg">{item.description}</p>
+                <p className="text-base sm:text-lg ">{item.description}</p>
               </div>
             </div>
           ))}
         </div>
-        <p>{resultFinalDescription}</p>
+        <p className="text-base sm:text-lg text-justify hyphens-auto sm:text-left sm:hyphens-none">
+          {resultFinalDescription}
+        </p>
       </MaxWidthWrapper>
     </section>
   );
