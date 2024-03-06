@@ -29,7 +29,7 @@ const CareerPageForm = () => {
     CurrentDesignation: z
       .string()
       .min(1, { message: "Current Designation is required" }),
-    Resume: z.string().min(1, { message: "Resume is required" }),
+    Resume: z.any(),
     Message: z.string().optional(),
   });
 
@@ -156,7 +156,12 @@ const CareerPageForm = () => {
                     type="file"
                     accept="application/pdf"
                     placeholder="Resume"
-                    {...field}
+                    onChange={(e) => {
+                      const files = e.target.files;
+                      if (files && files.length > 0) {
+                        field.onChange(files[0]);
+                      }
+                    }}
                     className="focus-visible:ring-offset-0 focus-visible:ring-0 rounded-lg text-lg mb-4 items-center bg-[#fafafa] border-none"
                   />
                 </FormControl>
