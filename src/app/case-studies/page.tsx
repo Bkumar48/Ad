@@ -3,6 +3,7 @@ import { ProcessSection } from "../about/page";
 import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
 import BlogCards from "@/components/BlogCard/BlogCards";
 import CaseStudyCards from "@/components/CaseStudyCards/CaseStudyCards";
+import { unstable_noStore as noStore } from "next/cache";
 
 async function getCaseStudyCategories() {
   const res = await fetch(
@@ -24,6 +25,7 @@ async function getCaseStudies() {
 }
 
 const CaseStudies = async () => {
+  noStore();
   const categories = await getCaseStudyCategories();
   const caseStudies = await getCaseStudies();
 
