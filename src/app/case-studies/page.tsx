@@ -3,6 +3,7 @@ import { ProcessSection } from "../about/page";
 import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
 import BlogCards from "@/components/BlogCard/BlogCards";
 import CaseStudyCards from "@/components/CaseStudyCards/CaseStudyCards";
+import { revalidatePath } from "next/cache";
 
 async function getCaseStudyCategories() {
   const res = await fetch(
@@ -12,6 +13,7 @@ async function getCaseStudyCategories() {
     }
   );
   const data = await res.json();
+    revalidatePath("/case-studies");
   return data.result;
 }
 
@@ -20,6 +22,7 @@ async function getCaseStudies() {
     `${process.env.NEXT_PUBLIC_API_URL}/api/v1/case-studies/all`
   );
   const data = await res.json();
+    revalidatePath("/case-studies");
   return data.result;
 }
 
