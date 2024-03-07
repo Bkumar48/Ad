@@ -10,13 +10,13 @@ export async function POST(request: NextRequest) {
     port: 465,
     secure: true,
     auth: {
-      user: process.env.NEXT_PUBLIC_SENDER_EMAIL,
-      pass: process.env.NEXT_PUBLIC_SENDER_PASSWORD,
+      user: process.env.SENDER_EMAIL,
+      pass: process.env.SENDER_PASSWORD,
     },
   });
 
   const mailOptions: Mail.Options = {
-    from: process.env.NEXT_PUBLIC_SENDER_NAME,
+    from: process.env.SENDER_NAME,
     to: [
       "triciagriffin19732@gmail.com",
       "zulemavub81@yahoo.com",
