@@ -2,7 +2,7 @@ import React from "react";
 import { Separator } from "../ui/separator";
 import MaxWidthWrapper from "../MaxWidthWrapper/MaxWidthWrapper";
 import Link from "next/link";
-import Image from "next/image";
+import { Icons } from "../Icons/Icons";
 
 const Topbar = () => {
   return (
@@ -11,13 +11,7 @@ const Topbar = () => {
         <div>
           <Link href="/" className="flex gap-1 sm:gap-2 items-center">
             <div>
-              <Image
-                src="/us_flag.webp"
-                width={30}
-                height={15}
-                alt="In"
-                priority
-              />
+              <Icons.UsFlag className="h-8 w-8" />
             </div>
 
             <p className=" text-xs sm:text-base">+1 (205) 273-6006</p>
@@ -26,13 +20,7 @@ const Topbar = () => {
         <Separator orientation="vertical" className="bg-[#D9D9D9] h-6 w-0.5" />
         <div>
           <Link href="/" className="flex gap-1 sm:gap-2 items-center">
-            <Image
-              src="/In_flag.webp"
-              width={30}
-              height={15}
-              alt="In"
-              priority
-            />
+            <Icons.IndianFlag className="h-8 w-8" />
             <p className=" text-xs sm:text-base">+91 8907400008</p>
           </Link>
         </div>

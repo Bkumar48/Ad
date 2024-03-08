@@ -18,12 +18,7 @@ export function homePageFormSubmission(data: homePageFormData) {
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
-    .then((response) => {
-      alert(response.message);
-      console.log(response)
-    })
     .catch((err) => {
-      alert(err);
       console.log(err);
     });
 }
@@ -42,12 +37,7 @@ export function getintouchFormSubmission(data: getintouchFormData) {
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
-    .then((response) => {
-      alert(response.message);
-      console.log(response)
-    })
     .catch((err) => {
-      alert(err);
       console.log(err);
     });
 }
@@ -70,12 +60,7 @@ export function getintouchFormSubmission(data: getintouchFormData) {
 //     body: JSON.stringify(data),
 //   })
 //     .then((res) => res.json())
-//     .then((response) => {
-//       alert(response.message);
-//       console.log(response)
-//     })
 //     .catch((err) => {
-//       alert(err);
 //       console.log(err);
 //     });
 // }
@@ -95,13 +80,24 @@ export function contactPageFormSubmission(data: contactPageFormData) {
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
-    .then((response) => {
-      alert(response.message);
-      console.log(response)
-    })
     .catch((err) => {
-      alert(err);
       console.log(err);
     });
 }
 
+type newsLetterFormData = {
+  Email: string;
+};
+
+export function newsLetterFormSubmission(data: newsLetterFormData) {
+  const apiEndpoint = "/api/newsLetterForm";
+
+  fetch(apiEndpoint, {
+    method: "POST",
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .catch((err) => {
+      console.log(err);
+    });
+}

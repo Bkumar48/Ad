@@ -1,10 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
+import NewsLetterTemplate from "../emailTemplates/NewsLetterTemplate";
 
 export async function POST(request: NextRequest) {
-  const { Name, Email, Message, Phone, Budget, Interest } =
-    await request.json();
+  const { Email } = await request.json();
 
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
@@ -20,10 +20,9 @@ export async function POST(request: NextRequest) {
   const userMailOptions: Mail.Options = {
     from: process.env.SENDER_NAME,
     to: Email, // Send email to the user who filled the form
-    subject: `Thank you for contacting us, ${Name}!`,
-    html: `<h1 class="text-3xl">Thank you for contacting us, ${Name}!</h1>
-    <p>We have received your message and will get back to you as soon as possible.</p>
-    <p>Your Message: ${Message}</p>`,
+    subject: `Thank you for subscribing to our newsletter!`,
+    html: `<h1 class="text-3xl">Thank you for subscribing to our newsletter!</h1>
+        <p>You will now receive our latest news and updates.</p>`,
   };
 
   // Options for the email notification you receive
@@ -35,13 +34,11 @@ export async function POST(request: NextRequest) {
       "GabrielleOPLewiswq@outlook.com",
       "JoanneNLOGreeneY@aol.com",
     ],
-    subject: `Message from ${Name} (${Email})`,
-    html: `<h1 class="text-3xl">Message from ${Name}</h1>
-    <p>Email: ${Email}</p>
-    <p>Phone: ${Phone}</p>
-    <p>Interest: ${Interest}</p>
-    <p>Budget: ${Budget}</p>
-    <p>Message: ${Message}</p>`,
+    subject: `New subscriber: ${Email}`,
+    // html: `<h1 class="text-3xl bg-black border text-white">
+    //     New subscriber: ${Email}
+    //     </h1>`,
+    html: NewsLetterTemplate({ email: Email }),
   };
 
   // Function to send the email
@@ -58,11 +55,9 @@ export async function POST(request: NextRequest) {
 
   try {
     // Send notification email to the user
-    await sendMailPromise(userMailOptions);
-
-    // Send email notification to you
+    // await sendMailPromise(userMailOptions);
+    // Send email notification to the site owner
     await sendMailPromise(mailOptions);
-
     return NextResponse.json({ message: "Email sent" });
   } catch (err) {
     console.log(err);
