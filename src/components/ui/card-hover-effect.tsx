@@ -76,7 +76,7 @@ export const HoverEffect = ({
               <CardTitle className="font-nunito text-lg sm:font-2xl">
                 {item.title}
               </CardTitle>
-              <CardDescription className="text-lg font-[#515151] mt-2 text-base sm:text-lg">
+              <CardDescription className="lg:text-lg font-[#515151] mt-2 text-base sm:text-lg">
                 {item.description}
               </CardDescription>
               <div
@@ -107,7 +107,10 @@ export const HoverEffect = ({
                   <ul className="marker:text-white text-white list-disc pl-5  ">
                     {item.list.map((listItem, index) => {
                       return (
-                        <li className="text-white text-base 2xl:text-lg" key={index}>
+                        <li
+                          className="text-white text-base 2xl:text-lg"
+                          key={index}
+                        >
                           {listItem}
                         </li>
                       );
@@ -118,7 +121,7 @@ export const HoverEffect = ({
                     className="bg-white text-black mt-2 sm:mt-2"
                     svgClassName="bg-[#F89520]  right-2.5 group-hover/btn:right-28"
                     type="button"
-                    navigateTo="/about"
+                    navigateTo={item.link}
                   />
                 </div>
               </div>

@@ -78,7 +78,7 @@
   textarea {
     font-family: var(--font-nunito);
     font-size: 18px;
-    font-weight: 300;
+    font-weight: inherit;
     text-decoration: none;
     margin: 0;
     color: var(--current);

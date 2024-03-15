@@ -38,20 +38,21 @@ export default function RootLayout({
       <body
         id="root"
         className={cn(
-          "relative h-full font-sans antialiased",
+          "relative h-full antialiased",
           dm.variable,
           nunito.variable,
           baby.variable
         )}
       >
-        <SmoothScroll>
-          <main className={`relative flex flex-col min-h-screen`}>
-            <Navbar />
-            <div>{children}</div>
-            <Footer />
-          </main>
-          <Toaster />
-        </SmoothScroll>
+        {/* className={`relative flex flex-col min-h-screen`} */}
+        <main>
+          <Navbar />
+          {/* <SmoothScroll> */}
+          {children}
+          {/* </SmoothScroll> */}
+          <Footer />
+        </main>
+        <Toaster />
       </body>
     </html>
   );

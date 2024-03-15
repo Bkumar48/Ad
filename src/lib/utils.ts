@@ -13,3 +13,23 @@ export const formatDate = (dateString: string) => {
   };
   return new Date(dateString).toLocaleDateString(undefined, options);
 };
+
+export const ClientRemoveTags = (html: any) => {
+  // Regular expression to match HTML tags
+  const tagRegex = /<[^>]*>|&nbsp;/g;
+
+  // Remove HTML tags using regex
+  const textWithoutTags = html.replace(tagRegex, '');
+
+  return textWithoutTags;
+};
+
+export const ServerRemoveTags = (html:any) => {
+  // Regular expression to match HTML tags
+  const tagRegex = /<[^>]*>|&nbsp;/g;
+
+  // Remove HTML tags using regex
+  const textWithoutTags = html.replace(tagRegex, '');
+
+  return textWithoutTags;
+};

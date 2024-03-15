@@ -262,7 +262,6 @@ const TechnologiesUsedsection = ({
             const category = categoryData.find(
               (category: any) => category._id === item
             );
-            console.log(category);
             return (
               <div
                 key={item}

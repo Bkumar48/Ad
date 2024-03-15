@@ -4,6 +4,7 @@ import Image from "next/image";
 import { formatDate } from "@/lib/utils";
 import parse from "html-react-parser";
 import PageBanner from "@/components/PageBanner/PageBanner";
+import PopularPosts from "@/components/PopularPosts/PopularPosts";
 
 async function getBlogs({ params }: { params: { slug: string } }) {
   const res = await fetch(
@@ -35,8 +36,8 @@ const Blog: React.FC<BlogProps> = async ({ params }) => {
   return (
     <>
       <PageBanner title="Blog" />
-      <MaxWidthWrapper className="flex py-6 lg:py-12">
-        <div className="flex-1 border p-10">
+      <MaxWidthWrapper className="flex gap-10 py-6 lg:py-12">
+        <div className="border p-10 w-[70%]">
           <div>
             <Image
               src={`${process.env.NEXT_PUBLIC_IMAGE_URL}blog/${data.image}`}
@@ -51,7 +52,11 @@ const Blog: React.FC<BlogProps> = async ({ params }) => {
           <p>{formatDate(data.createdAt)}</p>
           <div>{parse(data.description)}</div>
         </div>
-        <div className="w-1/4"></div>
+        <aside className="w-[30%] relative">
+          <div className="sticky top-24">
+            <PopularPosts />
+          </div>
+        </aside>
       </MaxWidthWrapper>
     </>
   );

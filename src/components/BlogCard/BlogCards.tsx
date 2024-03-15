@@ -2,7 +2,7 @@ import React from "react";
 import BlogCard from "@/components/BlogCard/BlogCard";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper/MaxWidthWrapper";
 import Button from "../Button/Button";
- 
+
 async function getBlogsData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/v1/blog/findBlog?limit=3&skip=0`
@@ -35,9 +35,6 @@ const BlogCards: React.FC = async () => {
         </div>
       </MaxWidthWrapper>
       <MaxWidthWrapper className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {/* {data.map((blog: any) => (
-          <BlogCard key={blog._id} data={blog} />
-        ))} */}
         {data.map((blog: any, index: number) => (
           <div
             key={blog._id}
@@ -53,7 +50,7 @@ const BlogCards: React.FC = async () => {
           className="bg-white text-black mt-5"
           svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
           type="button"
-          navigateTo="/about"
+          navigateTo={`/blog`}
         />
       </MaxWidthWrapper>
     </section>

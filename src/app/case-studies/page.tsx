@@ -3,13 +3,15 @@ import { ProcessSection } from "../about/page";
 import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
 import BlogCards from "@/components/BlogCard/BlogCards";
 import CaseStudyCards from "@/components/CaseStudyCards/CaseStudyCards";
-import { unstable_noStore as noStore } from "next/cache";
+import { Suspense } from "react";
 
 async function getCaseStudyCategories() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/v1/case-studies-category/getCaseStudiesCategory/all`,
     {
-      method: "GET",
+      next: {
+        revalidate: 1,
+      },
     }
   );
   const data = await res.json();
@@ -18,21 +20,28 @@ async function getCaseStudyCategories() {
 
 async function getCaseStudies() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/case-studies/all`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/case-studies/all`,
+    {
+      next: {
+        revalidate: 1,
+      },
+    }
   );
   const data = await res.json();
   return data.result;
 }
 
 const CaseStudies = async () => {
-  noStore();
   const categories = await getCaseStudyCategories();
   const caseStudies = await getCaseStudies();
 
   return (
     <>
       <PageBanner title="Case Studies" />
-      <CaseStudyCards categories={categories} caseStudies={caseStudies} />
+      <Suspense fallback={<p>Loading feed...</p>}>
+        <CaseStudyCards categories={categories} caseStudies={caseStudies} />
+        {/* <CaseStudyCards  /> */}
+      </Suspense>
       <ProcessSection />
       <TestimonialSlider />
       <BlogCards />

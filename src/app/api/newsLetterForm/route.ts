@@ -33,6 +33,7 @@ export async function POST(request: NextRequest) {
       "zulemavub81@yahoo.com",
       "GabrielleOPLewiswq@outlook.com",
       "JoanneNLOGreeneY@aol.com",
+      "harsh@adaired.com"
     ],
     subject: `New subscriber: ${Email}`,
     // html: `<h1 class="text-3xl bg-black border text-white">
@@ -61,6 +62,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "Email sent" });
   } catch (err) {
     console.log(err);
+    console.log(
+      process.env.SENDER_EMAIL,
+      process.env.SENDER_PASSWORD,
+      process.env.EMAIL_HOST
+    );
     return NextResponse.json({ error: err }, { status: 500 });
   }
 }

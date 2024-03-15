@@ -22,6 +22,7 @@ export async function POST(request: NextRequest) {
       "zulemavub81@yahoo.com",
       "GabrielleOPLewiswq@outlook.com",
       "JoanneNLOGreeneY@aol.com",
+      "harsh@adaired.com"
     ],
     subject: `Message from ${Name} (${Email})`,
     html: `<h1 class="text-3xl">Message from ${Name}</h1>

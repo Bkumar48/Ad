@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardContent,
@@ -8,9 +7,8 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Button from "@/components/Button/Button";
-import parse from "html-react-parser";
 import Image from "next/image";
-import { formatDate } from "@/lib/utils";
+import { formatDate, ServerRemoveTags } from "@/lib/utils";
 
 interface Data {
   image: string;
@@ -24,7 +22,6 @@ interface BlogCardProps {
   data: Data;
 }
 const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
-
   return (
     <div className="">
       <Card className="rounded-none ">
@@ -45,7 +42,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
           </CardTitle>
         </CardHeader>
         <CardContent className="font-nunito text-lg text-left p-4 pt-0">
-          <div className="line-clamp-3" dangerouslySetInnerHTML={{__html: data.description}}></div>
+          <div className="line-clamp-3">
+            {ServerRemoveTags(data.description)}
+          </div>
         </CardContent>
         <div className="p-4">
           <Button
@@ -53,7 +52,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
             className="bg-white text-black  border-none"
             svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
             type="button"
-            navigateTo="/about"
+            navigateTo={`/blog/${data.slug}`}
           />
         </div>
         <Separator className="mx-auto w-[90%]" />

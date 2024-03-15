@@ -93,23 +93,23 @@ export const NAV_ITEMS = [
           },
           {
             name: "PPC Bid Management",
-            href: "/services/web-designing-and-development/shopify-development",
+            href: "/services/paid-media-and-advertising",
           },
           {
             name: "Customized Ad Extensions",
-            href: "/services/web-designing-and-development/php-development",
+            href: "/services/paid-media-and-advertising",
           },
           {
             name: "Creative Display Ads",
-            href: "/services/web-designing-and-development/laravel-development",
+            href: "/services/paid-media-and-advertising",
           },
           {
             name: "Local Targeting Strategies",
-            href: "/services/web-designing-and-development/laravel-development",
+            href: "/services/paid-media-and-advertising",
           },
           {
             name: "Conversion Tracking",
-            href: "/services/web-designing-and-development/laravel-development",
+            href: "/services/paid-media-and-advertising",
           },
         ],
       },
@@ -221,7 +221,7 @@ export const NAV_ITEMS = [
     ],
   },
   {
-    label: "Contact Us",
+    label: "Contact",
     value: "contact" as const,
     href: "/contact",
   },

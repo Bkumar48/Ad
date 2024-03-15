@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
           </Link>
           <Link
-            href="https://maps.app.goo.gl/CEMtUbQd1246YQ3c7"
+            href="tel:+91-8907400008"
             target="_blank"
             rel="noopener noreferrer"
             className="flex col-span-12 gap-2 p-5 flex-col items-center text-center lg:text-left lg:items-start border lg:flex-row lg:border-0 sm:col-span-6 lg:col-span-4 xl:col-span-3"
@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
           </Link>
           <Link
-            href="https://maps.app.goo.gl/CEMtUbQd1246YQ3c7"
+            href="mailto:info@adaired.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex col-span-12 gap-2 p-5 flex-col items-center text-center lg:text-left lg:items-start border lg:flex-row lg:border-0 sm:col-span-6 lg:col-span-3 xl:col-span-3"
@@ -146,32 +146,44 @@ const Footer = () => {
             </h4>
             <ul className="mt-6 space-y-2">
               <li>
-                <Link href="/" className="">
+                <Link
+                  href="/services/web-designing-and-development"
+                  className=""
+                >
                   Website Designing & Development
                 </Link>
               </li>
               <li>
-                <Link href="/" className="">
+                <Link href="/services/search-engine-optimization" className="">
                   Search Engine Optimization (SEO)
                 </Link>
               </li>
               <li>
-                <Link href="/" className="">
+                <Link href="/services/paid-media-and-advertising" className="">
                   Paid Media & Advertising
                 </Link>
               </li>
               <li>
-                <Link href="/" className="">
+                <Link
+                  href="/services/compelling-content-marketing"
+                  className=""
+                >
                   Compelling Content Marketing
                 </Link>
               </li>
               <li>
-                <Link href="/" className="">
+                <Link
+                  href="/services/digital-creative-and-logo-design"
+                  className=""
+                >
                   Digital Creative & Logo Design
                 </Link>
               </li>
               <li>
-                <Link href="/" className="">
+                <Link
+                  href="/services/strategic-social-media-management"
+                  className=""
+                >
                   Strategic Social Media Management
                 </Link>
               </li>

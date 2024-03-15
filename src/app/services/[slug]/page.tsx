@@ -31,14 +31,14 @@ async function getServiceData({ params }: { params: { slug: string } }) {
   return newData;
 }
 
-// export async function generateStaticParams() {
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/services`);
-//   const data = await res.json();
-//   const newData = data.data;
-//   return newData.map((service: any) => ({
-//     slug: service.slug.toString(),
-//   }));
-// }
+export async function generateStaticParams() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/services`);
+  const data = await res.json();
+  const newData = data.data;
+  return newData.map((service: any) => ({
+    slug: service.slug.toString(),
+  }));
+}
 
 interface MainServiceProps {
   params: {
@@ -250,7 +250,7 @@ const OurProcess: React.FC<OurProcessProps> = ({
 const ServiceBuild = ({ data }: { data: any }) => {
   return (
     <>
-      {data.map(
+      {/* {data.map(
         (
           section: {
             combinedSectionImage: string;
@@ -370,7 +370,97 @@ const ServiceBuild = ({ data }: { data: any }) => {
             </section>
           );
         }
-      )}
+      )} */}
+      {data.map((section: any, index: number) => {
+        const value = section.editorValue;
+
+        const ChangedEditorValue = value
+          ? value
+              .replace(/<ul>/g, '<ul class="grid grid-cols-2 py-2">')
+              .replace(
+                /<li>/g,
+                '<li class="custom-marker flex items-center custom-marker py-1" >'
+              )
+              .replace(
+                /<li dir="ltr">/g,
+                '<li class="custom-marker flex items-center custom-marker py-1" >'
+              )
+          : "";
+        return (
+          <section
+            className={cn(`flex flex-col lg:flex-row lg:odd:flex-row-reverse`)}
+          >
+            <div className={cn("w-full lg:w-1/2")}>
+              <div className={cn("lg:max-w-[720px] space-y-4")}>
+                {section.editorValue ? (
+                  <div className="">
+                    <h2 className={cn("text-[1.688rem] md:text-4xl pb-4 ")}>
+                      {section.heading}
+                    </h2>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: ChangedEditorValue }}
+                    />
+                    <Button
+                      title="View More"
+                      className="bg-white text-black mt-5"
+                      svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
+                      type="button"
+                      navigateTo="/about"
+                    />
+                  </div>
+                ) : (
+                  <div className="">
+                    <h2 className="text-[1.688rem] md:text-4xl pb-4  ">
+                      {section.heading}
+                    </h2>
+                    <Accordion type="single" collapsible>
+                      {section.accordion.map(
+                        (accordion: any, index: number) => {
+                          return (
+                            <AccordionItem
+                              key={index}
+                              value={accordion.title}
+                              className="border-none data-[state=open]:bg-[#FFFAFD] px-2"
+                            >
+                              <AccordionTrigger className="flex ">
+                                <div className="flex items-center gap-3">
+                                  <div className="h-3 w-3 bg-[#BC1D8D]" />
+                                  {accordion.title}
+                                </div>
+                              </AccordionTrigger>
+                              <AccordionContent className="px-6">
+                                {parse(accordion.content)}
+                              </AccordionContent>
+                            </AccordionItem>
+                          );
+                        }
+                      )}
+                    </Accordion>
+                    <Button
+                      title="View More"
+                      className="bg-white text-black mt-5"
+                      svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
+                      type="button"
+                      navigateTo="/about"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2 cover">
+              <Image
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}services/${section.combinedSectionImage}`}
+                alt="hero image"
+                width={1000}
+                height={400}
+                placeholder="blur"
+                blurDataURL="/banner1.webp"
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </section>
+        );
+      })}
     </>
   );
 };

@@ -53,7 +53,13 @@ const MobileNav = () => {
           initial="hide"
           animate={mobileNav ? "show" : "hide"}
           onClick={toggleMobileNav}
-          className="flex flex-col space-y-2 relative z-10 p-5"
+          className={cn(
+            "flex flex-col space-y-1.5 relative z-10 p-2 border rounded-lg mr-3",
+            {
+              "bg-white": !mobileNav,
+              "bg-[#1B5A96]": mobileNav,
+            }
+          )}
         >
           <motion.span
             variants={{
@@ -62,10 +68,12 @@ const MobileNav = () => {
               },
               show: {
                 rotate: 45,
-                y: 10,
+                y: 8,
               },
             }}
-            className="w-8 bg-black h-0.5 block rounded-full "
+            className={cn("w-6 bg-[#1B5A96] h-0.5 block rounded-full", {
+              "bg-white": mobileNav,
+            })}
           ></motion.span>
           <motion.span
             variants={{
@@ -76,7 +84,9 @@ const MobileNav = () => {
                 opacity: 0,
               },
             }}
-            className="w-8 bg-black h-0.5 block rounded-full"
+            className={cn("w-6 bg-[#1B5A96] h-0.5 block rounded-full", {
+              "bg-white": mobileNav,
+            })}
           ></motion.span>
           <motion.span
             variants={{
@@ -85,10 +95,12 @@ const MobileNav = () => {
               },
               show: {
                 rotate: -45,
-                y: -10,
+                y: -8,
               },
             }}
-            className="w-8 bg-black h-0.5 block rounded-full"
+            className={cn("w-6 bg-[#1B5A96] h-0.5 block rounded-full", {
+              "bg-white": mobileNav,
+            })}
           ></motion.span>
         </motion.button>
       </div>
@@ -176,7 +188,7 @@ const MobileNav = () => {
           //         );
           //       })}
           //     </motion.ul>
-          //     {/* <motion.div
+          //     <motion.div
           //       variants={{
           //         hide: {
           //           y: "25%",
@@ -188,7 +200,7 @@ const MobileNav = () => {
           //         },
           //       }}
           //       className="w-full h-px bg-white/30"
-          //     ></motion.div> */}
+          //     ></motion.div>
           //     <motion.ul
           //       variants={{
           //         hide: {
@@ -203,13 +215,13 @@ const MobileNav = () => {
           //       className="list-none flex justify-center gap-x-4"
           //     >
           //       <li>
-          //         <div className="bg-white rounded-lg w-8 h-8"></div>
+          //         <div className="bg-black rounded-lg w-8 h-8"></div>
           //       </li>
           //       <li>
-          //         <div className="bg-white rounded-lg w-8 h-8"></div>
+          //         <div className="bg-black rounded-lg w-8 h-8"></div>
           //       </li>
           //       <li>
-          //         <div className="bg-white rounded-lg w-8 h-8"></div>
+          //         <div className="bg-black rounded-lg w-8 h-8"></div>
           //       </li>
           //     </motion.ul>
           //   </motion.div>
@@ -263,7 +275,7 @@ const MobileNav = () => {
                       type: "spring",
                       bounce: 0.1,
                       when: "beforeChildren",
-                      staggerChildren: 0.10,
+                      staggerChildren: 0.1,
                     },
                   },
                 }}
@@ -287,7 +299,12 @@ const MobileNav = () => {
                           }}
                           key={item.value}
                           className="flex items-center justify-between"
-                          onClick={() => handleMenuItemClick(item)}
+                          onClick={() => {
+                            handleMenuItemClick(item);
+                            !item.subItems &&
+                              !item.childrens &&
+                              toggleMobileNav();
+                          }}
                         >
                           <Link
                             href={item.href}
@@ -312,7 +329,10 @@ const MobileNav = () => {
                           {item.subItems &&
                             item.subItems.map((subItem) => (
                               <MaxWidthWrapper key={subItem.name}>
-                                <li className="flex items-center gap-2 py-1">
+                                <li
+                                  className="flex items-center gap-2 py-1"
+                                  onClick={() => toggleMobileNav()}
+                                >
                                   <div className="w-3 h-3 rounded-full bg-[#ddd]"></div>
                                   <Link
                                     href={subItem.href}
@@ -326,7 +346,10 @@ const MobileNav = () => {
                           {item.childrens &&
                             item.childrens.map((subItem) => (
                               <MaxWidthWrapper key={subItem.name}>
-                                <li className="flex items-center gap-2 py-1">
+                                <li
+                                  className="flex items-center gap-2 py-1"
+                                  onClick={() => toggleMobileNav()}
+                                >
                                   <div className="w-3 h-3 rounded-full bg-[#ddd]"></div>
                                   <Link
                                     href={subItem.href}

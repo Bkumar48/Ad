@@ -11,6 +11,9 @@ import Link from "next/link";
 import HomePageForm from "@/components/Forms/HomePageForm";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
+// Static Images
+import TeamsBig from "../../public/TeamsBig.webp";
+
 const CaseStudySlider = dynamic(
   () => import("@/components/CaseStudySlider/CaseStudySlider")
 );
@@ -104,7 +107,7 @@ const AboutSection = () => {
             <h2 className="text-[1.688rem] md:text-4xl">
               A Company Obsessed With ROI
             </h2>
-            <p className="py-3 text-base sm:text-lg text-justify md:text-left">
+            <p className="py-3 text-base sm:text-lg text-justify hyphens-auto">
               Transform your marketing outcomes and experience exponential ROI
               growth by partnering with Adaired! We offer smart, targeted,
               integrated campaigns that drive traffic, build engagement,
@@ -126,7 +129,7 @@ const AboutSection = () => {
                   <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0  md:left-0 bg-[#A7A9AC] h-0.5 w-16 rounded-lg"></div>
                   Tailored Approach
                 </h4>
-                <p className="text-base sm:text-lg">
+                <p className="text-base sm:text-lg text-justify hyphens-auto">
                   Our obsession with ROI means crafting personalized strategies,
                   from meticulous campaign design to continuous optimization for
                   maximum impact and growth.
@@ -144,7 +147,7 @@ const AboutSection = () => {
                   <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0 bg-[#A7A9AC] h-0.5 w-16 rounded-lg"></div>
                   Tangible Results
                 </h4>
-                <p className="text-base sm:text-lg">
+                <p className="text-base sm:text-lg text-justify hyphens-auto">
                   Experience transparency in your marketing endeavors with
                   Adaired. As your brand gains momentum, the ROI translates into
                   measurable success for your business.
@@ -238,7 +241,7 @@ const Services = () => {
       title: "Website Designing & Development",
       description:
         "Website Design and development services that deliver exquisite design, a user-friendly interface, and robust functionality for lasting impressions on the audience.",
-      link: "https://stripe.com",
+      link: "/services/web-designing-and-development",
       list: [
         "PHP Development",
         "Website management",
@@ -255,7 +258,7 @@ const Services = () => {
       title: "Search Engine Optimization (SEO)",
       description:
         "Launch and maintain the websites on top of search results to enhance your online visibility with tried and tested Search Engine Optimization (SEO) services.",
-      link: "https://netflix.com",
+      link: "/services/search-engine-optimization",
       list: [
         "Meta Tags Optimization",
         "Google tags Setup",
@@ -272,7 +275,7 @@ const Services = () => {
       title: "Paid Media  & Advertising",
       description:
         "Building strategic ad campaigns and carrying data-driven optimizations to drive targeted traffic with our Pay-Per-Click (PPC) solutions.",
-      link: "https://google.com",
+      link: "/services/paid-media-and-advertising",
       list: [
         "Social Ads",
         "Google Ads",
@@ -289,7 +292,7 @@ const Services = () => {
       title: "Compelling Content Marketing",
       description:
         "Engaging and captivating content development that not only resonates with the audience but ranks well across all search engines.  ",
-      link: "https://meta.com",
+      link: "/services/compelling-content-marketing",
       list: [
         "Infographics",
         "Website Blogs",
@@ -306,7 +309,7 @@ const Services = () => {
       title: "Digital Creative & Logo Design",
       description:
         "The creative team illustrates the brand's image and ideas in captivating visuals to communicate with the target audience.",
-      link: "https://amazon.com",
+      link: "/services/digital-creative-and-logo-design",
       list: [
         "Digital Broucher",
         "Email Marketing Graphics",
@@ -323,7 +326,7 @@ const Services = () => {
       title: "Strategic Social Media Management",
       description:
         "Enhance the social media presence of brands on diverse social platforms with engaging content to foster meaningful interactions and amplify reach.",
-      link: "https://microsoft.com",
+      link: "/services/strategic-social-media-management",
       list: [
         "Profile Optimization",
         "Targeted Page Likes",
@@ -371,11 +374,12 @@ const Growth = () => {
             <div className="max-w-[500px] lg:max-w-full after:absolute after:-top-3 after:-right-3 md:after:-top-6 md:after:-right-6 after:border-2 after:border-[#BC1D8D] after:h-[90%] after:w-[90%] after:-z-10">
               {" "}
               <Image
-                src="/TeamsBig.webp"
+                src={TeamsBig}
                 alt="Growth Image"
-                height={600}
+                height={800}
                 width={800}
                 className=""
+                placeholder="blur"
               />
             </div>
             <div className="transition-all absolute top-3/4 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:top-auto xl:left-auto xl:bottom-[20%] xl:right-[-20%]">

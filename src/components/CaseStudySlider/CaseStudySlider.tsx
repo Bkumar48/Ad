@@ -100,7 +100,7 @@ const CaseStudySlider = () => {
                       className="bg-white text-black mt-5"
                       svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
                       type="button"
-                      navigateTo="/about"
+                      navigateTo="/case-studies"
                     />
                   </div>
                   <div className={`flex-1 flex justify-end`}>
