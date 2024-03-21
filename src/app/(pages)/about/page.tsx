@@ -11,6 +11,7 @@ const About = () => {
     <div>
       <PageBanner title="About Us" />
       <IntroSection />
+      <WorkStation />
       <ProcessSection />
       <TestimonialSlider />
       <BlogCards />
@@ -187,5 +188,48 @@ export const ProcessSection = () => {
         <Process />
       </MaxWidthWrapper>
     </section>
+  );
+};
+
+const WorkStation = () => {
+  return (
+    <MaxWidthWrapper className="grid sm:grid-cols-2 gap-y-10 sm:gap-x-10 lg:gap-x-24 py-12 lg:py-20">
+      <div>
+        <div>
+          <Image
+            src="/about_workstation.webp"
+            alt="About Image"
+            height={600}
+            width={800}
+            className="rounded-lg"
+          />
+        </div>
+        <div className="bg-white py-5 px-8 lg:py-8 lg:px-12 border mx-auto -mt-9 lg:-mt-14 text-center w-4/5 relative z-1 ">
+          <h2 className="text-lg md:text-xl lg:text-2xl xl:text-4xl ">
+            Our Workstation
+          </h2>
+          <div className="absolute -left-3 -bottom-3 lg:-left-5  lg:-bottom-5 border-l-4 border-b-4 border-[#BC1D8D] h-8 w-8 lg:h-12 lg:w-12"></div>
+          <div className="absolute -right-3 -bottom-3 lg:-right-5  lg:-bottom-5 border-r-4 border-b-4 border-[#BC1D8D] h-8 w-8 lg:h-12 lg:w-12"></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <Image
+            src="/about_members.webp"
+            alt="About Image"
+            height={600}
+            width={800}
+            className="rounded-lg"
+          />
+        </div>
+        <div className="bg-white py-5 px-8 lg:py-8 lg:px-12 border mx-auto -mt-9 lg:-mt-14 text-center w-4/5 relative z-1 ">
+          <h2 className="text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-4xl ">
+            40+Team Members
+          </h2>
+          <div className="absolute -left-3 -bottom-3 lg:-left-5  lg:-bottom-5 border-l-4 border-b-4 border-[#BC1D8D] h-8 w-8 lg:h-12 lg:w-12"></div>
+          <div className="absolute -right-3 -bottom-3 lg:-right-5  lg:-bottom-5 border-r-4 border-b-4 border-[#BC1D8D] h-8 w-8 lg:h-12 lg:w-12"></div>
+        </div>
+      </div>
+    </MaxWidthWrapper>
   );
 };

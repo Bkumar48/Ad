@@ -18,7 +18,7 @@ const Navbar = () => {
                 <div className=" ">
                   <Link
                     href="/"
-                    className="flex items-center w-36 sm:w-10/0 lg:w-10/12 xl:w-full"
+                    className="flex items-center w-28 md:w-36 sm:w-10/0 lg:w-10/12 xl:w-full"
                   >
                     <Image src={Logo} width={170} height={50} alt="Logo" />
                   </Link>

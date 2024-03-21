@@ -29,8 +29,12 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Link from "next/link";
 import { homePageFormSubmission } from "@/lib/send-email";
+import { NAV_ITEMS } from "@/config";
 
 const HomePageForm = () => {
+  const data = NAV_ITEMS.find((item) => item.value === "services");
+  const services = data?.subItems && data?.subItems.map((item) => item.name);
+
   const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL;
   const schema = z.object({
     formId: z.string(),
@@ -135,8 +139,6 @@ const HomePageForm = () => {
                       country={"us"}
                       inputProps={{
                         name: "phone",
-                        // required: true,
-                        // autoFocus: false,
                       }}
                       inputStyle={{
                         width: "100%",
@@ -176,9 +178,11 @@ const HomePageForm = () => {
                         <SelectValue placeholder="Interest" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="seo">SEO</SelectItem>
-                        <SelectItem value="web">Web Dev</SelectItem>
-                        <SelectItem value="ppc">PPC</SelectItem>
+                        {services?.map((service) => (
+                          <SelectItem key={service} value={service}>
+                            {service}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </FormControl>

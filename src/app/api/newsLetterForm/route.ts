@@ -33,12 +33,9 @@ export async function POST(request: NextRequest) {
       "zulemavub81@yahoo.com",
       "GabrielleOPLewiswq@outlook.com",
       "JoanneNLOGreeneY@aol.com",
-      "harsh@adaired.com"
+      "harsh@adaired.com",
     ],
     subject: `New subscriber: ${Email}`,
-    // html: `<h1 class="text-3xl bg-black border text-white">
-    //     New subscriber: ${Email}
-    //     </h1>`,
     html: NewsLetterTemplate({ email: Email }),
   };
 

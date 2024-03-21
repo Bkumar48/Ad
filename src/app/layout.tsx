@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/Footer/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 
 const nunito = Nunito_Sans({
@@ -44,15 +45,13 @@ export default function RootLayout({
           baby.variable
         )}
       >
-        {/* className={`relative flex flex-col min-h-screen`} */}
         <main>
           <Navbar />
-          {/* <SmoothScroll> */}
           {children}
-          {/* </SmoothScroll> */}
           <Footer />
         </main>
         <Toaster />
+        <SpeedInsights />
       </body>
     </html>
   );

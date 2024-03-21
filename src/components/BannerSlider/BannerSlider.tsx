@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import BackgroundImage, { Data } from "./BackgroundImage";

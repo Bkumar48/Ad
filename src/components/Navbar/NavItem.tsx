@@ -20,8 +20,12 @@ const NavItem = ({ activeIndex, navitems }: NavItemProps) => {
     setSubmenuClicked(!submenuClicked);
   };
 
+  const OnMouseEnter = () => {
+    setSubmenuClicked(false);
+  };
+
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center" onMouseEnter={OnMouseEnter}>
       <div className={cn("flex  items-center group")}>
         <Link
           className="gap-1 font-semibold flex items-center h-20 px-2 relative hover:after:w-[100%] after:absolute after:content-[''] after:h-[3px] after:w-[0%] after:bg-[#aaa] after:bottom-0 after:left-0 after:transition-all after:duration-300"

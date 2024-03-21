@@ -54,7 +54,7 @@ const MobileNav = () => {
           animate={mobileNav ? "show" : "hide"}
           onClick={toggleMobileNav}
           className={cn(
-            "flex flex-col space-y-1.5 relative z-10 p-2 border rounded-lg mr-3",
+            "flex flex-col space-y-1.5 relative z-10 p-2 border rounded-lg mr-3 sm:mr-5",
             {
               "bg-white": !mobileNav,
               "bg-[#1B5A96]": mobileNav,
