@@ -25,7 +25,7 @@ const TestimonialSlider = dynamic(
 export default function Home() {
   return (
     <main>
-      {/* <BannerSlider /> */}
+      <BannerSlider />
       <ManageGrid />
       <AboutSection />
       <LogoSlider />
