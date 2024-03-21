@@ -76,7 +76,7 @@ export const HoverEffect = ({
               <CardTitle className="font-nunito text-lg sm:font-2xl">
                 {item.title}
               </CardTitle>
-              <CardDescription className="lg:text-lg font-[#515151] mt-2 text-base sm:text-lg">
+              <CardDescription className="lg:text-lg text-zinc-800 mt-2 text-base sm:text-lg">
                 {item.description}
               </CardDescription>
               <div
@@ -101,9 +101,9 @@ export const HoverEffect = ({
                       className="text-white"
                     />
                   </div>
-                  <h4 className="text-white py-1 xl:py-2 text-xl xl:text-2xl font-nunito">
+                  <h3 className="text-white py-1 xl:py-2 text-xl xl:text-2xl font-nunito">
                     {item.title}
-                  </h4>
+                  </h3>
                   <ul className="marker:text-white text-white list-disc pl-5  ">
                     {item.list.map((listItem, index) => {
                       return (
@@ -171,9 +171,9 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("font-bold tracking-wide mt-4", className)}>
+    <h3 className={cn("font-bold tracking-wide mt-4", className)}>
       {children}
-    </h4>
+    </h3>
   );
 };
 export const CardDescription = ({

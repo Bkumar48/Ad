@@ -80,7 +80,7 @@ function CaseStudyCards({ categories, caseStudies }: CaseStudyCardsProps) {
         ))}
       </div>
       <div className=" block md:hidden">
-        <h4>Filter:</h4>
+        <h3>Filter:</h3>
         <Select
           onValueChange={(value) => {
             setSelectedCategory(value);
@@ -323,7 +323,7 @@ export default CaseStudyCards;
 //         ))}
 //       </div>
 //       <div className=" block md:hidden">
-//         <h4>Filter:</h4>
+//         <h3>Filter:</h3>
 //         <Select
 //           onValueChange={(value) => {
 //             setSelectedCategory(value);

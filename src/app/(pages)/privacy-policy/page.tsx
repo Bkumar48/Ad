@@ -31,9 +31,9 @@ const Privacy: FC<IProps> = (props) => {
             This is a complete gist of how me gather and use every detail of
             yours.
           </p>
-          <h4 className="text-lg sm:text-2xl">
+          <h3 className="text-lg sm:text-2xl">
             How and what details we gather?
-          </h4>
+          </h3>
           <ul>
             <li>
               <strong> You provide it to us:</strong> We gather your personal
@@ -44,7 +44,7 @@ const Privacy: FC<IProps> = (props) => {
               <strong>Cookies:</strong> We do use cookies on our website.
             </li>
           </ul>
-          <h4 className="text-lg sm:text-2xl">How we use your details?</h4>
+          <h3 className="text-lg sm:text-2xl">How we use your details?</h3>
           <p>
             We make use of your personal details when you voluntarily provide us
             with it. In case if something goes wrong, we will make inquiries
@@ -56,15 +56,15 @@ const Privacy: FC<IProps> = (props) => {
             unless clearly mentioned. Any message or email sent by us will be
             related to the particular service we provide.
           </p>
-          <h4 className="text-lg sm:text-2xl">Who collects your information?</h4>
+          <h3 className="text-lg sm:text-2xl">Who collects your information?</h3>
           <p>
             When you are visiting to our website and are asked to fill your
             personal details, you are providing this information to the SEO
             department.
           </p>
-          <h4 className="text-lg sm:text-2xl">Do we share your information?</h4>
+          <h3 className="text-lg sm:text-2xl">Do we share your information?</h3>
           <p>We do not share your personal information further.</p>
-          <h4 className="text-lg sm:text-2xl">Do we use cookies?</h4>
+          <h3 className="text-lg sm:text-2xl">Do we use cookies?</h3>
           <p>
             We may use cookies, tags, HTML5 local shared objects or flash
             cookies and advertising identifiers from third parties in reference

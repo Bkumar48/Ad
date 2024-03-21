@@ -64,10 +64,10 @@ const IntroSection = () => {
                   width={60}
                   className="border rounded-lg p-2 mb-2"
                 />
-                <h4 className="relative py-2 font-nunito font-semibold text-xl">
+                <h3 className="relative py-2 font-nunito font-semibold text-xl">
                   <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0  md:left-0 bg-[#A7A9AC] h-0.5 w-16 rounded-lg"></div>
                   Innovative Mindset
-                </h4>
+                </h3>
                 <p className="text-base sm:text-lg">
                   Known for our innovative mindset, Adaired&apos;s qualified
                   digital marketers use creativity to craft tailored strategies
@@ -82,10 +82,10 @@ const IntroSection = () => {
                   width={60}
                   className="border rounded-lg p-2 mb-2 "
                 />
-                <h4 className="relative py-2 font-nunito font-semibold text-xl">
+                <h3 className="relative py-2 font-nunito font-semibold text-xl">
                   <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0 bg-[#A7A9AC] h-0.5 w-16 rounded-lg"></div>
                   Data-Driven Strategies
-                </h4>
+                </h3>
                 <p className="text-base sm:text-lg">
                   Adaired utilizes in-depth analysis of consumer behavior and
                   market research to develop data-backed strategies for ongoing

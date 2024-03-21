@@ -60,6 +60,7 @@ const MobileNav = () => {
               "bg-[#1B5A96]": mobileNav,
             }
           )}
+          aria-label="Toggle Mobile Nav"
         >
           <motion.span
             variants={{
@@ -328,11 +329,12 @@ const MobileNav = () => {
                         <ul>
                           {item.subItems &&
                             item.subItems.map((subItem) => (
-                              <MaxWidthWrapper key={subItem.name}>
-                                <li
-                                  className="flex items-center gap-2 py-1"
-                                  onClick={() => toggleMobileNav()}
-                                >
+                              <li
+                                className="flex items-center gap-2 py-1"
+                                onClick={() => toggleMobileNav()}
+                                key={subItem.name}
+                              >
+                                <MaxWidthWrapper>
                                   <div className="w-3 h-3 rounded-full bg-[#ddd]"></div>
                                   <Link
                                     href={subItem.href}
@@ -340,8 +342,8 @@ const MobileNav = () => {
                                   >
                                     {subItem.name}
                                   </Link>
-                                </li>
-                              </MaxWidthWrapper>
+                                </MaxWidthWrapper>
+                              </li>
                             ))}
                           {item.childrens &&
                             item.childrens.map((subItem) => (

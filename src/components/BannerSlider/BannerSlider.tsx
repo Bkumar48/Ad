@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const BannerSlider = () => {
   const [data, setData] = useState<Data[]>(sliderData);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(2);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,16 +27,19 @@ const BannerSlider = () => {
           <div>
             <Link href={process.env.NEXT_PUBLIC_FACEBOOK_URL || "/"}>
               <Icons.Facebook className="text-white text-4xl" />
+              <span className="sr-only">Visit Adaired Digital's Facebook page</span>
             </Link>
           </div>
           <div>
             <Link href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "/"}>
               <Icons.Instagram className="text-white text-4xl" />
+              <span className="sr-only">Visit Adaired Digital's Facebook page</span>
             </Link>
           </div>
           <div>
             <Link href={process.env.NEXT_PUBLIC_TWITTER_URL || "/"}>
               <Icons.Twitter className="text-white text-4xl" />
+              <span className="sr-only">Visit Adaired Digital's Facebook page</span>
             </Link>
           </div>
           <div className="w-0.5 h-48 bg-white" />
@@ -53,16 +56,19 @@ const BannerSlider = () => {
             <div>
               <Link href={process.env.NEXT_PUBLIC_FACEBOOK_URL || "/"}>
                 <Icons.Facebook className="text-white text-4xl" />
+                <span className="sr-only">Visit Adaired Digital's Facebook page</span>
               </Link>
             </div>
             <div>
               <Link href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "/"}>
                 <Icons.Instagram className="text-white text-4xl" />
+                <span className="sr-only">Visit Adaired Digital's Facebook page</span>
               </Link>
             </div>
             <div>
               <Link href={process.env.NEXT_PUBLIC_TWITTER_URL || "/"}>
                 <Icons.Twitter className="text-white text-4xl" />
+                <span className="sr-only">Visit Adaired Digital's Facebook page</span>
               </Link>
             </div>
             <div className="w-0.5 md:h-32 lg:h-48 bg-white" />
@@ -90,8 +96,8 @@ const sliderData: Data[] = [
   },
   {
     img: "/banner2.webp",
-    title: "Digital Marketing Agency That Turns Businesses Into Brands",
-    subHead: "Adaired Digital Media",
+    title: "",
+    subHead: "",
   },
   {
     img: "/banner3.webp",

@@ -70,42 +70,54 @@ const Footer = () => {
               committed to your online growth.{" "}
             </p>
             <div className="mt-6 hidden lg:block">
-              <h4 className="tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
+              <h3 className="tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
                 Follow Us
-              </h4>
+              </h3>
               <div className="flex gap-2 mt-4">
                 <Link
                   href={process.env.NEXT_PUBLIC_FACEBOOK_URL || "/"}
                   className="p-2 bg-white rounded-lg"
                 >
                   <Icons.Facebook className="text-[#1B5A96]" />
+                  <span className="sr-only">
+                    Visit Adaired Digital's Facebook page
+                  </span>
                 </Link>
                 <Link
                   href={process.env.NEXT_PUBLIC_TWITTER_URL || "/"}
                   className="p-2 bg-white rounded-lg"
                 >
                   <Icons.Twitter className="text-[#1B5A96]" />
+                  <span className="sr-only">
+                    Visit Adaired Digital's Facebook page
+                  </span>
                 </Link>
                 <Link
                   href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "/"}
                   className="p-2 bg-white rounded-lg"
                 >
                   <Icons.Instagram className="text-[#1B5A96]" />
+                  <span className="sr-only">
+                    Visit Adaired Digital's Facebook page
+                  </span>
                 </Link>
                 <Link
                   href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "/"}
                   className="p-2 bg-white rounded-lg"
                 >
                   <Icons.LinkedIn className="text-[#1B5A96]" />
+                  <span className="sr-only">
+                    Visit Adaired Digital's Facebook page
+                  </span>
                 </Link>
               </div>
             </div>
           </div>
 
           <div className="col-span-12 lg:col-span-2 md:col-span-3">
-            <h4 className="relative after:absolute after:content-[''] after:h-0.5 after:w-16 after:bg-white after:left-0 after:bottom-[-5px] tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
+            <h3 className="relative after:absolute after:content-[''] after:h-0.5 after:w-16 after:bg-white after:left-0 after:bottom-[-5px] tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
               Useful Links
-            </h4>
+            </h3>
             <ul className="mt-6 space-y-2">
               <li>
                 <Link href="/" className="">
@@ -141,9 +153,9 @@ const Footer = () => {
           </div>
 
           <div className="col-span-12 lg:col-span-3 md:col-span-5">
-            <h4 className="relative after:absolute after:content-[''] after:h-0.5 after:w-16 after:bg-white after:left-0 after:bottom-[-5px] tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
+            <h3 className="relative after:absolute after:content-[''] after:h-0.5 after:w-16 after:bg-white after:left-0 after:bottom-[-5px] tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
               Services
-            </h4>
+            </h3>
             <ul className="mt-6 space-y-2">
               <li>
                 <Link
@@ -191,9 +203,9 @@ const Footer = () => {
           </div>
 
           <div className="col-span-12 lg:col-span-3 md:col-span-4">
-            <h4 className="relative after:absolute after:content-[''] after:h-0.5 after:w-16 after:bg-white after:left-0 after:bottom-[-5px] tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
+            <h3 className="relative after:absolute after:content-[''] after:h-0.5 after:w-16 after:bg-white after:left-0 after:bottom-[-5px] tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
               Subscribe
-            </h4>
+            </h3>
             <p className="mt-6">
               Share your email address to subscribe to Adaired&apos;s
               newsletter.
@@ -201,33 +213,45 @@ const Footer = () => {
             <NewsLetter />
           </div>
           <div className="mt-6 lg:hidden col-span-12">
-            <h4 className="tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
+            <h3 className="tracking-wide font-semibold font-nunito text-lg lg:text-2xl">
               Follow Us
-            </h4>
+            </h3>
             <div className="flex gap-2 mt-4">
               <Link
                 href={process.env.NEXT_PUBLIC_FACEBOOK_URL || "/"}
                 className="p-2 bg-white rounded-lg"
               >
                 <Icons.Facebook className="text-[#1B5A96]" />
+                <span className="sr-only">
+                  Visit Adaired Digital's Facebook page
+                </span>
               </Link>
               <Link
                 href={process.env.NEXT_PUBLIC_TWITTER_URL || "/"}
                 className="p-2 bg-white rounded-lg"
               >
                 <Icons.Twitter className="text-[#1B5A96]" />
+                <span className="sr-only">
+                  Visit Adaired Digital's Facebook page
+                </span>
               </Link>
               <Link
                 href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "/"}
                 className="p-2 bg-white rounded-lg"
               >
                 <Icons.Instagram className="text-[#1B5A96]" />
+                <span className="sr-only">
+                  Visit Adaired Digital's Facebook page
+                </span>
               </Link>
               <Link
                 href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "/"}
                 className="p-2 bg-white rounded-lg"
               >
                 <Icons.LinkedIn className="text-[#1B5A96]" />
+                <span className="sr-only">
+                  Visit Adaired Digital's Facebook page
+                </span>
               </Link>
             </div>
           </div>

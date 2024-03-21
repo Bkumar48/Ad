@@ -19,11 +19,11 @@ const BlogCards: React.FC = async () => {
     <section className="py-3 md:py-12">
       <MaxWidthWrapper className="text-center">
         <div className="flex flex-col items-center">
-          <h5 className="inline font-nunito text-[#515151] relative px-4 text-lg">
+          <h3 className="inline font-nunito text-[#515151] relative px-4 text-lg">
             <div className="absolute top-1/2 left-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
             <div className="absolute top-1/2 right-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
             Blog
-          </h5>
+          </h3>
           <h2 className="text-[1.688rem] md:text-4xl py-1">
             Update On The Latest Marketing Trends And Tech
           </h2>

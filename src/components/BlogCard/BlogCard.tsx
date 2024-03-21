@@ -48,7 +48,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
         </CardContent>
         <div className="p-4">
           <Button
-            title="Read More"
+            title="Read Blog"
             className="bg-white text-black  border-none"
             svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
             type="button"

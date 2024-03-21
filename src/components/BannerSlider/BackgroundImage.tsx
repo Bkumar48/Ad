@@ -39,7 +39,7 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
           quality={70}
           fill
           style={{
-            objectFit: "cover",
+            objectFit: "cover", 
           }}
           priority
           alt="Current Banner Image"
@@ -65,8 +65,8 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
           style={{
             objectFit: "cover",
           }}
-          // priority
           alt="Next Banner Image"
+          priority
         />
         <div className="sm:hidden absolute inset-0 bg-black opacity-50" />
       </motion.div>

@@ -174,7 +174,10 @@ const HomePageForm = () => {
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
-                      <SelectTrigger className="focus:ring-offset-0 focus:ring-0 border-b-2 border-t-0 border-l-0 border-r-0 border-solid rounded-none text-lg">
+                      <SelectTrigger
+                        className="focus:ring-offset-0 focus:ring-0 border-b-2 border-t-0 border-l-0 border-r-0 border-solid rounded-none text-lg"
+                        aria-label="select any one service"
+                      >
                         <SelectValue placeholder="Interest" />
                       </SelectTrigger>
                       <SelectContent>

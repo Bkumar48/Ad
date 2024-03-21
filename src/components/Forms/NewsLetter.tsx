@@ -73,6 +73,7 @@ const NewsLetter = () => {
       <Button
         type="submit"
         className="absolute inset-y-1 right-2 bg-[#FB9100] rounded-tl-none rounded-br-none "
+        aria-label="Subscribe to our newsletter"
       >
         <Icons.ArrowRightBroken className="text-xl" />
       </Button>

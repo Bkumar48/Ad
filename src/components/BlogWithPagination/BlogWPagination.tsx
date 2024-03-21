@@ -62,7 +62,7 @@ const BlogWPagination: FC<IProps> = ({ data }) => {
                   </div>
                   <div>
                     <Button
-                      title="Read More"
+                      title="Read Blog"
                       className="mt-4 bg-white text-black  border-none"
                       svgClassName="bg-[#F89520] right-2.5 group-hover/btn:right-28"
                       type="button"
@@ -115,14 +115,14 @@ const BlogWPagination: FC<IProps> = ({ data }) => {
 
       <ul className="flex gap-2 justify-center items-center">
         <li>
-            <button
-                onClick={() =>
-                currentPage > 1 && setCurrentPage((prev) => prev - 1)
-                }
-                className="px-4 py-2 bg-gray-300 cursor-pointer"
-            >
-                Prev
-            </button>
+          <button
+            onClick={() =>
+              currentPage > 1 && setCurrentPage((prev) => prev - 1)
+            }
+            className="px-4 py-2 bg-gray-300 cursor-pointer"
+          >
+            Prev
+          </button>
         </li>
         {pageNumbers.map((number) => (
           <li
@@ -136,15 +136,15 @@ const BlogWPagination: FC<IProps> = ({ data }) => {
           </li>
         ))}
         <li>
-            <button
-                onClick={() =>
-                currentPage < pageNumbers.length &&
-                setCurrentPage((prev) => prev + 1)
-                }
-                className="px-4 py-2 bg-gray-300 cursor-pointer"
-            >
-                Next
-            </button>
+          <button
+            onClick={() =>
+              currentPage < pageNumbers.length &&
+              setCurrentPage((prev) => prev + 1)
+            }
+            className="px-4 py-2 bg-gray-300 cursor-pointer"
+          >
+            Next
+          </button>
         </li>
       </ul>
     </>

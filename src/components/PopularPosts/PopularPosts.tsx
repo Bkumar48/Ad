@@ -43,10 +43,10 @@ const PopularPosts = async () => {
                   />
                 </div>
                 <div>
-                  <h4 className="relative py-2 font-nunito text-base">
+                  <h3 className="relative py-2 font-nunito text-base">
                     <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0  md:left-0 bg-[#A7A9AC] h-0.5 w-16 rounded-lg"></div>
                     {blog.title}
-                  </h4>
+                  </h3>
                   {/* <p className="text-sm line-clamp-2">{blog.description}</p> */}
                 </div>
               </Link>

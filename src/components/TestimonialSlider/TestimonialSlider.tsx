@@ -61,11 +61,11 @@ const TestimonialSlider = () => {
           <div
             className={`flex-1 pb-12 flex flex-col items-center text-center lg:text-left lg:items-start lg:pb-0`}
           >
-            <h5 className="inline font-nunito text-[#515151] relative lg:pl-20 text-lg">
+            <h3 className="inline font-nunito text-[#515151] relative lg:pl-20 text-lg">
               <div className="absolute top-1/2 -left-2/4 lg:left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-10 lg:w-16 "></div>
               <div className="lg:hidden absolute top-1/2 -right-2/4 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-10 lg:w-16"></div>
               Not Convinced?
-            </h5>
+            </h3>
             <h2 className="text-2xl md:text-3xl lg:text-4xl py-1">
               Check Out What Our Clients Want To Say!
             </h2>
@@ -113,7 +113,7 @@ const TestimonialSlider = () => {
                               {item.name[0].toUpperCase()}
                             </div>
                           )}
-                          <h4>{item.name}</h4>
+                          <h3>{item.name}</h3>
                         </div>
                         <p className="pt-4 text-base sm:text-lg">
                           {item.review}

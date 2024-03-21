@@ -58,7 +58,7 @@ const ContactDetails = () => {
           <Icons.Map className="flex-none h-12 w-12 border p-2  text-[#1b5b97] rounded" />
           <div>
             <address>
-              <p>Find Us</p>
+              <p>We're located at</p>
               <Link
                 href="https://maps.app.goo.gl/CEMtUbQd1246YQ3c7"
                 className="font-semibold "
@@ -72,7 +72,7 @@ const ContactDetails = () => {
         <div className="flex gap-3 md:gap-5 p-5 border col-span-12 sm:col-span-6 lg:col-span-12 flex-col md:flex-row items-center md:items-start text-center md:text-left">
           <Icons.Phone className="flex-none h-12 w-12 border p-2  text-[#1b5b97] rounded" />
           <div>
-            <p>Call Us</p>
+            <p>Need assistance? Call us at</p>
             <Link href="tel:+1 (205) 273-6006" className="block font-semibold">
               +1 (205) 273-6006
             </Link>
@@ -84,15 +84,17 @@ const ContactDetails = () => {
         <div className="flex gap-3 md:gap-5 p-5 border col-span-12 sm:col-span-6 lg:col-span-12 flex-col md:flex-row items-center md:items-start text-center md:text-left">
           <Icons.Mail className="flex-none h-12 w-12 border p-2  text-[#1b5b97] rounded" />
           <div>
-            <p>Mail Us</p>
+            <p>Helpdesk</p>
             <Link
               href="mailto:info@adaired.com?subject=Adaired Support&body=Hi Adaired Team,"
-              className="block font-semibold"
+              className="block font-semibold "
             >
-              info@adaired.com
+              <span>General Inquiries - </span>{" "}
+              <span className="text-sky-600">info@adaired.com</span>
             </Link>
             <Link href="mailto:hr@adaired.com" className="block font-semibold">
-              hr@adaired.com
+              <span>HR Department - </span>{" "}
+              <span className="text-sky-600">hr@adaired.com</span>
             </Link>
           </div>
         </div>

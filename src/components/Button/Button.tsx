@@ -37,9 +37,11 @@ const Button: React.FC<ButtonProps> = (props) => {
           href={props.navigateTo}
           target={props.target || "_self"}
           rel={props.rel || "noreferrer"}
+          aria-label="Link to page"
         >
           <button
             className={`rounded-full border relative inline-flex items-center justify-start py-3 pl-4 pr-14 overflow-hidden transition-all duration-300 ease-in-out  hover:pl-14 hover:pr-4 group/btn ${props.className}`}
+            aria-label="Your Accessible Button Name"
           >
             {buttonContent}
           </button>
@@ -49,6 +51,7 @@ const Button: React.FC<ButtonProps> = (props) => {
           className={`rounded-full border relative inline-flex items-center justify-start py-3 pl-4 pr-14 overflow-hidden transition-all duration-300 ease-in-out  hover:pl-14 hover:pr-4 group/btn  ${props.className}`}
           type={props.type}
           onClick={props.onClick}
+          aria-label="Your Accessible Button Name"
         >
           {buttonContent}
         </button>

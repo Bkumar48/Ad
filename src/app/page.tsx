@@ -25,7 +25,7 @@ const TestimonialSlider = dynamic(
 export default function Home() {
   return (
     <main>
-      <BannerSlider />
+      {/* <BannerSlider /> */}
       <ManageGrid />
       <AboutSection />
       <LogoSlider />
@@ -100,11 +100,12 @@ const AboutSection = () => {
             </div>
           </div>
           <div className="flex-1 p-2 text-center md:text-left">
-            <h5 className=" sm:text-xl inline font-nunito text-[#515151] relative md:pl-20 text-lg">
+            <h3 className=" sm:text-xl inline font-nunito text-[#515151] relative md:pl-20 text-lg">
               <div className="absolute top-1/2 -left-full md:left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
               <div className="md:hidden absolute top-1/2 -right-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
               About Us
-            </h5>
+            </h3>
+
             <h2 className="text-[1.688rem] md:text-4xl">
               A Company Obsessed With ROI
             </h2>
@@ -126,10 +127,10 @@ const AboutSection = () => {
                   width={60}
                   className="border rounded-lg p-2 mb-2"
                 />
-                <h4 className="relative py-2 font-nunito font-semibold text-xl">
-                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0  md:left-0 bg-[#A7A9AC] h-0.5 w-16 rounded-lg"></div>
+                <h3 className="relative py-2 font-nunito font-semibold text-xl">
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0  md:left-0 bg-[#c0c2c5] h-0.5 w-14 rounded-lg"></div>
                   Tailored Approach
-                </h4>
+                </h3>
                 <p className="text-base sm:text-lg text-justify hyphens-auto">
                   Our obsession with ROI means crafting personalized strategies,
                   from meticulous campaign design to continuous optimization for
@@ -144,10 +145,10 @@ const AboutSection = () => {
                   width={60}
                   className="border rounded-lg p-2 mb-2 "
                 />
-                <h4 className="relative py-2 font-nunito font-semibold text-xl">
-                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0 bg-[#A7A9AC] h-0.5 w-16 rounded-lg"></div>
+                <h3 className="relative py-2 font-nunito font-semibold text-xl">
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0 bg-[#c0c2c5] h-0.5 w-14 rounded-lg"></div>
                   Tangible Results
-                </h4>
+                </h3>
                 <p className="text-base sm:text-lg text-justify hyphens-auto">
                   Experience transparency in your marketing endeavors with
                   Adaired. As your brand gains momentum, the ROI translates into
@@ -346,11 +347,11 @@ const Services = () => {
       <section className="py-6 lg:py-12">
         <MaxWidthWrapper>
           <div className="text-center flex flex-col items-center justify-center">
-            <h5 className="inline font-nunito text-[#515151] relative px-4 text-lg">
+            <h3 className="inline font-nunito text-[#515151] relative px-4 text-lg">
               <div className="absolute top-1/2 left-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
               <div className="absolute top-1/2 right-full transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div>
               Our Services
-            </h5>
+            </h3>
             <h2 className="text-[1.688rem] md:text-4xl py-2">What We Offer</h2>
             <p className="py-2 max-w-[900px] text-base sm:text-lg">
               Whatever service we provide, we give a thought about every small
@@ -395,11 +396,11 @@ const Growth = () => {
             </div>
           </div>
           <div className="flex-1 ">
-            <h5 className="inline font-nunito text-[#515151] relative pl-16 text-lg md:pl-20 ">
+            <h3 className="inline font-nunito text-[#515151] relative pl-16 text-lg md:pl-20 ">
               <div className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-12 md:w-16"></div>
               {/* <div className="lg:hidden absolute top-1/2 -right-2/4 transform -translate-y-1/2 bg-[#A7A9AC] h-px w-16"></div> */}
               Holistic Expertise
-            </h5>
+            </h3>
             <h2 className="text-[1.688rem] md:text-4xl py-2">
               Digital Marketing Experts Dedicated To Your Growth
             </h2>
@@ -529,7 +530,7 @@ const ContactUs = () => {
                   <Icons.Mail className="border p-2 rounded h-14 w-14 sm:h-16 sm:w-16 text-[#1B5A96]" />
                   <div>
                     <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
-                      Mail Id Of Sales Executive
+                      Email Support
                     </p>
                     <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
                       info@adaired.com
@@ -545,7 +546,7 @@ const ContactUs = () => {
                   <Icons.Skype className="border p-2 rounded h-14 w-14 sm:h-16 sm:w-16 text-[#1B5A96]" />
                   <div>
                     <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
-                      Our Skype ID
+                      Ready for a Skype chat?
                     </p>
                     <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
                       Adaired Digital
@@ -561,7 +562,7 @@ const ContactUs = () => {
                   <Icons.Whatsapp className="border p-2 rounded h-14 w-14 sm:h-16 sm:w-16 text-[#1B5A96]" />
                   <div>
                     <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
-                      Chat on
+                      WhatsApp us your queries
                     </p>
                     <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
                       Whatsapp
@@ -577,7 +578,7 @@ const ContactUs = () => {
                   <Icons.Telegram className="border p-2 rounded h-14 w-14 sm:h-16 sm:w-16 text-[#1B5A96]" />
                   <div>
                     <p className="text-base text-left sm:text-center lg:text-left lg:text-lg">
-                      Ping us on
+                      Drop us a Telegram note
                     </p>
                     <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
                       Telegram
