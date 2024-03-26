@@ -58,7 +58,7 @@ const ContactDetails = () => {
           <Icons.Map className="flex-none h-12 w-12 border p-2  text-[#1b5b97] rounded" />
           <div>
             <address>
-              <p>We`&apos;`re located at</p>
+              <p>We&apos;re located at</p>
               <Link
                 href="https://maps.app.goo.gl/CEMtUbQd1246YQ3c7"
                 className="font-semibold "

@@ -565,7 +565,7 @@ const ContactUs = () => {
                       WhatsApp us your queries
                     </p>
                     <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
-                      Whatsapp
+                      +91 890-740-0008
                     </p>
                   </div>
                 </Link>
@@ -581,7 +581,7 @@ const ContactUs = () => {
                       Drop us a Telegram note
                     </p>
                     <p className="font-semibold text-lg text-left sm:text-center lg:text-left  lg:text-2xl">
-                      Telegram
+                      Adaired Digital Media
                     </p>
                   </div>
                 </Link>

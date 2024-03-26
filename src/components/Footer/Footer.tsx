@@ -80,7 +80,7 @@ const Footer = () => {
                 >
                   <Icons.Facebook className="text-[#1B5A96]" />
                   <span className="sr-only">
-                    Visit Adaired Digital `&apos;` s Facebook page
+                    Visit Adaired Digital &apos; s Facebook page
                   </span>
                 </Link>
                 <Link
@@ -89,7 +89,7 @@ const Footer = () => {
                 >
                   <Icons.Twitter className="text-[#1B5A96]" />
                   <span className="sr-only">
-                    Visit Adaired Digital `&apos;` s Facebook page
+                    Visit Adaired Digital &apos; s Facebook page
                   </span>
                 </Link>
                 <Link
@@ -98,7 +98,7 @@ const Footer = () => {
                 >
                   <Icons.Instagram className="text-[#1B5A96]" />
                   <span className="sr-only">
-                    Visit Adaired Digital `&apos;` s Facebook page
+                    Visit Adaired Digital &apos; s Facebook page
                   </span>
                 </Link>
                 <Link
@@ -107,7 +107,7 @@ const Footer = () => {
                 >
                   <Icons.LinkedIn className="text-[#1B5A96]" />
                   <span className="sr-only">
-                    Visit Adaired Digital `&apos;` s Facebook page
+                    Visit Adaired Digital &apos; s Facebook page
                   </span>
                 </Link>
               </div>
@@ -223,7 +223,7 @@ const Footer = () => {
               >
                 <Icons.Facebook className="text-[#1B5A96]" />
                 <span className="sr-only">
-                  Visit Adaired Digital `&apos;` s Facebook page
+                  Visit Adaired Digital &apos; s Facebook page
                 </span>
               </Link>
               <Link
@@ -232,7 +232,7 @@ const Footer = () => {
               >
                 <Icons.Twitter className="text-[#1B5A96]" />
                 <span className="sr-only">
-                  Visit Adaired Digital `&apos;` s Facebook page
+                  Visit Adaired Digital &apos; s Facebook page
                 </span>
               </Link>
               <Link
@@ -241,7 +241,7 @@ const Footer = () => {
               >
                 <Icons.Instagram className="text-[#1B5A96]" />
                 <span className="sr-only">
-                  Visit Adaired Digital `&apos;` s Facebook page
+                  Visit Adaired Digital &apos; s Facebook page
                 </span>
               </Link>
               <Link
@@ -250,7 +250,7 @@ const Footer = () => {
               >
                 <Icons.LinkedIn className="text-[#1B5A96]" />
                 <span className="sr-only">
-                  Visit Adaired Digital `&apos;` s Facebook page
+                  Visit Adaired Digital &apos; s Facebook page
                 </span>
               </Link>
             </div>
